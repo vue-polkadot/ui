@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "docs for vue-ui-polkadot",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "keywords": [
+    "polkadot",
+    "vue"
+  ],
+  "author": "matej nemcek",
+  "license": "ISC",
+  "devDependencies": {
+    "vuepress": "^1.0.3"
+  }
+}
