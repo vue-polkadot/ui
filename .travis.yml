@@ -13,7 +13,7 @@ before_install:
 before_script:
   - ./cc-test-reporter before-build
 script:
-  - yarn polkadot-dev-travis-build
+  - yarn run docs:build
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
