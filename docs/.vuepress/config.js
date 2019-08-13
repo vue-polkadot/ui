@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/ui/',
+  base: '/vue-ui-polkadot/',
   title: 'dysonring/vue-ui-polkadot',
   description: 'VueJS utilities, libraries and Vue components in use across @polkadot projects',
   markdown: {
@@ -22,12 +22,12 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/polkadot-js/ui' }
     ],
     search: false,
-    sidebar: [
-      ['/vue-keyring/', '@dysonring/vue-keyring'],
-      ['/vue-settings/', '@dysonring/vue-settings'],
-      ['/vue-shared/', '@dysonring/vue-shared'],
-      ['/vue-identicon/', '@dysonring/vue-identicon'],
-      '/CONTRIBUTING.md'
-    ]
+    // sidebar: [
+      // ['/ui-keyring/', '@dysonring/vue-keyring'],
+      // ['/vue-settings/', '@dysonring/vue-settings'],
+      // ['/vue-shared/', '@dysonring/vue-shared'],
+      // ['/vue-identicon/', '@dysonring/vue-identicon'],
+      // ['/contribute/', '/CONTRIBUTING.md'],
+    // ]
   }
 };
