@@ -13,7 +13,7 @@ features:
 - title: vue-utilities
   details: Utilities for formatting and working with settings inside any browser-based application.
 
-footer: Apache-2 Licensed | Copyright © 2019 dysonring authors and contributors
+footer: MIT Licensed | Copyright © 2019 dysonring authors and contributors
 ---
 
 ## Welcome

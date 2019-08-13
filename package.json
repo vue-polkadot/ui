@@ -12,7 +12,7 @@
     "vue"
   ],
   "author": "matej nemcek",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.0.3"
   }
