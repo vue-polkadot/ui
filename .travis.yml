@@ -7,15 +7,9 @@ cache:
     - node_modules
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
   - export PATH=$HOME/.yarn/bin:$PATH
-before_script:
-  - ./cc-test-reporter before-build
 script:
   - yarn run docs:build
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 deploy:
   provider: pages
   keep-history: true
