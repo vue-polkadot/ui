@@ -19,7 +19,7 @@ module.exports = {
           { text: 'VueJS Libs Reference (this)', link: 'https://vue-polkadot.js.org/ui/' }
         ]
       },
-      { text: 'GitHub', link: 'https://github.com/polkadot-js/ui' }
+      { text: 'GitHub', link: 'https://dysonring.github.io/vue-ui-polkadot/' }
     ],
     search: false,
     // sidebar: [
