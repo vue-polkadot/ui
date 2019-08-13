@@ -22,8 +22,8 @@ module.exports = {
       { text: 'GitHub', link: 'https://dysonring.github.io/vue-ui-polkadot/' }
     ],
     search: false,
-    // sidebar: [
-      // ['/ui-keyring/', '@dysonring/vue-keyring'],
+    sidebar: 'auto'
+      // ['/vue-keyring/', '@dysonring/vue-keyring'],
       // ['/vue-settings/', '@dysonring/vue-settings'],
       // ['/vue-shared/', '@dysonring/vue-shared'],
       // ['/vue-identicon/', '@dysonring/vue-identicon'],
