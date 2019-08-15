@@ -23,10 +23,10 @@ module.exports = {
     ],
     search: false,
     sidebar: 'auto'
-      // ['/vue-keyring/', '@dysonring/vue-keyring'],
-      // ['/vue-settings/', '@dysonring/vue-settings'],
-      // ['/vue-shared/', '@dysonring/vue-shared'],
-      // ['/vue-identicon/', '@dysonring/vue-identicon'],
+      // ['/vue-keyring/', '@vue-polkadot/vue-keyring'],
+      // ['/vue-settings/', '@vue-polkadot/vue-settings'],
+      // ['/vue-shared/', '@dvue-polkadot/vue-shared'],
+      // ['/vue-identicon/', '@vue-polkadot/vue-identicon'],
       // ['/contribute/', '/CONTRIBUTING.md'],
     // ]
   }
