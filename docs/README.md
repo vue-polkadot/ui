@@ -44,8 +44,8 @@ You can find the Polkadot repositories at:
 - [https://github.com/paritytech/polkadot](https://github.com/paritytech/polkadot)
 - [https://github.com/paritytech/substrate](https://github.com/paritytech/substrate)
 
-This documentation is generated from [https://github.com/dysonring/vue-ui-polkadot](https://github.com/dysonring/vue-ui-polkadot)
+This documentation is generated from [https://github.com/vue-polkadot/vue-ui](https://github.com/vue-polkadot/vue-ui)
 
 ## Contributing
 
-Contribution to the Polkadot JS projects are more than welcome. You can [report issues](https://github.com/dysonring/vue-ui-polkadot/issues/new) and [log feature requests](https://github.com/dysonring/vue-ui-polkadot/issues/new).
+Contribution to the Polkadot JS projects are more than welcome. You can [report issues](https://github.com/vue-polkadot/vue-ui/issues/new) and [log feature requests](https://github.com/vue-polkadot/vue-ui/issues/new).
