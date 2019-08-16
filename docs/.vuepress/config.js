@@ -22,12 +22,11 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/vue-polkadot/vue-ui' }
     ],
     search: false,
-    sidebar: 'auto'
-      // ['/vue-keyring/', '@vue-polkadot/vue-keyring'],
-      // ['/vue-settings/', '@vue-polkadot/vue-settings'],
-      // ['/vue-shared/', '@dvue-polkadot/vue-shared'],
-      // ['/vue-identicon/', '@vue-polkadot/vue-identicon'],
-      // ['/contribute/', '/CONTRIBUTING.md'],
-    // ]
+    sidebar:
+     [
+       '/',
+       '/vue-keyring/',
+       '/vue-identicon/'
+    ]
   }
 };
