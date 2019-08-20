@@ -1,5 +1,5 @@
 
-# @dysonring/vue-keyring
+# @vue-polkadot/vue-keyring
 
 A wrapper extending the base @polkadot/keyring interface for usage in the browser: Key management of user accounts including generation and retrieval of keyring pairs from a variety of input combinations.
 
@@ -9,7 +9,7 @@ All module methods are exposed through a single default export.
 
 ### Regular
 ```js
-import keyring from @dysonring/vue-keyring
+import keyring from @vue-polkadot/vue-keyring
 
 ```
 
