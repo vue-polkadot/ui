@@ -9,7 +9,7 @@ All module methods are exposed through a single default export.
 
 ### Regular
 ```js
-import keyring from @vue-polkadot/vue-keyring
+import keyring from '@vue-polkadot/vue-keyring'
 
 ```
 
