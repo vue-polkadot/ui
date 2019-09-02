@@ -1,14 +1,13 @@
 {
-  "name": "vue-identicon",
-  "version": "0.1.0",
+  "name": "@vue-polkadot/vue-identicon",
+  "version": "0.0.2",
   "description": "Identicon for Vue.js",
   "author": "Viki Val <viktorko99@gmail.com>",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name vue-identicon ./src/wrapper.ts"
+    "build-bundle": "vue-cli-service build --target lib --name vue-identicon ./src/index.ts"
   },
   "main": "dist/vue-identicon.common.js",
   "module": "dist/vue-identicon.esm.js",
@@ -33,14 +32,15 @@
     "vue-styled-components": "^1.4.9"
   },
   "peerDependencies": {
-    "vue": "*",
-    "@polkadot/util-crypto": "*"
+    "@polkadot/util-crypto": "*",
+    "vue": "*"
   },
   "devDependencies": {
     "@polkadot/util-crypto": "^1.1.1",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-typescript": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "bili": "^4.8.1",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   }
