@@ -2,8 +2,7 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-import { BehaviorSubject } from 'rxjs';
-import { KeyringJson, KeyringStore, KeyringStruct, KeyringItemType } from '../types';
+import { KeyringItemType, KeyringStruct } from '../types';
 
 export interface KeyringSectionOption {
   className?: string;
@@ -26,19 +25,4 @@ export type KeyringOption$Type = keyof KeyringOptions;
 export interface KeyringOptionInstance {
   createOptionHeader: (name: string) => KeyringSectionOption;
   init: (keyring: KeyringStruct) => void;
-}
-
-export interface SingleAddress {
-  json: KeyringJson;
-  option: KeyringSectionOption;
-}
-
-export interface SubjectInfo {
-  [index: string]: SingleAddress;
-}
-
-export interface AddressSubject {
-  add: (store: KeyringStore, address: string, json: KeyringJson) => SingleAddress;
-  remove: (store: KeyringStore, address: string) => void;
-  subject: BehaviorSubject<SubjectInfo>;
 }
