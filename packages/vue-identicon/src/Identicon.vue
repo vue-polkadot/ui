@@ -1,5 +1,5 @@
 <template>
-  <component id="app" :is="currentComponent" :size="size" :iconProperties="iconProperties" />
+  <component :is="currentComponent" :size="size" :iconProperties="iconProperties" />
 </template>
 
 <script lang="ts">
