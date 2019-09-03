@@ -1,0 +1,20 @@
+<template>
+  <div id="keyring-wrapper">
+
+  </div>
+
+</template>
+
+<script lang="ts">
+import Keyring from './Keyring.vue';
+import { Vue, Component } from 'vue-property-decorator';
+
+@Component({
+  components: {
+    Keyring,
+  },
+})
+export default class Subkey extends Vue {
+
+}
+</script>
