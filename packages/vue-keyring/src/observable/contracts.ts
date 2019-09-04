@@ -4,6 +4,6 @@
 
 import { contractKey } from '../defaults';
 
-import genericSubject from './genericSubject';
+// import genericSubject from './genericSubject';
 
 export default genericSubject(contractKey);

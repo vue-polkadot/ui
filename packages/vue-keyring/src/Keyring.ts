@@ -26,7 +26,7 @@ export class Keyring extends Base implements KeyringStruct {
   private stores = {
     address: (): AddressSubject => this.addresses,
     contract: (): AddressSubject => this.contracts,
-    account: (): AddressSubject => this.accounts
+    account: (): AddressSubject => this.accounts,
   };
 
   public addExternal(address: string | Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
@@ -34,7 +34,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     return {
       json: this.saveAccount(pair),
-      pair
+      pair,
     };
   }
 
@@ -43,7 +43,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     return {
       json: this.saveAccount(pair, password),
-      pair
+      pair,
     };
   }
 
@@ -52,7 +52,7 @@ export class Keyring extends Base implements KeyringStruct {
 
     return {
       json: this.saveAccount(pair, password),
-      pair
+      pair,
     };
   }
 
@@ -120,7 +120,7 @@ export class Keyring extends Base implements KeyringStruct {
     return info && {
       address,
       publicKey,
-      meta: info.json.meta
+      meta: info.json.meta,
     };
   }
 
@@ -142,7 +142,7 @@ export class Keyring extends Base implements KeyringStruct {
     return Object
       .entries(available)
       .filter(([, { json: { meta: { contract } } }]): boolean =>
-        !!contract && contract.genesisHash === this.genesisHash
+        !!contract && contract.genesisHash === this.genesisHash,
       )
       .map(([address]): KeyringAddress => storessthis.getContract(address) as KeyringAddress);
   }
