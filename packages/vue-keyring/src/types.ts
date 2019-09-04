@@ -84,8 +84,8 @@ export interface KeyringStruct {
   getAccounts: () => KeyringAddress[];
   getAddress: (address: string | Uint8Array, type: KeyringItemType | null) => KeyringAddress | undefined;
   getAddresses: () => KeyringAddress[];
-  getContract: (address: string | Uint8Array) => KeyringAddress | undefined;
-  getContracts: (genesisHash?: string) => KeyringAddress[];
+  // getContract: (address: string | Uint8Array) => KeyringAddress | undefined;
+  // getContracts: (genesisHash?: string) => KeyringAddress[];
   getPair: (address: string | Uint8Array) => KeyringPair;
   getPairs: () => KeyringPair[];
   isAvailable: (address: string | Uint8Array) => boolean;

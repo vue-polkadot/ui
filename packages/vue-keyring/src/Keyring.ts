@@ -20,7 +20,8 @@ import keyringOption from './options';
 const RECENT_EXPIRY = 24 * 60 * 60;
 
 // No accounts (or test accounts) should be loaded until after the chain determination.
-// Chain determination occurs outside of Keyring. Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
+// Chain determination occurs outside of Keyring.
+// Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 export class Keyring extends Base implements KeyringStruct {
   private stores = {
