@@ -132,20 +132,20 @@ export class Keyring extends Base implements KeyringStruct {
       .map((address): KeyringAddress => this.getAddress(address) as KeyringAddress);
   }
 
-  public getContract(address: string | Uint8Array): KeyringAddress | undefined {
-    return this.getAddress(address, 'contract');
-  }
+  // public getContract(address: string | Uint8Array): KeyringAddress | undefined {
+  //   return this.getAddress(address, 'contract');
+  // }
 
-  public getContracts(): KeyringAddress[] {
-    const available = this.contracts.subject.getValue();
+  // public getContracts(): KeyringAddress[] {
+  //   const available = this.contracts.subject.getValue();
 
-    return Object
-      .entries(available)
-      .filter(([, { json: { meta: { contract } } }]): boolean =>
-        !!contract && contract.genesisHash === this.genesisHash,
-      )
-      .map(([address]): KeyringAddress => storessthis.getContract(address) as KeyringAddress);
-  }
+  //   return Object
+  //     .entries(available)
+  //     .filter(([, { json: { meta: { contract } } }]): boolean =>
+  //       !!contract && contract.genesisHash === this.genesisHash,
+  //     )
+  //     .map(([address]): KeyringAddress => storessthis.getContract(address) as KeyringAddress);
+  // }
 
   private rewriteKey(json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
     if (hexAddr.substr(0, 2) === '0x') {
