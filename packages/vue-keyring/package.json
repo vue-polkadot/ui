@@ -30,12 +30,14 @@
     "@polkadot/util": "^1.1.1",
     "@polkadot/util-crypto": "^1.1.1",
     "@types/store": "^2.0.2",
+    "@vue-polkadot/vue-identicon": "^0.0.3",
     "core-js": "^2.6.5",
     "rxjs": "^6.5.2",
     "store": "^2.0.12",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
+    "vue-styled-components": "^1.4.9",
     "vuex": "^3.1.1"
   },
   "devDependencies": {

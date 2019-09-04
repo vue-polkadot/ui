@@ -20,7 +20,7 @@ interface Result {
 export default combineLatest(
   accounts.subject,
   addresses.subject,
-  contracts.subject
+  // contracts.subject
 ).pipe(
   // map(([accounts, addresses, contracts]): Result => ({
   map(([accounts, addresses]): Result => ({

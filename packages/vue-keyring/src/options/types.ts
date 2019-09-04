@@ -10,7 +10,7 @@ export interface KeyringSectionOption {
   content?: string;
   key: string | null;
   name: string;
-  text: string;
+  text: string | any;
   value: string | null;
 }
 
