@@ -9,12 +9,12 @@ import { map } from 'rxjs/operators';
 
 import accounts from './accounts';
 import addresses from './addresses';
-import contracts from './contracts';
+// import contracts from './contracts';
 
 interface Result {
   accounts: SubjectInfo;
   addresses: SubjectInfo;
-  contracts: SubjectInfo;
+  // contracts: SubjectInfo;
 }
 
 export default combineLatest(
@@ -22,9 +22,10 @@ export default combineLatest(
   addresses.subject,
   contracts.subject
 ).pipe(
-  map(([accounts, addresses, contracts]): Result => ({
+  // map(([accounts, addresses, contracts]): Result => ({
+  map(([accounts, addresses]): Result => ({
     accounts,
     addresses,
-    contracts
+    // contracts
   }))
 );

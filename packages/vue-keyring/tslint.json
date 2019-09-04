@@ -16,6 +16,11 @@
     "ordered-imports": false,
     "quotemark": [true, "single"],
     "member-ordering": [false],
-    "trailing-comma": [false]
+    "trailing-comma": [false],
+    "variable-name": {
+      "options": [
+        "allow-leading-underscore"
+      ]
+    }
   }
 }
