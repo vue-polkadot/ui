@@ -39,7 +39,7 @@ You can read more about the Polkadot Network at [https://polkadot.network/](http
 ## Github repositories
 
 You can find the Polkadot repositories at:
-
+- [https://github.com/vue-polkadot](https://github.com/vue-polkadot)
 - [https://github.com/polkadot-js](https://github.com/polkadot-js)
 - [https://github.com/paritytech/polkadot](https://github.com/paritytech/polkadot)
 - [https://github.com/paritytech/substrate](https://github.com/paritytech/substrate)
