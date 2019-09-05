@@ -1,6 +1,6 @@
 <template>
   <div id="keyring-wrapper">
-
+    <Keyring/>
   </div>
 
 </template>
@@ -14,7 +14,7 @@ import { Vue, Component } from 'vue-property-decorator';
     Keyring,
   },
 })
-export default class Subkey extends Vue {
+export default class Vuekeyring extends Vue {
   // public address = keyring.encodeAddress('');
 
   // public pair = keyring.getPair(address);
