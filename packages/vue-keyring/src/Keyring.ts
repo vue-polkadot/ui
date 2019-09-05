@@ -16,13 +16,15 @@ import env from './observable/development';
 import Base from './Base';
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
-
+// import Vue from 'vue';
 const RECENT_EXPIRY = 24 * 60 * 60;
 
 // No accounts (or test accounts) should be loaded until after the chain determination.
 // Chain determination occurs outside of Keyring.
 // Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
+import { Vue,  Component } from 'vue-property-decorator';
+// @Component({})
 export class Keyring extends Base implements KeyringStruct {
   private stores = {
     address: (): AddressSubject => this.addresses,
@@ -192,7 +194,7 @@ export class Keyring extends Base implements KeyringStruct {
 
   private loadContract(json: KeyringJson, key: string): void {
     const address = this.encodeAddress(
-      this.decodeAddress(json.address)
+      this.decodeAddress(json.address),
     );
     const [, hexAddr] = key.split(':');
 
@@ -208,8 +210,8 @@ export class Keyring extends Base implements KeyringStruct {
       address,
       meta: {
         ...meta,
-        isInjected: true
-      }
+        isInjected: true,
+      },
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 

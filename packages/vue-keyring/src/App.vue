@@ -1,20 +1,22 @@
 <template>
   <div id="keyring-wrapper">
-    <Keyring/>
+    <!-- <vuekeyring /> -->
   </div>
-
 </template>
 
 <script lang="ts">
-import Keyring from './Keyring.vue';
 import { Vue, Component } from 'vue-property-decorator';
+import keyring, { Keyring } from './Keyring';
 
-@Component({
-  components: {
-    Keyring,
-  },
-})
-export default class Vuekeyring extends Vue {
+// console.log(keyring);
+// console.log(Keyring);
+export default class Subkey extends Keyring {
+
+  public mounted(): void {
+    // console.log(keyring);
+    this.keyring.encodeAddress('');
+  }
+
   // public address = keyring.encodeAddress('');
 
   // public pair = keyring.getPair(address);

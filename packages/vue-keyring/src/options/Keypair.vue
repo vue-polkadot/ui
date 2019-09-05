@@ -48,7 +48,7 @@
 </template>
 
 <script>
-// import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 import styled from 'vue-styled-components';
 import Identicon from '@vue-polkadot/vue-identicon'
 

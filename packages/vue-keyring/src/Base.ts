@@ -16,8 +16,10 @@ import contracts from './observable/contracts';
 import env from './observable/development';
 import BrowserStore from './stores/Browser'; // direct import (skip index with all)
 import { MAX_PASS_LEN } from './defaults';
-
-export default class Base {
+// import Vue from 'vue';
+import { Vue, Component } from 'vue-property-decorator';
+@Component({})
+export default class Base extends Vue {
   private _accounts: AddressSubject;
 
   private _addresses: AddressSubject;
@@ -33,6 +35,7 @@ export default class Base {
   protected _store!: KeyringStore;
 
   public constructor() {
+    super();
     this._accounts = accounts;
     this._addresses = addresses;
     this._contracts = contracts;

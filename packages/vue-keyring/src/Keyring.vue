@@ -1,16 +1,19 @@
 <template>
-  <div id="keyring">
-
-  </div>
+  <Keyring />
 </template>
 
 <script lang="ts">
 
-import { Component, Vue } from 'vue-property-decorator';
-import Keyring from './Keyring';
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import keyring from './Keyring';
+
+// const vuekeyring: Record<string, Vue.Component> = {
+
+// };
 
 @Component({
-  components: {},
+  components: {
+  },
 })
-export default class App extends Vue {}
+export default class VueKeyring extends Vue {}
 </script>
