@@ -5,7 +5,7 @@
 <script lang="ts">
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import keyring from './Keyring';
+// import keyring from './index';
 
 // const vuekeyring: Record<string, Vue.Component> = {
 

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import keyring, { Keyring } from './Keyring';
+import { Keyring } from './Keyring';
 
 // console.log(keyring);
 // console.log(Keyring);
