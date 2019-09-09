@@ -37,11 +37,11 @@ import { Vue,  Component } from 'vue-property-decorator';
 
 // @Component({})
 export class Keyring implements KeyringStruct {
-  public accounts: any;
+
   private _accounts: AddressSubject = accounts;
-  public addresses: any;
+
   private _addresses: AddressSubject = addresses;
-  public contracts: any;
+
   private _contracts: AddressSubject = contracts;
 
   private _keyring?: KeyringInstance;
@@ -53,12 +53,138 @@ export class Keyring implements KeyringStruct {
     return this.keyring.encodeAddress(key);
   }
 
+  public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
+    return this.keyring.decodeAddress(key, ignoreChecksum);
+  }
+
+  public get accounts(): AddressSubject {
+    return this._accounts;
+  }
+
+  public get addresses(): AddressSubject {
+    return this._addresses;
+  }
+
+  public get contracts(): AddressSubject {
+    return this._contracts;
+  }
+
   public get keyring(): KeyringInstance {
     if (this._keyring) {
       return this._keyring;
     }
 
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
+  }
+
+  public get genesisHash(): string | undefined {
+    return this._genesisHash;
+  }
+
+  public loadAll(options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
+    this.initKeyring(options);
+
+    this._store.all((key: string, json: KeyringJson): void => {
+      if (options.filter ? options.filter(json) : true) {
+        if (this.allowGenesis(json)) {
+          if (accountRegex.test(key)) {
+            this.loadAccount(json, key);
+          } else if (addressRegex.test(key)) {
+            this.loadAddress(json, key);
+          } else if (contractRegex.test(key)) {
+            this.loadContract(json, key);
+          }
+        }
+      }
+    });
+
+    injected.forEach((account): void => {
+      if (this.allowGenesis(account)) {
+        this.loadInjected(account.address, account.meta);
+      }
+    });
+
+    keyringOption.init(this);
+  }
+
+  private allowGenesis(json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
+    if (json && json.meta && this.genesisHash) {
+      if (json.meta.genesisHash) {
+        return this.genesisHash === json.meta.genesisHash;
+      } else if (json.meta.contract) {
+        return this.genesisHash === json.meta.contract.genesisHash;
+      }
+    }
+
+    return true;
+  }
+
+  private loadAccount(json: KeyringJson, key: string): void {
+    if (!json.meta.isTesting && (json as KeyringPair$Json).encoded) {
+      // FIXME Just for the transition period (ignoreChecksum)
+      const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
+
+      this.accounts.add(this._store, pair.address, json);
+    }
+
+    const [, hexAddr] = key.split(':');
+
+    this.rewriteKey(json, key, hexAddr.trim(), accountKey);
+  }
+
+  private loadAddress(json: KeyringJson, key: string): void {
+    const { isRecent, whenCreated = 0 } = json.meta;
+
+    if (isRecent && (Date.now() - whenCreated) > RECENT_EXPIRY) {
+      this._store.remove(key);
+      return;
+    }
+
+    const address = this.encodeAddress(
+      isHex(json.address)
+        ? hexToU8a(json.address)
+        // FIXME Just for the transition period (ignoreChecksum)
+        : this.decodeAddress(json.address, true)
+    );
+    const [, hexAddr] = key.split(':');
+
+    this.addresses.add(this._store, address, json);
+    this.rewriteKey(json, key, hexAddr, addressKey);
+  }
+
+  private loadContract(json: KeyringJson, key: string): void {
+    const address = this.encodeAddress(
+      this.decodeAddress(json.address),
+    );
+    const [, hexAddr] = key.split(':');
+
+    // move genesisHash to top-level (TODO Remove from contracts section?)
+    json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract && json.meta.contract.genesisHash);
+
+    this.contracts.add(this._store, address, json);
+    this.rewriteKey(json, key, hexAddr, contractKey);
+  }
+
+  private loadInjected(address: string, meta: KeyringJson$Meta): void {
+    const json = {
+      address,
+      meta: {
+        ...meta,
+        isInjected: true,
+      },
+    };
+    const pair = this.keyring.addFromAddress(address, json.meta);
+
+    this.accounts.add(this._store, pair.address, json);
+  }
+
+  private rewriteKey(json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
+    if (hexAddr.substr(0, 2) === '0x') {
+      return;
+    }
+
+    this._store.remove(key);
+    this._store.set(creator(hexAddr), json);
   }
 
   protected initKeyring(options: KeyringOptions): void {
@@ -70,7 +196,7 @@ export class Keyring implements KeyringStruct {
 
     this._keyring = keyring;
     this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    // this._store = options.store || new BrowserStore();
+    this._store = options.store || new BrowserStore();
 
     this.addAccountPairs();
   }
