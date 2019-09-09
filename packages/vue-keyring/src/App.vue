@@ -14,7 +14,7 @@ import keyringInstance from './VueKeyring';
 export default class Subkey extends Vue {
 
   public mounted(): void {
-    console.log('keyring.VUE')
+    console.log('keyring.VUE');
     console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
   }
 
