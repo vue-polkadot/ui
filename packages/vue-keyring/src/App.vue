@@ -6,15 +6,16 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import { Keyring } from './Keyring';
+import keyringInstance from './VueKeyring';
 
 // console.log(keyring);
 // console.log(Keyring);
-export default class Subkey extends Keyring {
+@Component({})
+export default class Subkey extends Vue {
 
   public mounted(): void {
-    // console.log(keyring);
-    this.keyring.encodeAddress('');
+    console.log('keyring.VUE')
+    console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
   }
 
   // public address = keyring.encodeAddress('');
