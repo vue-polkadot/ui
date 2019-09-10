@@ -5,10 +5,10 @@
 
 // export default Keyring;
 
-import keyring, { Keyring } from './Keyring';
+// import keyring, { Keyring } from './Keyring';
 
-export default keyring;
+// export default keyring;
 
-export {
-  Keyring
-};
+// export {
+//   Keyring
+// };

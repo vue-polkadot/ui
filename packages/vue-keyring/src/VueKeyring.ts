@@ -9,9 +9,9 @@ import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import contracts from './observable/contracts';
 import env from './observable/development';
+import { MAX_PASS_LEN } from './defaults';
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
-
 
 import { KeyringPair$Meta, KeyringPair$Json } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
@@ -23,7 +23,6 @@ import { CreateResult, KeyringAddress, KeyringAddressType,
 import createPair from '@polkadot/keyring/pair';
 import { hexToU8a, isHex, isString } from '@polkadot/util';
 
-import Base from './Base';
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
 // import Vue from 'vue';
@@ -65,6 +64,21 @@ export class Keyring implements KeyringStruct {
     return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
       env.isDevelopment() || pair.meta.isTesting !== true
     );
+  }
+
+  public isAvailable(_address: Uint8Array | string): boolean {
+    const accountsValue = this.accounts.subject.getValue();
+    const addressesValue = this.addresses.subject.getValue();
+    const contractsValue = this.contracts.subject.getValue();
+    const address = isString(_address)
+      ? _address
+      : this.encodeAddress(_address);
+
+    return !accountsValue[address] && !addressesValue[address] && !contractsValue[address];
+  }
+
+  public isPassValid(password: string): boolean {
+    return password.length > 0 && password.length <= MAX_PASS_LEN;
   }
 
   public get accounts(): AddressSubject {
