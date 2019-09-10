@@ -155,6 +155,31 @@ export class Keyring implements KeyringStruct {
     keyringOption.init(this);
   }
 
+  public getAddress(_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
+    const address = isString(_address)
+      ? _address
+      : this.encodeAddress(_address);
+    const publicKey = this.decodeAddress(address);
+    const stores = type
+      ? [this.stores[type]]
+      : Object.values(this.stores);
+
+    const info = stores.reduce<SingleAddress | undefined>((lastInfo, store): SingleAddress | undefined =>
+      (store().subject.getValue()[address] || lastInfo), undefined);
+
+    return info && {
+      address,
+      publicKey,
+      meta: info.json.meta,
+    };
+  }
+
+  private stores = {
+    address: (): AddressSubject => this.addresses,
+    contract: (): AddressSubject => this.contracts,
+    account: (): AddressSubject => this.accounts
+  };
+
   private allowGenesis(json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
     if (json && json.meta && this.genesisHash) {
       if (json.meta.genesisHash) {
