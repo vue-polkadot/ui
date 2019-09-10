@@ -213,6 +213,22 @@ export class Keyring implements KeyringStruct {
     keyringOption.init(this);
   }
 
+  public getContract(address: string | Uint8Array): KeyringAddress | undefined {
+    return this.getAddress(address, 'contract');
+  }
+
+  public getContracts(): KeyringAddress[] {
+    const available = this.contracts.subject.getValue();
+
+    return Object
+      .entries(available)
+      .filter(([, { json: { meta: { contract } } }]): boolean =>
+        !!contract && contract.genesisHash === this.genesisHash,
+      )
+      .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
+
+  }
+
   public restoreAccount(json: KeyringPair$Json, password: string): KeyringPair {
     const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
     const pair = createPair(

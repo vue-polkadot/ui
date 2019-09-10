@@ -147,7 +147,8 @@ export class Keyring extends Base implements KeyringStruct {
   //     .filter(([, { json: { meta: { contract } } }]): boolean =>
   //       !!contract && contract.genesisHash === this.genesisHash,
   //     )
-  //     .map(([address]): KeyringAddress => storessthis.getContract(address) as KeyringAddress);
+  //     .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
+
   // }
 
   private rewriteKey(json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
