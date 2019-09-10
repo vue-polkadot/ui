@@ -114,8 +114,57 @@ export class Keyring implements KeyringStruct {
     };
   }
 
+  public backupAccount(pair: KeyringPair, password: string): KeyringPair$Json {
+    if (!pair.isLocked) {
+      pair.lock();
+    }
+
+    pair.decodePkcs8(password);
+
+    return pair.toJson(password);
+  }
+
+  public createFromUri(suri: string, meta: KeyringPair$Meta = {}, type?: KeypairType): KeyringPair {
+    return this.keyring.createFromUri(suri, meta, type);
+  }
+
+  public encryptAccount(pair: KeyringPair, password: string): void {
+    const json = pair.toJson(password);
+
+    json.meta.whenEdited = Date.now();
+
+    this.keyring.addFromJson(json);
+    this.accounts.add(this._store, pair.address, json);
+  }
+
+  public forgetAccount(address: string): void {
+    this.keyring.removePair(address);
+    this.accounts.remove(this._store, address);
+  }
+
+  public forgetAddress(address: string): void {
+    this.addresses.remove(this._store, address);
+  }
+
+  public forgetContract(address: string): void {
+    this.contracts.remove(this._store, address);
+  }
+
+  public getAccount(address: string | Uint8Array): KeyringAddress | undefined {
+    return this.getAddress(address, 'account');
+  }
+
   public get genesisHash(): string | undefined {
     return this._genesisHash;
+  }
+
+  public getAccounts(): KeyringAddress[] {
+    const available = this.accounts.subject.getValue();
+
+    return Object
+      .keys(available)
+      .map((address): KeyringAddress => this.getAddress(address, 'account') as KeyringAddress)
+      .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
   public setAddressPrefix(prefix: number): void {
@@ -181,6 +230,14 @@ export class Keyring implements KeyringStruct {
       publicKey,
       meta: info.json.meta,
     };
+  }
+
+  public getAddresses(): KeyringAddress[] {
+    const available = this.addresses.subject.getValue();
+
+    return Object
+      .keys(available)
+      .map((address): KeyringAddress => this.getAddress(address) as KeyringAddress);
   }
 
   private stores = {
