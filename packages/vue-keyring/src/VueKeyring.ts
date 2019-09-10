@@ -86,6 +86,15 @@ export class Keyring implements KeyringStruct {
     };
   }
 
+  public addUri(suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
+    const pair = this.keyring.addFromUri(suri, meta, type);
+
+    return {
+      json: this.saveAccount(pair, password),
+      pair
+    };
+  }
+
   public get genesisHash(): string | undefined {
     return this._genesisHash;
   }
