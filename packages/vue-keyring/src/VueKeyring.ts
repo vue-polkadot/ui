@@ -96,6 +96,15 @@ export class Keyring implements KeyringStruct {
     };
   }
 
+  public addExternal(address: string | Uint8Array, meta: KeyringPair$Meta = {}): CreateResult {
+    const pair = this.keyring.addFromAddress(address, { ...meta, isExternal: true }, null);
+
+    return {
+      json: this.saveAccount(pair),
+      pair,
+    };
+  }
+
   public addUri(suri: string, password?: string, meta: KeyringPair$Meta = {}, type?: KeypairType): CreateResult {
     const pair = this.keyring.addFromUri(suri, meta, type);
 
