@@ -213,6 +213,79 @@ export class Keyring implements KeyringStruct {
     keyringOption.init(this);
   }
 
+  public restoreAccount(json: KeyringPair$Json, password: string): KeyringPair {
+    const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
+    const pair = createPair(
+      type,
+      {
+        // FIXME Just for the transition period (ignoreChecksum)
+        publicKey: this.decodeAddress(json.address, true)
+      },
+      json.meta,
+      hexToU8a(json.encoded)
+    );
+
+    // unlock, save account and then lock (locking cleans secretKey, so needs to be last)
+    pair.decodePkcs8(password);
+    this.addPair(pair, password);
+    pair.lock();
+
+    return pair;
+  }
+
+  public saveAccountMeta(pair: KeyringPair, meta: KeyringPair$Meta): void {
+    const address = pair.address;
+
+    this._store.get(accountKey(address), (json: KeyringJson): void => {
+      pair.setMeta(meta);
+      json.meta = pair.meta;
+
+      this.accounts.add(this._store, address, json);
+    });
+  }
+
+  public saveAddress(address: string, meta: KeyringPair$Meta, type: KeyringAddressType = 'address'): KeyringPair$Json {
+    const available = this.addresses.subject.getValue();
+
+    const json = (available[address] && available[address].json) || {
+      address,
+      meta: {
+        isRecent: undefined,
+        whenCreated: Date.now()
+      }
+    };
+
+    Object.keys(meta).forEach((key): void => {
+      json.meta[key] = meta[key];
+    });
+
+    delete json.meta.isRecent;
+
+    this.stores[type]().add(this._store, address, json);
+
+    return json as KeyringPair$Json;
+  }
+
+  public saveContract(address: string, meta: KeyringPair$Meta): KeyringPair$Json {
+    return this.saveAddress(address, meta, 'contract');
+  }
+
+  public saveRecent(address: string): SingleAddress {
+    const available = this.addresses.subject.getValue();
+
+    if (!available[address]) {
+      this.addresses.add(this._store, address, {
+        address,
+        meta: {
+          isRecent: true,
+          whenCreated: Date.now()
+        }
+      });
+    }
+
+    return this.addresses.subject.getValue()[address];
+  }
+
   public getAddress(_address: string | Uint8Array, type: KeyringItemType | null = null): KeyringAddress | undefined {
     const address = isString(_address)
       ? _address
