@@ -24,7 +24,7 @@ export default function createItem(address: string, _name?: string, isUppercase 
     text: {
       address,
       isUppercase,
-      name
+      name,
     },
     // text: (
     //   <KeyPair
@@ -33,6 +33,6 @@ export default function createItem(address: string, _name?: string, isUppercase 
     //     name={name}
     //   />
     // ),
-    value: address
+    value: address,
   };
 }
