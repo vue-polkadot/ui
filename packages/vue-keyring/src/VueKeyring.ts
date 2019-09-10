@@ -77,11 +77,32 @@ export class Keyring implements KeyringStruct {
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
   }
 
+  public addPair(pair: KeyringPair, password: string): CreateResult {
+    this.keyring.addPair(pair);
+
+    return {
+      json: this.saveAccount(pair, password),
+      pair
+    };
+  }
+
   public get genesisHash(): string | undefined {
     return this._genesisHash;
   }
 
-  public loadAll(options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
+  public saveAccount(pair: KeyringPair, password?: string): KeyringPair$Json {
+    this.addTimestamp(pair);
+
+    const json = pair.toJson(password);
+
+    this.keyring.addFromJson(json);
+    this.accounts.add(this._store, pair.address, json);
+
+    return json;
+  }
+
+  public loadAll(options: KeyringOptions, injected:
+     { address: string; meta: KeyringJson$Meta }[] = []): void {
     this.initKeyring(options);
 
     this._store.all((key: string, json: KeyringJson): void => {
@@ -207,6 +228,12 @@ export class Keyring implements KeyringStruct {
       .forEach(({ address, meta }: KeyringPair): void => {
         this.accounts.add(this._store, address, { address, meta });
       });
+  }
+
+  protected addTimestamp(pair: KeyringPair): void {
+    if (!pair.meta.whenCreated) {
+      pair.setMeta({ whenCreated: Date.now() });
+    }
   }
 }
 

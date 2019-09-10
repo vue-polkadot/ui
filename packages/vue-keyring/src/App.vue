@@ -7,6 +7,8 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import keyringInstance from './VueKeyring';
+import { Prefix } from '@polkadot/util-crypto/address/types';
+
 
 // console.log(keyring);
 // console.log(Keyring);
@@ -14,16 +16,15 @@ import keyringInstance from './VueKeyring';
 export default class Subkey extends Vue {
 
   public keyring: any = '';
-
+  // public addressPrefix = (-1) as Prefix;
   public mounted(): void {
     console.log('keyring.VUE');
-    // this.keyring = keyringInstance()
-    // keyring.loadAll({
-    //   addressPrefix,
-    //   genesisHash: api.genesisHash,
-    //   isDevelopment,
-    //   type: 'ed25519'
-    // }, injectedAccounts);
+    this.keyring = keyringInstance.loadAll({
+      addressPrefix: (-1) as Prefix,
+      // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
+      isDevelopment: true,
+      type: 'ed25519'
+    }, []);
 
 
     console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
