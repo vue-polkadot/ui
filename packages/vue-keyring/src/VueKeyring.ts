@@ -8,6 +8,7 @@ import testKeyring from '@polkadot/keyring/testing';
 import accounts from './observable/accounts';
 import addresses from './observable/addresses';
 import contracts from './observable/contracts';
+import env from './observable/development';
 
 import { Prefix } from '@polkadot/util-crypto/address/types';
 
@@ -22,7 +23,6 @@ import { CreateResult, KeyringAddress, KeyringAddressType,
 import createPair from '@polkadot/keyring/pair';
 import { hexToU8a, isHex, isString } from '@polkadot/util';
 
-import env from './observable/development';
 import Base from './Base';
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
@@ -55,6 +55,16 @@ export class Keyring implements KeyringStruct {
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum);
+  }
+
+  public getPair(address: string | Uint8Array): KeyringPair {
+    return this.keyring.getPair(address);
+  }
+
+  public getPairs(): KeyringPair[] {
+    return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
+      env.isDevelopment() || pair.meta.isTesting !== true
+    );
   }
 
   public get accounts(): AddressSubject {
@@ -97,6 +107,14 @@ export class Keyring implements KeyringStruct {
 
   public get genesisHash(): string | undefined {
     return this._genesisHash;
+  }
+
+  public setAddressPrefix(prefix: number): void {
+    this._prefix = prefix as Prefix;
+  }
+
+  public setDevMode(isDevelopment: boolean): void {
+    env.set(isDevelopment);
   }
 
   public saveAccount(pair: KeyringPair, password?: string): KeyringPair$Json {
