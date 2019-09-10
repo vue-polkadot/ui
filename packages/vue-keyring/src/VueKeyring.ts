@@ -186,6 +186,7 @@ export class Keyring implements KeyringStruct {
     return json;
   }
 
+  /* tslint:disable */
   public loadAll(options: KeyringOptions, injected:
      { address: string; meta: KeyringJson$Meta }[] = []): void {
     this.initKeyring(options);
@@ -226,7 +227,6 @@ export class Keyring implements KeyringStruct {
         !!contract && contract.genesisHash === this.genesisHash,
       )
       .map(([address]): KeyringAddress => this.getContract(address) as KeyringAddress);
-
   }
 
   public restoreAccount(json: KeyringPair$Json, password: string): KeyringPair {

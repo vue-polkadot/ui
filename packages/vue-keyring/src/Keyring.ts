@@ -231,31 +231,31 @@ export class Keyring extends Base implements KeyringStruct {
     return true;
   }
 
-  public loadAll(options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
-    super.initKeyring(options);
+  // public loadAll(options: KeyringOptions, injected: { address: string; meta: KeyringJson$Meta }[] = []): void {
+  //   super.initKeyring(options);
 
-    this._store.all((key: string, json: KeyringJson): void => {
-      if (options.filter ? options.filter(json) : true) {
-        if (this.allowGenesis(json)) {
-          if (accountRegex.test(key)) {
-            this.loadAccount(json, key);
-          } else if (addressRegex.test(key)) {
-            this.loadAddress(json, key);
-          } else if (contractRegex.test(key)) {
-            this.loadContract(json, key);
-          }
-        }
-      }
-    });
+  //   this._store.all((key: string, json: KeyringJson): void => {
+  //     if (options.filter ? options.filter(json) : true) {
+  //       if (this.allowGenesis(json)) {
+  //         if (accountRegex.test(key)) {
+  //           this.loadAccount(json, key);
+  //         } else if (addressRegex.test(key)) {
+  //           this.loadAddress(json, key);
+  //         } else if (contractRegex.test(key)) {
+  //           this.loadContract(json, key);
+  //         }
+  //       }
+  //     }
+  //   });
 
-    injected.forEach((account): void => {
-      if (this.allowGenesis(account)) {
-        this.loadInjected(account.address, account.meta);
-      }
-    });
+  //   injected.forEach((account): void => {
+  //     if (this.allowGenesis(account)) {
+  //       this.loadInjected(account.address, account.meta);
+  //     }
+  //   });
 
-    keyringOption.init(this);
-  }
+  //   keyringOption.init(this);
+  // }
 
   public restoreAccount(json: KeyringPair$Json, password: string): KeyringPair {
     const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
