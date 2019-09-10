@@ -18,6 +18,14 @@ export default class Subkey extends Vue {
   public mounted(): void {
     console.log('keyring.VUE');
     // this.keyring = keyringInstance()
+    // keyring.loadAll({
+    //   addressPrefix,
+    //   genesisHash: api.genesisHash,
+    //   isDevelopment,
+    //   type: 'ed25519'
+    // }, injectedAccounts);
+
+
     console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
   }
 
