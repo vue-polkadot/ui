@@ -28,6 +28,7 @@ export default class Subkey extends Vue {
 
 
     console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
+    console.log(keyringInstance.decodeAddress('SV4YSr3vJt7nLoE1tMZcpduSNVvvjW5YrPAKUox1BcCr4yZL'));
   }
 
   // public address = keyring.encodeAddress('');

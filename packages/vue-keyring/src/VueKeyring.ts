@@ -21,7 +21,7 @@ import { CreateResult, KeyringAddress, KeyringAddressType,
   KeyringOptions, KeyringStruct, KeyringStore } from './types';
 
 import createPair from '@polkadot/keyring/pair';
-import { hexToU8a, isHex, isString } from '@polkadot/util';
+import { isBoolean, hexToU8a, isHex, isString } from '@polkadot/util';
 
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
@@ -432,9 +432,9 @@ export class Keyring implements KeyringStruct {
   protected initKeyring(options: KeyringOptions): void {
     const keyring = testKeyring({ addressPrefix: this._prefix, ...options }, true);
 
-    // if (isBoolean(options.isDevelopment)) {
-    //   this.setDevMode(options.isDevelopment);
-    // }
+    if (isBoolean(options.isDevelopment)) {
+      this.setDevMode(options.isDevelopment);
+    }
 
     this._keyring = keyring;
     this._genesisHash = options.genesisHash && options.genesisHash.toHex();
