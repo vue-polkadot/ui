@@ -26,7 +26,8 @@ module.exports = {
      [
        '/',
        '/vue-keyring/',
-       '/vue-identicon/'
+       '/vue-identicon/',
+       '/vue-settings/'
     ]
   }
 };
