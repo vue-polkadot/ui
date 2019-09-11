@@ -23,7 +23,7 @@ export default class Subkey extends Vue {
       addressPrefix: (-1) as Prefix,
       // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
       isDevelopment: true,
-      type: 'ed25519'
+      type: 'ed25519',
     }, []);
 
 

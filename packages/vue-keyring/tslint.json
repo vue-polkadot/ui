@@ -15,13 +15,6 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [true, "single"],
-    "member-ordering": [false],
-    "trailing-comma": [false],
-    "variable-name": {
-      "options": [
-        "allow-leading-underscore"
-      ]
-    },
     "no-shadowed-variable": false,
     "no-unused-expression": false,
     "no-console": false

@@ -27,5 +27,5 @@ export default combineLatest(
     accounts,
     addresses,
     // contracts
-  }))
+  })),
 );

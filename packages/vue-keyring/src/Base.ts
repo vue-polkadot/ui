@@ -20,50 +20,50 @@ import { MAX_PASS_LEN } from './defaults';
 import { Vue, Component } from 'vue-property-decorator';
 @Component({})
 export default class Base extends Vue {
-  private _accounts: AddressSubject;
-
-  private _addresses: AddressSubject;
-
-  private _contracts: AddressSubject;
-
-  private _keyring?: KeyringInstance;
-
-  private _prefix?: Prefix;
-
-  protected _genesisHash?: string;
-
-  protected _store!: KeyringStore;
-
-  public constructor() {
-    super();
-    this._accounts = accounts;
-    this._addresses = addresses;
-    this._contracts = contracts;
-    this._keyring = undefined;
-  }
 
   public get accounts(): AddressSubject {
-    return this._accounts;
+    return this.mAccounts;
   }
 
   public get addresses(): AddressSubject {
-    return this._addresses;
+    return this.mAddresses;
   }
 
   public get contracts(): AddressSubject {
-    return this._contracts;
+    return this.mContracts;
   }
 
   public get keyring(): KeyringInstance {
-    if (this._keyring) {
-      return this._keyring;
+    if (this.mKeyring) {
+      return this.mKeyring;
     }
 
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
   }
 
   public get genesisHash(): string | undefined {
-    return this._genesisHash;
+    return this.mGenesisHash;
+  }
+
+  protected mGenesisHash?: string;
+
+  protected mStore!: KeyringStore;
+  private mAccounts: AddressSubject;
+
+  private mAddresses: AddressSubject;
+
+  private mContracts: AddressSubject;
+
+  private mKeyring?: KeyringInstance;
+
+  private mPrefix?: Prefix;
+
+  public constructor() {
+    super();
+    this.mAccounts = accounts;
+    this.mAddresses = addresses;
+    this.mContracts = contracts;
+    this.mKeyring = undefined;
   }
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
@@ -80,19 +80,19 @@ export default class Base extends Vue {
 
   public getPairs(): KeyringPair[] {
     return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
-      env.isDevelopment() || pair.meta.isTesting !== true
+      env.isDevelopment() || pair.meta.isTesting !== true,
     );
   }
 
-  public isAvailable(_address: Uint8Array | string): boolean {
+  public isAvailable(address: Uint8Array | string): boolean {
     const accountsValue = this.accounts.subject.getValue();
     const addressesValue = this.addresses.subject.getValue();
     const contractsValue = this.contracts.subject.getValue();
-    const address = isString(_address)
-      ? _address
-      : this.encodeAddress(_address);
+    const encodedAddress = isString(address)
+      ? address
+      : this.encodeAddress(address);
 
-    return !accountsValue[address] && !addressesValue[address] && !contractsValue[address];
+    return !accountsValue[encodedAddress] && !addressesValue[encodedAddress] && !contractsValue[encodedAddress];
   }
 
   public isPassValid(password: string): boolean {
@@ -100,7 +100,7 @@ export default class Base extends Vue {
   }
 
   public setAddressPrefix(prefix: number): void {
-    this._prefix = prefix as Prefix;
+    this.mPrefix = prefix as Prefix;
   }
 
   public setDevMode(isDevelopment: boolean): void {
@@ -108,15 +108,15 @@ export default class Base extends Vue {
   }
 
   protected initKeyring(options: KeyringOptions): void {
-    const keyring = testKeyring({ addressPrefix: this._prefix, ...options }, true);
+    const keyring = testKeyring({ addressPrefix: this.mPrefix, ...options }, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);
     }
 
-    this._keyring = keyring;
-    this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    this._store = options.store || new BrowserStore();
+    this.mKeyring = keyring;
+    this.mGenesisHash = options.genesisHash && options.genesisHash.toHex();
+    this.mStore = options.store || new BrowserStore();
 
     this.addAccountPairs();
   }
@@ -125,7 +125,7 @@ export default class Base extends Vue {
     this.keyring
       .getPairs()
       .forEach(({ address, meta }: KeyringPair): void => {
-        this.accounts.add(this._store, address, { address, meta });
+        this.accounts.add(this.mStore, address, { address, meta });
       });
   }
 

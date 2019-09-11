@@ -45,7 +45,7 @@ class KeyringOption implements KeyringOptionInstance {
       name,
       key: `header-${name.toLowerCase()}`,
       text: name,
-      value: null
+      value: null,
     };
   }
 
@@ -79,7 +79,7 @@ class KeyringOption implements KeyringOptionInstance {
         options.length
           ? [this.createOptionHeader(header)]
           : [],
-        options
+        options,
       );
     }, [] as KeyringSectionOptions);
   }
@@ -138,7 +138,7 @@ class KeyringOption implements KeyringOptionInstance {
       all: [],
       allPlus: [],
       recent: [],
-      testing: []
+      testing: [],
     };
   }
 }
