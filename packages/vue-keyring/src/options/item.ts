@@ -4,7 +4,6 @@
 
 import { KeyringSectionOption } from './types';
 
-// import React from 'react';
 import { isUndefined } from '@polkadot/util';
 
 // import KeyPair from './KeyPair';
