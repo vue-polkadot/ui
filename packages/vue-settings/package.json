@@ -1,0 +1,36 @@
+{
+  "name": "@vue-polkadot/vue-settings",
+  "version": "0.0.1",
+  "description": "Polkadot Settings for Vue.js",
+  "author": "Viki Val <viktorko99@gmail.com>",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build-bundle": "vue-cli-service build --target lib --name vue-settings ./src/SettingModule.ts"
+  },
+  "main": "dist/vue-settings.common.js",
+  "module": "dist/vue-settings.esm.js",
+  "unpkg": "dist/vue-settings.min.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.ts"
+  ],
+  "dependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.1.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "typescript": "^3.4.3",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
