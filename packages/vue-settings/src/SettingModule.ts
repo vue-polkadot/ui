@@ -1,6 +1,5 @@
 import { SettingsStruct, Option, AvaibleOptions } from './types'
 import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults/index'
-  // import { Store } from 'vuex'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
