@@ -36,6 +36,10 @@ import { Vue,  Component } from 'vue-property-decorator';
 
 // @Component({})
 export class Keyring implements KeyringStruct {
+  protected mGenesisHash?: string;
+  protected mStore!: KeyringStore;
+  private mKeyring?: KeyringInstance;
+  private mPrefix?: Prefix;
 
   protected _genesisHash?: string;
   protected _store!: KeyringStore;
@@ -44,9 +48,9 @@ export class Keyring implements KeyringStruct {
 
   private _accounts: AddressSubject = accounts;
 
-  private _addresses: AddressSubject = addresses;
+  private mAddresses: AddressSubject = addresses;
 
-  private _contracts: AddressSubject = contracts;
+  private mContracts: AddressSubject = contracts;
 
   public encodeAddress = (key: string | Uint8Array): string => {
     return this.keyring.encodeAddress(key);
@@ -82,20 +86,20 @@ export class Keyring implements KeyringStruct {
   }
 
   public get accounts(): AddressSubject {
-    return this._accounts;
+    return this.mAccounts;
   }
 
   public get addresses(): AddressSubject {
-    return this._addresses;
+    return this.mAddresses;
   }
 
   public get contracts(): AddressSubject {
-    return this._contracts;
+    return this.mContracts;
   }
 
   public get keyring(): KeyringInstance {
-    if (this._keyring) {
-      return this._keyring;
+    if (this.mKeyring) {
+      return this.mKeyring;
     }
 
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
@@ -148,20 +152,20 @@ export class Keyring implements KeyringStruct {
     json.meta.whenEdited = Date.now();
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this.mStore, pair.address, json);
   }
 
   public forgetAccount(address: string): void {
     this.keyring.removePair(address);
-    this.accounts.remove(this._store, address);
+    this.accounts.remove(this.mStore, address);
   }
 
   public forgetAddress(address: string): void {
-    this.addresses.remove(this._store, address);
+    this.addresses.remove(this.mStore, address);
   }
 
   public forgetContract(address: string): void {
-    this.contracts.remove(this._store, address);
+    this.contracts.remove(this.mStore, address);
   }
 
   public getAccount(address: string | Uint8Array): KeyringAddress | undefined {
@@ -169,7 +173,7 @@ export class Keyring implements KeyringStruct {
   }
 
   public get genesisHash(): string | undefined {
-    return this._genesisHash;
+    return this.mGenesisHash;
   }
 
   public getAccounts(): KeyringAddress[] {
@@ -182,7 +186,7 @@ export class Keyring implements KeyringStruct {
   }
 
   public setAddressPrefix(prefix: number): void {
-    this._prefix = prefix as Prefix;
+    this.mPrefix = prefix as Prefix;
   }
 
   public setDevMode(isDevelopment: boolean): void {
@@ -195,7 +199,7 @@ export class Keyring implements KeyringStruct {
     const json = pair.toJson(password);
 
     this.keyring.addFromJson(json);
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this.mStore, pair.address, json);
 
     return json;
   }
@@ -205,7 +209,7 @@ export class Keyring implements KeyringStruct {
      { address: string; meta: KeyringJson$Meta }[] = []): void {
     this.initKeyring(options);
 
-    this._store.all((key: string, json: KeyringJson): void => {
+    this.mStore.all((key: string, json: KeyringJson): void => {
       if (options.filter ? options.filter(json) : true) {
         if (this.allowGenesis(json)) {
           if (accountRegex.test(key)) {
@@ -266,11 +270,11 @@ export class Keyring implements KeyringStruct {
   public saveAccountMeta(pair: KeyringPair, meta: KeyringPair$Meta): void {
     const address = pair.address;
 
-    this._store.get(accountKey(address), (json: KeyringJson): void => {
+    this.mStore.get(accountKey(address), (json: KeyringJson): void => {
       pair.setMeta(meta);
       json.meta = pair.meta;
 
-      this.accounts.add(this._store, address, json);
+      this.accounts.add(this.mStore, address, json);
     });
   }
 
@@ -291,7 +295,7 @@ export class Keyring implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    this.stores[type]().add(this._store, address, json);
+    this.stores[type]().add(this.mStore, address, json);
 
     return json as KeyringPair$Json;
   }
@@ -304,7 +308,7 @@ export class Keyring implements KeyringStruct {
     const available = this.addresses.subject.getValue();
 
     if (!available[address]) {
-      this.addresses.add(this._store, address, {
+      this.addresses.add(this.mStore, address, {
         address,
         meta: {
           isRecent: true,
@@ -366,7 +370,7 @@ export class Keyring implements KeyringStruct {
       // FIXME Just for the transition period (ignoreChecksum)
       const pair = this.keyring.addFromJson(json as KeyringPair$Json, true);
 
-      this.accounts.add(this._store, pair.address, json);
+      this.accounts.add(this.mStore, pair.address, json);
     }
 
     const [, hexAddr] = key.split(':');
@@ -378,7 +382,7 @@ export class Keyring implements KeyringStruct {
     const { isRecent, whenCreated = 0 } = json.meta;
 
     if (isRecent && (Date.now() - whenCreated) > RECENT_EXPIRY) {
-      this._store.remove(key);
+      this.mStore.remove(key);
       return;
     }
 
@@ -390,7 +394,7 @@ export class Keyring implements KeyringStruct {
     );
     const [, hexAddr] = key.split(':');
 
-    this.addresses.add(this._store, address, json);
+    this.addresses.add(this.mStore, address, json);
     this.rewriteKey(json, key, hexAddr, addressKey);
   }
 
@@ -403,7 +407,7 @@ export class Keyring implements KeyringStruct {
     // move genesisHash to top-level (TODO Remove from contracts section?)
     json.meta.genesisHash = json.meta.genesisHash || (json.meta.contract && json.meta.contract.genesisHash);
 
-    this.contracts.add(this._store, address, json);
+    this.contracts.add(this.mStore, address, json);
     this.rewriteKey(json, key, hexAddr, contractKey);
   }
 
@@ -417,7 +421,7 @@ export class Keyring implements KeyringStruct {
     };
     const pair = this.keyring.addFromAddress(address, json.meta);
 
-    this.accounts.add(this._store, pair.address, json);
+    this.accounts.add(this.mStore, pair.address, json);
   }
 
   private rewriteKey(json: KeyringJson, key: string, hexAddr: string, creator: (addr: string) => string): void {
@@ -425,20 +429,20 @@ export class Keyring implements KeyringStruct {
       return;
     }
 
-    this._store.remove(key);
-    this._store.set(creator(hexAddr), json);
+    this.mStore.remove(key);
+    this.mStore.set(creator(hexAddr), json);
   }
 
   protected initKeyring(options: KeyringOptions): void {
-    const keyring = testKeyring({ addressPrefix: this._prefix, ...options }, true);
+    const keyring = testKeyring({ addressPrefix: this.mPrefix, ...options }, true);
 
     // if (isBoolean(options.isDevelopment)) {
     //   this.setDevMode(options.isDevelopment);
     // }
 
-    this._keyring = keyring;
-    this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    this._store = options.store || new BrowserStore();
+    this.mKeyring = keyring;
+    this.mGenesisHash = options.genesisHash && options.genesisHash.toHex();
+    this.mStore = options.store || new BrowserStore();
 
     this.addAccountPairs();
   }
@@ -447,7 +451,7 @@ export class Keyring implements KeyringStruct {
     this.keyring
       .getPairs()
       .forEach(({ address, meta }: KeyringPair): void => {
-        this.accounts.add(this._store, address, { address, meta });
+        this.accounts.add(this.mStore, address, { address, meta });
       });
   }
 
