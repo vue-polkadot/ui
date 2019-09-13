@@ -38,7 +38,7 @@ export default function genericSubject(keyCreator: (address: string) => string, 
 
       current[address] = {
         json: { ...json, address },
-        option: createOptionItem(address, json.meta.name, !json.meta.isRecent)
+        option: createOptionItem(address, json.meta.name, !json.meta.isRecent),
       };
 
       if (!json.meta.isInjected && (!json.meta.isTesting || development.isDevelopment())) {
@@ -57,6 +57,6 @@ export default function genericSubject(keyCreator: (address: string) => string, 
       store.remove(keyCreator(address));
       next();
     },
-    subject
+    subject,
   };
 }

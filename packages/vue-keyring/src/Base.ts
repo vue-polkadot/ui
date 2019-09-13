@@ -20,6 +20,10 @@ import { MAX_PASS_LEN } from './defaults';
 import { Vue, Component } from 'vue-property-decorator';
 @Component({})
 export default class Base extends Vue {
+  protected _genesisHash?: string;
+
+  protected _store!: KeyringStore;
+
   private _accounts: AddressSubject;
 
   private _addresses: AddressSubject;
@@ -29,10 +33,6 @@ export default class Base extends Vue {
   private _keyring?: KeyringInstance;
 
   private _prefix?: Prefix;
-
-  protected _genesisHash?: string;
-
-  protected _store!: KeyringStore;
 
   public constructor() {
     super();
@@ -80,7 +80,7 @@ export default class Base extends Vue {
 
   public getPairs(): KeyringPair[] {
     return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
-      env.isDevelopment() || pair.meta.isTesting !== true
+      env.isDevelopment() || pair.meta.isTesting !== true,
     );
   }
 
