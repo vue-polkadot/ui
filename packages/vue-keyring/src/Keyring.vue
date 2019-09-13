@@ -1,19 +1,20 @@
 <template>
-  <Keyring />
 </template>
 
 <script lang="ts">
-
 import { Component, Prop, Vue } from 'vue-property-decorator';
-// import keyring from './Keyring';
+import keyringInstance from './VueKeyring';
+import { Prefix } from '@polkadot/util-crypto/address/types';
 
-// const vuekeyring: Record<string, Vue.Component> = {
-
-// };
-
-@Component({
-  components: {
-  },
-})
-export default class VueKeyring extends Vue {}
+@Component({})
+export default class VueKeyring extends Vue {
+  public keyring: any = '';
+  public mounted(): void{
+    this.keyring = keyringInstance.loadAll({
+      addressPrefix: (-1) as Prefix,
+      isDevelopment: true,
+      type: 'ed25519'
+    }, []);
+  }
+}
 </script>
