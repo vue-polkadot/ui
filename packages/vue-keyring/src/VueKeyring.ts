@@ -25,14 +25,15 @@ import { isBoolean, hexToU8a, isHex, isString } from '@polkadot/util';
 
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
 import keyringOption from './options';
-// import Vue from 'vue';
+
 const RECENT_EXPIRY = 24 * 60 * 60;
 
 // No accounts (or test accounts) should be loaded until after the chain determination.
 // Chain determination occurs outside of Keyring.
 // Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
-import { Vue,  Component } from 'vue-property-decorator';
+
+// import { Vue,  Component } from 'vue-property-decorator';
 
 // @Component({})
 export class Keyring implements KeyringStruct {

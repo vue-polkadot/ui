@@ -1,5 +1,5 @@
 {
-  "name": "@vue-polkadot/vue-keyring",
+  "name": "vue-keyring",
   "version": "0.0.1",
   "private": true,
   "author": "Matej Nemcek <ybdaba@gmail.com>",
