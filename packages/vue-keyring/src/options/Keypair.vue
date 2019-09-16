@@ -3,11 +3,24 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 <template>
-  <Identicon
-    :value="address"
-    :theme="theme"
-    :size="size"
-  />
+  <div id="keypair">
+    <wrapper>
+      <div className="icon">
+        <Identicon
+          :value="address"
+          theme="polkadot"
+          size="32"
+        />
+      </div>
+      <!-- <div :className="`name ${isUppercase ? 'uppercase' : 'normalcase'}`"> -->
+      <div className="name">
+        {{name}}
+      </div>
+      <div className="address">
+        {{address}}
+      </div>
+    </wrapper>
+  </div>
 </template>
 
 <script lang="ts">
@@ -55,12 +68,15 @@ const wrapper = styled.div`
 
 @Component({
   components: {
-    Identicon
+    Identicon,
+    wrapper,
   }
 })
 export default class Keypair extends Vue {
   @Prop(String) public address!: string;
-  @Prop({default: 128}) public size!: number;
-  @Prop({default: 'polkadot'}) public theme!: string;
+  // @Prop(String) public className!: string;
+  @Prop({ default: 'true'}) public isUpperCase!: boolean;
+  @Prop({ default: 'noname'}) public name!: string;
+  // @Prop(String) public style!: string;
 }
 </script>
