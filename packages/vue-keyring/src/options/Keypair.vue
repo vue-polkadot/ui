@@ -2,57 +2,21 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
-// import React from 'react';
-// import styled from 'styled-components';
-// import IdentityIcon from '@polkadot/react-identicon';
-
-// interface Props {
-//   address: string;
-//   className?: string;
-//   isUppercase: boolean;
-//   name: string;
-//   style?: Record<string, string>;
-// }
-
-// export default class KeyPair extends React.PureComponent<Props> {
-//   public render (): React.ReactNode {
-//     const { address, className, isUppercase, name, style } = this.props;
-
-//     return (
-//       <Wrapper
-//         className={['ui--KeyPair', className].join(' ')}
-//         style={style}
-//       >
-//         <IdentityIcon
-//           className='icon'
-//           size={32}
-//           value={address}
-//         />
-//         <div className={`name ${isUppercase ? 'uppercase' : 'normalcase'}`}>
-//           {name}
-//         </div>
-//         <div className='address'>
-//           {address}
-//         </div>
-//       </Wrapper>
-//     );
-//   }
-// }
-
 <template>
   <Identicon
-    value="5DFwZivYX7hEjBsVH7KGYZYCJMtb75t2aBoeJnzLSLZGPLFn"
-    theme="polkadot"
-    size="64"
+    :value="address"
+    :theme="theme"
+    :size="size"
   />
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+// @ts-ignore
 import styled from 'vue-styled-components';
-import Identicon from '@vue-polkadot/vue-identicon'
+import Identicon from '@vue-polkadot/vue-identicon';
 
-const Wrapper = styled.div`
+const wrapper = styled.div`
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -89,16 +53,14 @@ const Wrapper = styled.div`
     }
   `;
 
-  export default {
-    components: { Identicon }
+@Component({
+  components: {
+    Identicon
   }
-
-// @Component({
-//   components: {
-//     'Wrapper': Wrapper
-//   },
-// })
-// export default class Keypair extends createItem {
-
-// }
+})
+export default class Keypair extends Vue {
+  @Prop(String) public address!: string;
+  @Prop({default: 128}) public size!: number;
+  @Prop({default: 'polkadot'}) public theme!: string;
+}
 </script>
