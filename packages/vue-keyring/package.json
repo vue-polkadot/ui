@@ -1,7 +1,6 @@
 {
   "name": "@vue-polkadot/vue-keyring",
   "version": "0.0.1",
-  "private": true,
   "author": "Matej Nemcek <ybdaba@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,14 +9,13 @@
     "build-bundle": "vue-cli-service build --target lib --name vue-keyring ./src/index.ts",
     "build:tsc": "tsc",
     "build:watch": "tsc --watch",
-    "build:clean": "tsc --build --clean"
+    "build:clean": "tsc --build --clean",
+    "build:rollup": "rollup -c",
+    "build:rollup:watch": "rollup -cw"
   },
-  "main": "./dist/vue-keyring.common.js",
-  "module": "dist/vue-keyring.esm.js",
-  "unpkg": "dist/vue-keyring.min.js",
-  "browser": {
-    "./sfc": "src/vue-keyring.vue"
-  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/*",
     "src/*",
@@ -47,6 +45,8 @@
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-typescript": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "rollup": "^1.21.4",
+    "rollup-plugin-typescript2": "^0.24.2",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   }

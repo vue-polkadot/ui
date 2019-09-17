@@ -1,7 +1,11 @@
 // import Vue from 'vue';
 // import VueKeyring from './Keyring.vue';
-import keyringInstance from './VueKeyring';
+import keyring, { Keyring } from './Keyring';
 
 // Vue.component('VueKeyring', VueKeyring);
 
-export default keyringInstance;
+export default keyring;
+
+export {
+  Keyring
+};

@@ -33,9 +33,6 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 // Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
 // from the API after the chain is received
 
-// import { Vue,  Component } from 'vue-property-decorator';
-
-// @Component({})
 export class Keyring implements KeyringStruct {
 
   private _accounts: AddressSubject = accounts;

@@ -26,12 +26,6 @@ export default class Subkey extends Vue {
 
   public mounted(): void {
     console.log('keyring.VUE');
-    // this.keyring = keyringInstance.loadAll({
-    //   addressPrefix: (-1) as Prefix,
-    //   // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
-    //   isDevelopment: true,
-    //   type: 'ed25519'
-    // }, []);
     this.keyring = keyringInstance.loadAll({
       // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
       ss58Format: 42, type: 'sr25519',
@@ -45,14 +39,11 @@ export default class Subkey extends Vue {
   }
 
   // public pair = keyring.getPair('SXYSytZ7wxpQHbRo5FzUFA9wjTfWvTQgYzhVEybWRQvBrvMS');
-
   // public isLocked: boolean = this.pair.isLocked;
   // public meta: object = this.pair.meta;
-
   // public saveAccount(pair: object, password: string): void {
   //   this.keyring.saveAccount(pair, password);
   // }
-
   // public saveAddress(address: string, {...meta}: object): void {
   //   this.keyring.saveAddress(address, {...meta});
   // }
