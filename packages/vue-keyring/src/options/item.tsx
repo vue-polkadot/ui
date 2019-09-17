@@ -1,12 +1,12 @@
 // Copyright 2017-2019 @polkadot/ui-keyring authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
-
 import { KeyringSectionOption } from './types';
-
 import { isUndefined } from '@polkadot/util';
 
-// import KeyPair from './KeyPair';
+// https://github.com/polkadot-js/ui/blob/master/CHANGELOG.md#0450-betax
+// removed pre-formatted Vue object
+// Rather users of this functionality should construct their own options for their framework.
 
 export default function createItem(address: string, _name?: string, isUppercase = true): KeyringSectionOption {
   const name = isUndefined(_name)
@@ -20,18 +20,7 @@ export default function createItem(address: string, _name?: string, isUppercase 
   return {
     key: address,
     name,
-    text: {
-      address,
-      isUppercase,
-      name
-    },
-    // text: (
-    //   <KeyPair
-    //     address={address}
-    //     isUppercase={isUppercase}
-    //     name={name}
-    //   />
-    // ),
     value: address
   };
 }
+

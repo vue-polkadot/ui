@@ -7,10 +7,8 @@ import { KeyringItemType, KeyringStruct } from '../types';
 export interface KeyringSectionOption {
   className?: string;
   disabled?: boolean;
-  content?: string;
   key: string | null;
   name: string;
-  text: string | any;
   value: string | null;
 }
 

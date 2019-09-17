@@ -1,11 +1,11 @@
 <template>
   <div id="keyring-wrapper">
-    <Keypair
+    <!-- <Keypair
       address="SXYSytZ7wxpQHbRo5FzUFA9wjTfWvTQgYzhVEybWRQvBrvMS" />
     <Keypair
       address="SVyHhpNypEpW8awHeL2XVpEydcedTv1M4AZABcTqMRzx61Ja" />
     <Keypair
-      address="SW1wmzX29Ei8mCLxB7crVUhGTkL1TDtCUwpVickwdqBUNunM" />
+      address="SW1wmzX29Ei8mCLxB7crVUhGTkL1TDtCUwpVickwdqBUNunM" /> -->
   </div>
 </template>
 

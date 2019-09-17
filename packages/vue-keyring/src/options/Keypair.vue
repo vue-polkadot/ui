@@ -76,7 +76,7 @@ export default class Keypair extends Vue {
   @Prop(String) public address!: string;
   // @Prop(String) public className!: string;
   @Prop({ default: 'true'}) public isUpperCase!: boolean;
-  @Prop({ default: 'noname'}) public name!: string;
+  @Prop({ default: 'no-name'}) public name!: string;
   // @Prop(String) public style!: string;
 }
 </script>

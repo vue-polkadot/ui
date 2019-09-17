@@ -3,17 +3,8 @@
 // of the Apache-2.0 license. See the LICENSE file for details.
 
 import { BehaviorSubject } from 'rxjs';
+import { KeyringSectionOption } from '../options/types';
 import { KeyringJson, KeyringStore, KeyringStruct, KeyringItemType } from '../types';
-
-export interface KeyringSectionOption {
-  className?: string;
-  disabled?: boolean;
-  content?: string;
-  key: string | null;
-  name: string;
-  text: string;
-  value: string | null;
-}
 
 export type KeyringSectionOptions = KeyringSectionOption[];
 
