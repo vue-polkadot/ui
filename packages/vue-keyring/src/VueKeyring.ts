@@ -48,6 +48,7 @@ export class Keyring implements KeyringStruct {
   private _prefix?: Prefix;
   protected _genesisHash?: string;
   protected _store!: KeyringStore;
+  private _ss58Format?: Prefix;
 
   public encodeAddress = (key: string | Uint8Array): string => {
     return this.keyring.encodeAddress(key);
@@ -182,8 +183,8 @@ export class Keyring implements KeyringStruct {
       .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
-  public setAddressPrefix(prefix: number): void {
-    this._prefix = prefix as Prefix;
+  public setSS58Format(ss58Format: number): void {
+    this._ss58Format = ss58Format as Prefix;
   }
 
   public setDevMode(isDevelopment: boolean): void {
@@ -431,7 +432,7 @@ export class Keyring implements KeyringStruct {
   }
 
   protected initKeyring(options: KeyringOptions): void {
-    const keyring = testKeyring({ addressPrefix: this._prefix, ...options }, true);
+    const keyring = testKeyring({ ss58Format: this._ss58Format, ...options }, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);
