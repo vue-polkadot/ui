@@ -33,7 +33,9 @@ export default class Subkey extends Vue {
     //   type: 'ed25519'
     // }, []);
     this.keyring = keyringInstance.loadAll({
-      ss58Format: 42, type: 'sr25519' });
+      // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
+      ss58Format: 42, type: 'sr25519',
+      isDevelopment: true });
 
     console.log(keyringInstance.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
     console.log(keyringInstance.decodeAddress('SV4YSr3vJt7nLoE1tMZcpduSNVvvjW5YrPAKUox1BcCr4yZL'));
