@@ -50,12 +50,16 @@ export class Keyring implements KeyringStruct {
   protected _store!: KeyringStore;
   private _ss58Format?: Prefix;
 
-  public encodeAddress = (key: string | Uint8Array): string => {
-    return this.keyring.encodeAddress(key);
+  public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
+    // FIXME Tryings are wrong... :()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (this.keyring.decodeAddress as any)(key, ignoreChecksum, ss58Format);
   }
 
-  public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean): Uint8Array => {
-    return this.keyring.decodeAddress(key, ignoreChecksum);
+  public encodeAddress = (key: string | Uint8Array, ss58Format?: Prefix): string => {
+    // FIXME Tryings are wrong... :()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (this.keyring.encodeAddress as any)(key, ss58Format);
   }
 
   public getPair(address: string | Uint8Array): KeyringPair {
