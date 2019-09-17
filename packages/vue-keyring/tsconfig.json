@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es6",
+    "module": "es2015",
     "strict": true,
     "jsx": "preserve",
+    "declaration": true,
+    "outDir": "./dist",
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
@@ -29,7 +31,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
+    // "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],

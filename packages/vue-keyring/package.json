@@ -7,7 +7,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-bundle": "vue-cli-service build --target lib --name vue-keyring ./src/index.ts"
+    "build-bundle": "vue-cli-service build --target lib --name vue-keyring ./src/index.ts",
+    "build:tsc": "tsc",
+    "build:watch": "tsc --watch",
+    "build:clean": "tsc --build --clean"
   },
   "main": "./dist/vue-keyring.common.js",
   "module": "dist/vue-keyring.esm.js",

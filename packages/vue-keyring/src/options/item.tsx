@@ -23,4 +23,3 @@ export default function createItem(address: string, _name?: string, isUppercase 
     value: address
   };
 }
-
