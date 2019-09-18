@@ -13,7 +13,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import keyring from './Keyring';
 import { Prefix } from '@polkadot/util-crypto/address/types';
-// import Keypair from './options/Keypair.vue';
+
 @Component({})
 export default class Subkey extends Vue {
   public keyring: any = '';
