@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-settings",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Polkadot Settings for Vue.js",
   "author": "Viki Val <viktorko99@gmail.com>",
   "main": "dist/index.js",
@@ -9,6 +9,11 @@
     "build:watch": "tsc --watch",
     "lint": "tslint --project \"./tsconfig.json\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-polkadot/vue-ui.git"
+  },
+  "homepage": "https://github.com/vue-polkadot/vue-ui/tree/master/packages/vue-settings#readme",
   "files": [
     "dist/*",
     "src/*",

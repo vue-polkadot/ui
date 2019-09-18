@@ -20,36 +20,24 @@
 
 ## Mutations
 
-| Name        | Description | Params   | Types                   |
-| ----------- | ----------- | -------- | ----------------------- |
-| setSettings | Set se      | settings | Partial<SettingsStruct> |
-
-## Actions
-
-| Name        | Description                   | Type   | Default   |
-| ----------- | ----------------------------- | ------ | --------- |
-| setSettings | Selected Url                  | String | null      |
-| setApiUrl   | Selected language             | String | jdenticon |
-| setLanguage | Selected Locking              | String | 128       |
-| setLocking  | Prefix                        | Number | 128       |
-| setPrefix   | UI Mode                       | Number | 128       |
-| setUiTheme  | UI Theme                      | Number | 128       |
-| setUiMode   | Object of all avaible options | Number | 128       |
+| Name        | Description  | Params   | Types                   |
+| ----------- | ------------ | -------- | ----------------------- |
+| setSettings | Set settings | settings | Partial<SettingsStruct> |
 
 ## Getters
 
-| Name               | Description                   | Type   | Default   |
-| ------------------ | ----------------------------- | ------ | --------- |
-| availableNodes     | Selected Url                  | String | null      |
-| availableLanguages | Selected language             | String | jdenticon |
-| availableCryptos   | Selected Locking              | String | 128       |
-| availableLocking   | Prefix                        | Number | 128       |
-| availablePrefixes  | UI Mode                       | Number | 128       |
-| availableUiModes   | UI Theme                      | Number | 128       |
-| availableUiThemes  | Object of all avaible options | Number | 128       |
-| getSettings        | Object of all avaible options | Number | 128       |
+| Name               | Description                   | Returns        |
+| ------------------ | ----------------------------- | -------------- |
+| availableNodes     | List of Nodes                 | Option[]       |
+| availableLanguages | List of Languages             | Option[]       |
+| availableCryptos   | List of Cryptographic modes   | Option[]       |
+| availableLocking   | List of Locking               | Option[]       |
+| availablePrefixes  | List of Prefixes              | Option[]       |
+| availableUiModes   | List of UI Modes              | Option[]       |
+| availableUiThemes  | List of UI Themes             | Option[]       |
+| getSettings        | Object of all avaible options | SettingsStruct |
 
-## Usage
+## Usage Examples
 
 import `SettingModule` to your store as module
 
@@ -63,11 +51,31 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
     setting: SettingModule,
-  }
+  },
 })
 ```
 
 now you can use getters and actions inside your component (Using Vue with typescript)
 
-```
+```html
+<template>
+  <div>
+    <div v-for="option in options">
+      <span>{{option.value}}</span>
+      <span>{{option.text}}</span>
+    </div>
+  </div>
+</template>
+
+<script lang="ts">
+  import { Component, Vue } from 'vue-property-decorator'
+
+  @Component
+  export default class App extends Vue {
+    // Getter is like computed
+    get options(): Option[] {
+      return this.$store.getters.availableNodes
+    }
+  }
+</script>
 ```
