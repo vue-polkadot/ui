@@ -8,7 +8,7 @@ import { isUndefined } from '@polkadot/util';
 // removed pre-formatted Vue object
 // Rather users of this functionality should construct their own options for their framework.
 
-export default function createItem(address: string, _name?: string, isUppercase = true): KeyringSectionOption {
+export default function createItem(address: string, _name?: string): KeyringSectionOption {
   const name = isUndefined(_name)
     ? (
       (address.length > 15)
