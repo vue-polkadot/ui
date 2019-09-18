@@ -9,15 +9,15 @@ Vuex module for polkadot.js settings
 
 ## State Props
 
-| Name           | Description                   | Type   | Default   |
-| -------------- | ----------------------------- | ------ | --------- |
-| apiUrl         | Selected Url                  | String | null      |
-| i18nLang       | Selected language             | String | jdenticon |
-| locking        | Selected Locking              | String | 128       |
-| prefix         | Prefix                        | Number | 128       |
-| uiMode         | UI Mode                       | Number | 128       |
-| uiTheme        | UI Theme                      | Number | 128       |
-| avaibleOptions | Object of all avaible options | Number | 128       |
+| Name           | Description                   |
+| -------------- | ----------------------------- |
+| apiUrl         | Selected Url                  |
+| i18nLang       | Selected language             |
+| locking        | Selected Locking              |
+| prefix         | Prefix                        |
+| uiMode         | UI Mode                       |
+| uiTheme        | UI Theme                      |
+| avaibleOptions | Object of all avaible options |
 
 ## Mutations
 
