@@ -14,7 +14,7 @@
 
 ▸ **calculateAddressAndPublicKey**(`value`: string, `prefix?`: Prefix): *[IconProperties](../interfaces/_types_.iconproperties.md)*
 
-*Defined in [utils.ts:6](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-identicon/src/utils.ts#L6)*
+*Defined in [utils.ts:6](https://github.com/vue-polkadot/vue-ui/blob/6bfb894/packages/vue-identicon/src/utils.ts#L6)*
 
 **Parameters:**
 

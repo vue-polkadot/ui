@@ -19,7 +19,7 @@
 
 • **address**: *string*
 
-*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-identicon/src/types.ts#L28)*
+*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/6bfb894/packages/vue-identicon/src/types.ts#L28)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **publicKey**: *string*
 
-*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-identicon/src/types.ts#L29)*
+*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/6bfb894/packages/vue-identicon/src/types.ts#L29)*

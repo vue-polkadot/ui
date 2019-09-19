@@ -23,7 +23,7 @@
 
 • **className**? : *undefined | string*
 
-*Defined in [types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-identicon/src/types.ts#L8)*
+*Defined in [types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/6bfb894/packages/vue-identicon/src/types.ts#L8)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **style**? : *Record‹string, string | number›*
 
-*Defined in [types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-identicon/src/types.ts#L9)*
+*Defined in [types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/6bfb894/packages/vue-identicon/src/types.ts#L9)*
