@@ -1,3 +1,7 @@
+[vue-polkadot UI libraries](README.md) › [Globals](globals.md)
+
+# vue-polkadot UI libraries
+
 <h1 align="center">vue-settings</h1>
 
 <h5 align="center">Vuex module for polkadot.js settings </h5>
@@ -22,7 +26,7 @@
 
 | Name        | Description  | Params   | Types                   |
 | ----------- | ------------ | -------- | ----------------------- |
-| setSettings | Set settings | settings | PartialSettingsStruct |
+| setSettings | Set settings | settings | Partial<SettingsStruct> |
 
 ## Getters
 

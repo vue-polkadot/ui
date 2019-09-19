@@ -6,7 +6,9 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:generate": "npx typedoc --options typedoc.js --out ./docs/vue-settings/ ./packages/vue-settings/src/"
+    "docs:generate:settings": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-settings/tsconfig.json --out ./docs/vue-settingsx/ ./packages/vue-settings/src/",
+    "docs:generate:keyring": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-keyring/tsconfig.json --out ./docs/vue-keyringx/ ./packages/vue-keyring/src/",
+    "docs:generate:identicon": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-identicon/tsconfig.json --out ./docs/vue-identiconx/ ./packages/vue-identicon/src/"
   },
   "keywords": [
     "polkadot",
