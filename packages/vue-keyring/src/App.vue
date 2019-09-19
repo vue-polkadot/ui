@@ -1,44 +1,35 @@
 <template>
   <div id="keyring-wrapper">
-    <!-- <vuekeyring /> -->
+    <!-- <Keypair
+      address="SXYSytZ7wxpQHbRo5FzUFA9wjTfWvTQgYzhVEybWRQvBrvMS" />
+    <Keypair
+      address="SVyHhpNypEpW8awHeL2XVpEydcedTv1M4AZABcTqMRzx61Ja" />
+    <Keypair
+      address="SW1wmzX29Ei8mCLxB7crVUhGTkL1TDtCUwpVickwdqBUNunM" /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import keyringInstance from './VueKeyring';
+import keyring from './Keyring';
 import { Prefix } from '@polkadot/util-crypto/address/types';
 
-
-// console.log(keyring);
-// console.log(Keyring);
 @Component({})
 export default class Subkey extends Vue {
-
   public keyring: any = '';
-  // public addressPrefix = (-1) as Prefix;
+
   public mounted(): void {
-    this.keyring = keyringInstance.loadAll({
-      addressPrefix: (-1) as Prefix,
+    // console.log('keyring.VUE');
+    this.keyring = keyring.loadAll({
       // genesisHash: 0xdcd1346701ca8396496e52aa2785b1748deb6db09551b72159dcb3e08991025b,
-      isDevelopment: true,
-      type: 'ed25519',
-    }, []);
+      ss58Format: 42, type: 'sr25519',
+      isDevelopment: true });
+
+    // console.log(keyring.encodeAddress('0x6674a2958bf589aca9056d57b26f758c50d5aa95aa36dcfbb8659a8bdf7eef6d'));
+    // console.log(keyring.decodeAddress('SV4YSr3vJt7nLoE1tMZcpduSNVvvjW5YrPAKUox1BcCr4yZL'));
+    // console.log(keyring.getPairs());
+    // alice
+    // console.log(keyring.getPair('SXYSytZ7wxpQHbRo5FzUFA9wjTfWvTQgYzhVEybWRQvBrvMS'));
   }
-
-  // public address = keyring.encodeAddress('');
-
-  // public pair = keyring.getPair(address);
-
-  // public isLocked: boolean = this.pair.isLocked;
-  // public meta: object = this.pair.meta;
-
-  // public saveAccount(pair: object, password: string): void {
-  //   this.keyring.saveAccount(pair, password);
-  // }
-
-  // public saveAddress(address: string, {...meta}: object): void {
-  //   this.keyring.saveAddress(address, {...meta});
-  // }
 }
 </script>

@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-identicon",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Identicon for Vue.js",
   "author": "Viki Val <viktorko99@gmail.com>",
   "scripts": {
@@ -29,8 +29,7 @@
     "jdenticon": "2.2.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
-    "vue-property-decorator": "^8.1.0",
-    "vue-styled-components": "^1.4.9"
+    "vue-property-decorator": "^8.1.0"
   },
   "peerDependencies": {
     "@polkadot/util-crypto": "*",
@@ -41,7 +40,6 @@
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-typescript": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
-    "bili": "^4.8.1",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10"
   }

@@ -1,19 +1,29 @@
 {
-  "name": "docs",
+  "name": "@vue-polkadot/vue-ui",
   "version": "1.0.0",
-  "description": "docs for vue-ui-polkadot",
+  "description": "documentation for vue-polkadot/vue-ui",
   "main": "index.js",
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "docs:generate:identicon": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-identicon/tsconfig.json --out ./docs/vue-identicon/ ./packages/vue-identicon/src/",
+    "docs:generate:keyring": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-keyring/tsconfig.json --out ./docs/vue-keyring/ ./packages/vue-keyring/src/",
+    "docs:generate:settings": "npx typedoc --options typedoc.js --tsconfig ./packages/vue-settings/tsconfig.json --out ./docs/vue-settings/ ./packages/vue-settings/src/"
   },
   "keywords": [
     "polkadot",
     "vue"
   ],
-  "author": "matej nemcek",
+  "author": "Matej Nemcek <ybdaba@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.0.3"
+  },
+  "dependencies": {
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.0",
+    "typedoc": "^0.15.0",
+    "typedoc-plugin-markdown": "^2.2.5",
+    "typedoc-plugin-no-inherit": "^1.1.10"
   }
 }

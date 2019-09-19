@@ -1,2 +1,2 @@
-declare module 'vue-keyring' {
+declare module '@vue-polkadot/vue-keyring' {
 }

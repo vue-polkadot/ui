@@ -3,18 +3,15 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import keyringInstance from './VueKeyring';
+import keyringInstance from './Keyring';
 import { Prefix } from '@polkadot/util-crypto/address/types';
 
 @Component({})
 export default class VueKeyring extends Vue {
   public keyring: any = '';
-  public mounted(): void{
+  public mounted(): void {
     this.keyring = keyringInstance.loadAll({
-      addressPrefix: (-1) as Prefix,
-      isDevelopment: true,
-      type: 'ed25519'
-    }, []);
+      ss58Format: 42, type: 'sr25519' });
   }
 }
 </script>

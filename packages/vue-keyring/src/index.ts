@@ -1,7 +1,11 @@
-// import Vue from 'vue';
-// import Keyring from './Keyring.vue';
-import keyringInstance from './VueKeyring';
+import { assertSingletonPackage } from '@polkadot/util';
 
-// Vue.component('Keyring', keyringInstance);
+import keyring, { Keyring } from './Keyring';
 
-export default keyringInstance;
+assertSingletonPackage('@polkadot/ui-keyring');
+
+export default keyring;
+
+export {
+  Keyring,
+};
