@@ -1,0 +1,31 @@
+{
+  "name": "@vue-polkadot/vue-settings",
+  "version": "0.0.3",
+  "description": "Polkadot Settings for Vue.js",
+  "author": "Viki Val <viktorko99@gmail.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "tslint --project \"./tsconfig.json\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vue-polkadot/vue-ui.git"
+  },
+  "homepage": "https://github.com/vue-polkadot/vue-ui/tree/master/packages/vue-settings#readme",
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.ts"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  }
+}

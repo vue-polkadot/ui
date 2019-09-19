@@ -1,7 +1,6 @@
+<h1 align="center">vue-settings</h1>
 
-# @vue-polkadot/vue-settings
-
-Vuex module for polkadot.js settings
+<h5 align="center">Vuex module for polkadot.js settings </h5>
 
 ## Installation
 
