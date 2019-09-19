@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [KeyringAddress](_types_.keyringaddress.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [KeyringAddress](_types_.keyringaddress.md)
 
 # Interface: KeyringAddress
 
@@ -20,7 +20,7 @@
 
 • **address**: *string*
 
-*Defined in [types.ts:53](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L53)*
+*Defined in [types.ts:53](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L53)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **meta**: *[KeyringJson$Meta](_types_.keyringjson_meta.md)*
 
-*Defined in [types.ts:54](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L54)*
+*Defined in [types.ts:54](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L54)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **publicKey**: *Uint8Array*
 
-*Defined in [types.ts:55](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L55)*
+*Defined in [types.ts:55](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L55)*

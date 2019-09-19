@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["observable/genericSubject"](_observable_genericsubject_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["observable/genericSubject"](_observable_genericsubject_.md)
 
 # External module: "observable/genericSubject"
 
@@ -14,7 +14,7 @@
 
 ▸ **genericSubject**(`keyCreator`: function, `withTest`: boolean): *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
-*Defined in [observable/genericSubject.ts:28](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/observable/genericSubject.ts#L28)*
+*Defined in [observable/genericSubject.ts:28](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/observable/genericSubject.ts#L28)*
 
 **Parameters:**
 

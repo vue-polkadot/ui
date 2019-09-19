@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [KeyringStruct](_types_.keyringstruct.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [KeyringStruct](_types_.keyringstruct.md)
 
 # Interface: KeyringStruct
 
@@ -58,7 +58,7 @@
 
 • **accounts**: *[AddressSubject](_observable_types_.addresssubject.md)*
 
-*Defined in [types.ts:68](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L68)*
+*Defined in [types.ts:68](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L68)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **addExternal**: *function*
 
-*Defined in [types.ts:74](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L74)*
+*Defined in [types.ts:74](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L74)*
 
 #### Type declaration:
 
@@ -85,7 +85,7 @@ ___
 
 • **addPair**: *function*
 
-*Defined in [types.ts:75](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L75)*
+*Defined in [types.ts:75](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L75)*
 
 #### Type declaration:
 
@@ -104,7 +104,7 @@ ___
 
 • **addUri**: *function*
 
-*Defined in [types.ts:76](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L76)*
+*Defined in [types.ts:76](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L76)*
 
 #### Type declaration:
 
@@ -125,7 +125,7 @@ ___
 
 • **addresses**: *[AddressSubject](_observable_types_.addresssubject.md)*
 
-*Defined in [types.ts:69](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L69)*
+*Defined in [types.ts:69](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L69)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • **backupAccount**: *function*
 
-*Defined in [types.ts:77](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L77)*
+*Defined in [types.ts:77](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L77)*
 
 #### Type declaration:
 
@@ -152,7 +152,7 @@ ___
 
 • **contracts**: *[AddressSubject](_observable_types_.addresssubject.md)*
 
-*Defined in [types.ts:70](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L70)*
+*Defined in [types.ts:70](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L70)*
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 • **decodeAddress**: *function*
 
-*Defined in [types.ts:79](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L79)*
+*Defined in [types.ts:79](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L79)*
 
 #### Type declaration:
 
@@ -178,7 +178,7 @@ ___
 
 • **encodeAddress**: *function*
 
-*Defined in [types.ts:80](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L80)*
+*Defined in [types.ts:80](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L80)*
 
 #### Type declaration:
 
@@ -196,7 +196,7 @@ ___
 
 • **encryptAccount**: *function*
 
-*Defined in [types.ts:81](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L81)*
+*Defined in [types.ts:81](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L81)*
 
 #### Type declaration:
 
@@ -215,7 +215,7 @@ ___
 
 • **forgetAccount**: *function*
 
-*Defined in [types.ts:82](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L82)*
+*Defined in [types.ts:82](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L82)*
 
 #### Type declaration:
 
@@ -233,7 +233,7 @@ ___
 
 • **forgetAddress**: *function*
 
-*Defined in [types.ts:83](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L83)*
+*Defined in [types.ts:83](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L83)*
 
 #### Type declaration:
 
@@ -251,7 +251,7 @@ ___
 
 • **forgetContract**: *function*
 
-*Defined in [types.ts:84](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L84)*
+*Defined in [types.ts:84](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L84)*
 
 #### Type declaration:
 
@@ -269,7 +269,7 @@ ___
 
 • **genesisHash**? : *undefined | string*
 
-*Defined in [types.ts:72](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L72)*
+*Defined in [types.ts:72](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L72)*
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 • **getAccount**: *function*
 
-*Defined in [types.ts:85](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L85)*
+*Defined in [types.ts:85](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L85)*
 
 #### Type declaration:
 
@@ -295,7 +295,7 @@ ___
 
 • **getAccounts**: *function*
 
-*Defined in [types.ts:86](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L86)*
+*Defined in [types.ts:86](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L86)*
 
 #### Type declaration:
 
@@ -307,7 +307,7 @@ ___
 
 • **getAddress**: *function*
 
-*Defined in [types.ts:87](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L87)*
+*Defined in [types.ts:87](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L87)*
 
 #### Type declaration:
 
@@ -326,7 +326,7 @@ ___
 
 • **getAddresses**: *function*
 
-*Defined in [types.ts:88](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L88)*
+*Defined in [types.ts:88](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L88)*
 
 #### Type declaration:
 
@@ -338,7 +338,7 @@ ___
 
 • **getContract**: *function*
 
-*Defined in [types.ts:89](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L89)*
+*Defined in [types.ts:89](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L89)*
 
 #### Type declaration:
 
@@ -356,7 +356,7 @@ ___
 
 • **getContracts**: *function*
 
-*Defined in [types.ts:90](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L90)*
+*Defined in [types.ts:90](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L90)*
 
 #### Type declaration:
 
@@ -374,7 +374,7 @@ ___
 
 • **getPair**: *function*
 
-*Defined in [types.ts:91](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L91)*
+*Defined in [types.ts:91](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L91)*
 
 #### Type declaration:
 
@@ -392,7 +392,7 @@ ___
 
 • **getPairs**: *function*
 
-*Defined in [types.ts:92](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L92)*
+*Defined in [types.ts:92](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L92)*
 
 #### Type declaration:
 
@@ -404,7 +404,7 @@ ___
 
 • **isAvailable**: *function*
 
-*Defined in [types.ts:93](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L93)*
+*Defined in [types.ts:93](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L93)*
 
 #### Type declaration:
 
@@ -422,7 +422,7 @@ ___
 
 • **isPassValid**: *function*
 
-*Defined in [types.ts:94](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L94)*
+*Defined in [types.ts:94](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L94)*
 
 #### Type declaration:
 
@@ -440,7 +440,7 @@ ___
 
 • **keyring**: *BaseKeyringInstance | undefined*
 
-*Defined in [types.ts:71](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L71)*
+*Defined in [types.ts:71](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L71)*
 
 ___
 
@@ -448,7 +448,7 @@ ___
 
 • **loadAll**: *function*
 
-*Defined in [types.ts:95](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L95)*
+*Defined in [types.ts:95](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L95)*
 
 #### Type declaration:
 
@@ -466,7 +466,7 @@ ___
 
 • **restoreAccount**: *function*
 
-*Defined in [types.ts:96](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L96)*
+*Defined in [types.ts:96](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L96)*
 
 #### Type declaration:
 
@@ -485,7 +485,7 @@ ___
 
 • **saveAccount**: *function*
 
-*Defined in [types.ts:97](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L97)*
+*Defined in [types.ts:97](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L97)*
 
 #### Type declaration:
 
@@ -504,7 +504,7 @@ ___
 
 • **saveAccountMeta**: *function*
 
-*Defined in [types.ts:98](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L98)*
+*Defined in [types.ts:98](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L98)*
 
 #### Type declaration:
 
@@ -523,7 +523,7 @@ ___
 
 • **saveAddress**: *function*
 
-*Defined in [types.ts:99](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L99)*
+*Defined in [types.ts:99](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L99)*
 
 #### Type declaration:
 
@@ -542,7 +542,7 @@ ___
 
 • **saveContract**: *function*
 
-*Defined in [types.ts:100](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L100)*
+*Defined in [types.ts:100](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L100)*
 
 #### Type declaration:
 
@@ -561,7 +561,7 @@ ___
 
 • **saveRecent**: *function*
 
-*Defined in [types.ts:101](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L101)*
+*Defined in [types.ts:101](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L101)*
 
 #### Type declaration:
 
@@ -579,7 +579,7 @@ ___
 
 • **setDevMode**: *function*
 
-*Defined in [types.ts:102](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L102)*
+*Defined in [types.ts:102](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L102)*
 
 #### Type declaration:
 
@@ -597,7 +597,7 @@ Name | Type |
 
 ▸ **createFromUri**(`suri`: string, `meta?`: KeyringPair$Meta, `type?`: KeypairType): *KeyringPair*
 
-*Defined in [types.ts:78](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L78)*
+*Defined in [types.ts:78](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L78)*
 
 **Parameters:**
 

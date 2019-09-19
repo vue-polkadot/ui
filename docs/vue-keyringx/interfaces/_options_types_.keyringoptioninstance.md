@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["options/types"](../modules/_options_types_.md) › [KeyringOptionInstance](_options_types_.keyringoptioninstance.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["options/types"](../modules/_options_types_.md) › [KeyringOptionInstance](_options_types_.keyringoptioninstance.md)
 
 # Interface: KeyringOptionInstance
 
@@ -19,7 +19,7 @@
 
 • **createOptionHeader**: *function*
 
-*Defined in [options/types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/options/types.ts#L24)*
+*Defined in [options/types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L24)*
 
 #### Type declaration:
 
@@ -37,7 +37,7 @@ ___
 
 • **init**: *function*
 
-*Defined in [options/types.ts:25](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/options/types.ts#L25)*
+*Defined in [options/types.ts:25](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L25)*
 
 #### Type declaration:
 

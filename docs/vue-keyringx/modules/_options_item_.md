@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["options/item"](_options_item_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["options/item"](_options_item_.md)
 
 # External module: "options/item"
 
@@ -14,7 +14,7 @@
 
 ▸ **createItem**(`address`: string, `_name?`: undefined | string): *[KeyringSectionOption](../interfaces/_options_types_.keyringsectionoption.md)*
 
-*Defined in [options/item.tsx:11](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/options/item.tsx#L11)*
+*Defined in [options/item.tsx:11](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/item.tsx#L11)*
 
 **Parameters:**
 

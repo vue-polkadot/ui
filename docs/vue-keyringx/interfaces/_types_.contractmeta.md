@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [ContractMeta](_types_.contractmeta.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [ContractMeta](_types_.contractmeta.md)
 
 # Interface: ContractMeta
 
@@ -19,7 +19,7 @@
 
 • **abi**: *string*
 
-*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L14)*
+*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L14)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **genesisHash**? : *undefined | string*
 
-*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L15)*
+*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L15)*

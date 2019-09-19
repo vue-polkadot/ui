@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["Keyring"](_keyring_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["Keyring"](_keyring_.md)
 
 # External module: "Keyring"
 

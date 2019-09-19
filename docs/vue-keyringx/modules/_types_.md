@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
 
 # External module: "types"
 
@@ -26,7 +26,7 @@
 
 Ƭ **KeyringAddressType**: *"address" | "contract"*
 
-*Defined in [types.ts:58](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L58)*
+*Defined in [types.ts:58](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L58)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 Ƭ **KeyringItemType**: *"account" | [KeyringAddressType](_types_.md#keyringaddresstype)*
 
-*Defined in [types.ts:60](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-keyring/src/types.ts#L60)*
+*Defined in [types.ts:60](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L60)*
