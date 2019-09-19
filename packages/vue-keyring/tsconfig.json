@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es5",
+    "module": "es6",
     "strict": true,
     "jsx": "preserve",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist",
+    // "outFile": "./dist/vueKeyring.js",
     "importHelpers": true,
+    "noImplicitAny": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "esModuleInterop": true,
@@ -27,9 +32,9 @@
     ]
   },
   "include": [
+    "index.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],

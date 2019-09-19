@@ -39,5 +39,5 @@ export {
   addressRegex,
   contractKey,
   contractRegex,
-  MAX_PASS_LEN
+  MAX_PASS_LEN,
 };
