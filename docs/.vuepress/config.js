@@ -25,12 +25,9 @@ module.exports = {
     sidebar:
      [
        '/',
-       '/vue-keyring/',
-       '/vue-identicon/',
-       '/vue-settings/',
-       ['/vue-identiconx/', '@vue-polkadot/vue-identiconx'],
-       ['/vue-keyringx/', '@vue-polkadot/vue-keyringx'],
-       ['/vue-settingsx/', '@vue-polkadot/vue-settingsx']
+       ['/vue-identicon/', '@vue-polkadot/vue-identicon'],
+       ['/vue-keyring/', '@vue-polkadot/vue-keyring'],
+       ['/vue-settings/', '@vue-polkadot/vue-settings']
     ]
   }
 };
