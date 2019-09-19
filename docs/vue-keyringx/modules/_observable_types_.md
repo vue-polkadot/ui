@@ -23,7 +23,7 @@
 
 Ƭ **KeyringOption$Type**: *keyof KeyringOptions*
 
-*Defined in [observable/types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L15)*
+*Defined in [observable/types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L15)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 Ƭ **KeyringOptions**: *object*
 
-*Defined in [observable/types.ts:11](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L11)*
+*Defined in [observable/types.ts:11](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L11)*
 
 #### Type declaration:
 
@@ -41,4 +41,4 @@ ___
 
 Ƭ **KeyringSectionOptions**: *[KeyringSectionOption](../interfaces/_options_types_.keyringsectionoption.md)[]*
 
-*Defined in [observable/types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L9)*
+*Defined in [observable/types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L9)*

@@ -36,7 +36,7 @@ ___
 
 • **filter**? : *undefined | function*
 
-*Defined in [types.ts:26](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L26)*
+*Defined in [types.ts:26](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L26)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **genesisHash**? : *Hash*
 
-*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L28)*
+*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L28)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **isDevelopment**? : *undefined | false | true*
 
-*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L29)*
+*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L29)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 *Overrides void*
 
-*Defined in [types.ts:27](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L27)*
+*Defined in [types.ts:27](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L27)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **store**? : *[KeyringStore](_types_.keyringstore.md)*
 
-*Defined in [types.ts:30](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L30)*
+*Defined in [types.ts:30](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L30)*
 
 ___
 

@@ -1,6 +1,6 @@
 module.exports = {
   name: 'vue-polkadot UI Libraries',
-  exclude: 'node_modules',
+  exclude: '**/*+(index|e2e|spec).ts',
   excludeExternals: true,
   excludeNotExported: true,
   excludeProtected: true,

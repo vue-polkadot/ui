@@ -26,7 +26,7 @@
 
 Ƭ **KeyringAddressType**: *"address" | "contract"*
 
-*Defined in [types.ts:58](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L58)*
+*Defined in [types.ts:58](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L58)*
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 Ƭ **KeyringItemType**: *"account" | [KeyringAddressType](_types_.md#keyringaddresstype)*
 
-*Defined in [types.ts:60](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L60)*
+*Defined in [types.ts:60](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L60)*

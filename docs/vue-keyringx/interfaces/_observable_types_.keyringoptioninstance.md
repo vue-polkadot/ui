@@ -19,7 +19,7 @@
 
 • **createOptionHeader**: *function*
 
-*Defined in [observable/types.ts:18](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L18)*
+*Defined in [observable/types.ts:18](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L18)*
 
 #### Type declaration:
 
@@ -37,7 +37,7 @@ ___
 
 • **init**: *function*
 
-*Defined in [observable/types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L19)*
+*Defined in [observable/types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L19)*
 
 #### Type declaration:
 

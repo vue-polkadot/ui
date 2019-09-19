@@ -19,7 +19,7 @@
 
 • **address**: *string*
 
-*Defined in [types.ts:48](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L48)*
+*Defined in [types.ts:48](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L48)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **meta**: *[KeyringJson$Meta](_types_.keyringjson_meta.md)*
 
-*Defined in [types.ts:49](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L49)*
+*Defined in [types.ts:49](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/types.ts#L49)*

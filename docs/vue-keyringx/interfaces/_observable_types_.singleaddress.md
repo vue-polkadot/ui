@@ -19,7 +19,7 @@
 
 • **json**: *[KeyringJson](_types_.keyringjson.md)*
 
-*Defined in [observable/types.ts:23](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L23)*
+*Defined in [observable/types.ts:23](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L23)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **option**: *[KeyringSectionOption](_options_types_.keyringsectionoption.md)*
 
-*Defined in [observable/types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L24)*
+*Defined in [observable/types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/747f2fa/packages/vue-keyring/src/observable/types.ts#L24)*
