@@ -27,7 +27,10 @@ module.exports = {
        '/',
        '/vue-keyring/',
        '/vue-identicon/',
-       '/vue-settings/'
+       '/vue-settings/',
+       ['/vue-identiconx/', '@vue-polkadot/vue-identiconx'],
+       ['/vue-keyringx/', '@vue-polkadot/vue-keyringx'],
+       ['/vue-settingsx/', '@vue-polkadot/vue-settingsx']
     ]
   }
 };

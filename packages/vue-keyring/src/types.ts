@@ -2,8 +2,11 @@
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
+import { Prefix } from '@polkadot/util-crypto/address/types';
 import { Hash } from '@polkadot/types/interfaces';
-import { KeyringInstance as BaseKeyringInstance, KeyringPair, KeyringPair$Meta, KeyringPair$Json, KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
+import { KeyringInstance as BaseKeyringInstance,
+  KeyringPair, KeyringPair$Meta, KeyringPair$Json,
+  KeyringOptions as KeyringOptionsBase } from '@polkadot/keyring/types';
 import { KeypairType } from '@polkadot/util-crypto/types';
 import { AddressSubject, SingleAddress } from './observable/types';
 
@@ -21,6 +24,7 @@ export interface KeyringStore {
 
 export interface KeyringOptions extends KeyringOptionsBase {
   filter?: (json: KeyringJson) => boolean;
+  ss58Format?: Prefix;
   genesisHash?: Hash;
   isDevelopment?: boolean;
   store?: KeyringStore;

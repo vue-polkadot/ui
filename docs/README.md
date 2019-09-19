@@ -28,7 +28,7 @@ In a rush and just want examples? [Jump right in](vue-identicon/README.md) and g
 
 This repository split up into a number of internal packages, namely -
 
-- [vue-identicon](vue-identicon/README.md) Display of identity icons based on theme, also availble for [Vue JS](vue-identicon/README.md)
+- [vue-identicon](vue-identicon/README.md) Display of identity icons based on theme, also availble for Vue JS
 - [vue-keyring](vue-keyring/README.md) A keyring with browser-specific extensions
 - [vue-settings](vue-settings/README.md) Setting management and defaults
 

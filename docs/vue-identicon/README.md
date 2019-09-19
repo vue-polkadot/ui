@@ -1,41 +1,28 @@
-# @vue-polkadot/vue-identicon
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
 
-A generic identity icon that can render icons based on the theme, be it Substrate or Polkadot or Kusama
+# vue-polkadot UI Libraries
 
-## Usage Examples
+<h1 align="center">vue-identicon</h1>
 
-To install the component, do
+<!-- <h5 align="center">Identicon</h5> -->
 
-`yarn add @vue-polkadot/vue-identicon`
+## Installation
+`npm install --save @vue-polkadot/vue-identicon`
 
-Inside a Vue component, you can now render any account with the associated icon
+## Props
+
+| Name  | Description                 | Type   | Default   |
+|-------|-----------------------------|--------|-----------|
+| value | Address for generating icon | String | null      |
+| theme | Theme for icon              | String | jdenticon |
+| size  | Size of icon                | Number | 128       |
+
+## Usage
 
 ```js
-<template>
-  <Identicon
-    :value="5DFwZivYX7hEjBsVH7KGYZYCJMtb75t2aBoeJnzLSLZGPLFn"
-    :theme="polkadot"
-    :size="64"
-  />
-</template>
-
-<script>
-  import Identicon from '@vue-polkadot/vue-identicon'
-
-  export default {
-    components: { Identicon }
-  };
-</script>
+<Identicon
+  :value="address"
+  theme="beachball"
+  size="64"
+/>
 ```
-
-## FAQ
-
-* Are there different themes for identicon?
-  * Yes, there are
-    - `Beachball`
-    - `Empty`
-    - `Jdenticon`
-    - `Polkadot`
-
-
-
