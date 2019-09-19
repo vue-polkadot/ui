@@ -1,7 +1,10 @@
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
 
-# @vue-polkadot/vue-settings
+# vue-polkadot UI Libraries
 
-Vuex module for polkadot.js settings
+<h1 align="center">vue-settings</h1>
+
+<h5 align="center">Vuex module for polkadot.js settings </h5>
 
 ## Installation
 
