@@ -14,7 +14,7 @@
 
 ▸ **createItem**(`address`: string, `_name?`: undefined | string): *[KeyringSectionOption](../interfaces/_options_types_.keyringsectionoption.md)*
 
-*Defined in [options/item.tsx:11](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/item.tsx#L11)*
+*Defined in [options/item.tsx:11](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/item.tsx#L11)*
 
 **Parameters:**
 

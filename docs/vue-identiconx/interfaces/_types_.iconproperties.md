@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [IconProperties](_types_.iconproperties.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [IconProperties](_types_.iconproperties.md)
 
 # Interface: IconProperties
 
@@ -19,7 +19,7 @@
 
 • **address**: *string*
 
-*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-identicon/src/types.ts#L28)*
+*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-identicon/src/types.ts#L28)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **publicKey**: *string*
 
-*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-identicon/src/types.ts#L29)*
+*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-identicon/src/types.ts#L29)*

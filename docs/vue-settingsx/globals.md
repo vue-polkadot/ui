@@ -1,6 +1,6 @@
-[vue-polkadot UI libraries](README.md) › [Globals](globals.md)
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
 
-# vue-polkadot UI libraries
+# vue-polkadot UI Libraries
 
 ## Index
 

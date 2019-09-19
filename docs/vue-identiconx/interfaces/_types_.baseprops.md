@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [BaseProps](_types_.baseprops.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](../modules/_types_.md) › [BaseProps](_types_.baseprops.md)
 
 # Interface: BaseProps
 
@@ -23,7 +23,7 @@
 
 • **className**? : *undefined | string*
 
-*Defined in [types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-identicon/src/types.ts#L8)*
+*Defined in [types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-identicon/src/types.ts#L8)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **style**? : *Record‹string, string | number›*
 
-*Defined in [types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-identicon/src/types.ts#L9)*
+*Defined in [types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-identicon/src/types.ts#L9)*

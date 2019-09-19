@@ -1,6 +1,6 @@
-[vue-polkadot UI libraries](README.md) › [Globals](globals.md)
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
 
-# vue-polkadot UI libraries
+# vue-polkadot UI Libraries
 
 <h1 align="center">vue-identicon</h1>
 

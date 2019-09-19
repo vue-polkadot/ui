@@ -1,6 +1,6 @@
-[vue-polkadot UI libraries](README.md) › [Globals](globals.md)
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
 
-# vue-polkadot UI libraries
+# vue-polkadot UI Libraries
 
 <h1 align="center">vue-settings</h1>
 
@@ -26,7 +26,7 @@
 
 | Name        | Description  | Params   | Types                   |
 | ----------- | ------------ | -------- | ----------------------- |
-| setSettings | Set settings | settings | Partial<SettingsStruct> |
+| setSettings | Set settings | settings | PartialSettingsStruct |
 
 ## Getters
 

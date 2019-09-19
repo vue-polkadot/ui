@@ -19,7 +19,7 @@
 
 • **abi**: *string*
 
-*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L14)*
+*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L14)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **genesisHash**? : *undefined | string*
 
-*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L15)*
+*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L15)*

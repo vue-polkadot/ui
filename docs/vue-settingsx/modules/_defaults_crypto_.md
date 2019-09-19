@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["defaults/crypto"](_defaults_crypto_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["defaults/crypto"](_defaults_crypto_.md)
 
 # External module: "defaults/crypto"
 
@@ -25,4 +25,4 @@
   }
 ]
 
-*Defined in [defaults/crypto.ts:7](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/crypto.ts#L7)*
+*Defined in [defaults/crypto.ts:7](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/crypto.ts#L7)*

@@ -20,7 +20,7 @@
 
 • **add**: *function*
 
-*Defined in [observable/types.ts:32](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/observable/types.ts#L32)*
+*Defined in [observable/types.ts:32](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L32)*
 
 #### Type declaration:
 
@@ -40,7 +40,7 @@ ___
 
 • **remove**: *function*
 
-*Defined in [observable/types.ts:33](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/observable/types.ts#L33)*
+*Defined in [observable/types.ts:33](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L33)*
 
 #### Type declaration:
 
@@ -59,4 +59,4 @@ ___
 
 • **subject**: *BehaviorSubject‹[SubjectInfo](_observable_types_.subjectinfo.md)›*
 
-*Defined in [observable/types.ts:34](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/observable/types.ts#L34)*
+*Defined in [observable/types.ts:34](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/types.ts#L34)*

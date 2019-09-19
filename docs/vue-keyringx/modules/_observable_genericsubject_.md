@@ -14,7 +14,7 @@
 
 ▸ **genericSubject**(`keyCreator`: function, `withTest`: boolean): *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
-*Defined in [observable/genericSubject.ts:28](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/observable/genericSubject.ts#L28)*
+*Defined in [observable/genericSubject.ts:28](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/observable/genericSubject.ts#L28)*
 
 **Parameters:**
 

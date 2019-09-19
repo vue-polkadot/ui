@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["defaults/ss58"](_defaults_ss58_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["defaults/ss58"](_defaults_ss58_.md)
 
 # External module: "defaults/ss58"
 
@@ -36,7 +36,7 @@
   }
 ]
 
-*Defined in [defaults/ss58.ts:9](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/ss58.ts#L9)*
+*Defined in [defaults/ss58.ts:9](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/ss58.ts#L9)*
 
 ___
 
@@ -44,4 +44,4 @@ ___
 
 • **PREFIX_DEFAULT**: *-1* =  -1
 
-*Defined in [defaults/ss58.ts:7](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/ss58.ts#L7)*
+*Defined in [defaults/ss58.ts:7](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/ss58.ts#L7)*

@@ -19,7 +19,7 @@
 
 • **json**: *KeyringPair$Json*
 
-*Defined in [types.ts:63](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L63)*
+*Defined in [types.ts:63](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L63)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **pair**: *KeyringPair*
 
-*Defined in [types.ts:64](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L64)*
+*Defined in [types.ts:64](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L64)*

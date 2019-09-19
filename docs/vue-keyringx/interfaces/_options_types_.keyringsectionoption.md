@@ -22,7 +22,7 @@
 
 • **className**? : *undefined | string*
 
-*Defined in [options/types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L8)*
+*Defined in [options/types.ts:8](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/types.ts#L8)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **disabled**? : *undefined | false | true*
 
-*Defined in [options/types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L9)*
+*Defined in [options/types.ts:9](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/types.ts#L9)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **key**: *string | null*
 
-*Defined in [options/types.ts:10](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L10)*
+*Defined in [options/types.ts:10](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/types.ts#L10)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [options/types.ts:11](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L11)*
+*Defined in [options/types.ts:11](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/types.ts#L11)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **value**: *string | null*
 
-*Defined in [options/types.ts:12](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/options/types.ts#L12)*
+*Defined in [options/types.ts:12](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/options/types.ts#L12)*

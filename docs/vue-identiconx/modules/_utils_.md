@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["utils"](_utils_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["utils"](_utils_.md)
 
 # External module: "utils"
 
@@ -14,7 +14,7 @@
 
 ▸ **calculateAddressAndPublicKey**(`value`: string, `prefix?`: Prefix): *[IconProperties](../interfaces/_types_.iconproperties.md)*
 
-*Defined in [utils.ts:6](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-identicon/src/utils.ts#L6)*
+*Defined in [utils.ts:6](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-identicon/src/utils.ts#L6)*
 
 **Parameters:**
 

@@ -59,7 +59,7 @@
 
 • **get accounts**(): *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
-*Defined in [Keyring.ts:87](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L87)*
+*Defined in [Keyring.ts:87](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L87)*
 
 **Returns:** *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
@@ -69,7 +69,7 @@ ___
 
 • **get addresses**(): *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
-*Defined in [Keyring.ts:91](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L91)*
+*Defined in [Keyring.ts:91](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L91)*
 
 **Returns:** *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
@@ -79,7 +79,7 @@ ___
 
 • **get contracts**(): *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
-*Defined in [Keyring.ts:95](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L95)*
+*Defined in [Keyring.ts:95](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L95)*
 
 **Returns:** *[AddressSubject](../interfaces/_observable_types_.addresssubject.md)*
 
@@ -89,7 +89,7 @@ ___
 
 • **get genesisHash**(): *string | undefined*
 
-*Defined in [Keyring.ts:174](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L174)*
+*Defined in [Keyring.ts:174](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L174)*
 
 **Returns:** *string | undefined*
 
@@ -99,7 +99,7 @@ ___
 
 • **get keyring**(): *KeyringInstance*
 
-*Defined in [Keyring.ts:99](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L99)*
+*Defined in [Keyring.ts:99](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L99)*
 
 **Returns:** *KeyringInstance*
 
@@ -109,7 +109,7 @@ ___
 
 ▸ **addExternal**(`address`: string | Uint8Array, `meta`: KeyringPair$Meta): *[CreateResult](../interfaces/_types_.createresult.md)*
 
-*Defined in [Keyring.ts:116](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L116)*
+*Defined in [Keyring.ts:116](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L116)*
 
 **Parameters:**
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **addPair**(`pair`: KeyringPair, `password`: string): *[CreateResult](../interfaces/_types_.createresult.md)*
 
-*Defined in [Keyring.ts:107](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L107)*
+*Defined in [Keyring.ts:107](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L107)*
 
 **Parameters:**
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **addUri**(`suri`: string, `password?`: undefined | string, `meta`: KeyringPair$Meta, `type?`: KeypairType): *[CreateResult](../interfaces/_types_.createresult.md)*
 
-*Defined in [Keyring.ts:125](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L125)*
+*Defined in [Keyring.ts:125](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L125)*
 
 **Parameters:**
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **backupAccount**(`pair`: KeyringPair, `password`: string): *KeyringPair$Json*
 
-*Defined in [Keyring.ts:134](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L134)*
+*Defined in [Keyring.ts:134](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L134)*
 
 **Parameters:**
 
@@ -181,7 +181,7 @@ ___
 
 *Implementation of [KeyringStruct](../interfaces/_types_.keyringstruct.md)*
 
-*Defined in [Keyring.ts:144](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L144)*
+*Defined in [Keyring.ts:144](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L144)*
 
 **Parameters:**
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **decodeAddress**(`key`: string | Uint8Array, `ignoreChecksum?`: undefined | false | true, `ss58Format?`: Prefix): *Uint8Array*
 
-*Defined in [Keyring.ts:50](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L50)*
+*Defined in [Keyring.ts:50](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L50)*
 
 **Parameters:**
 
@@ -217,7 +217,7 @@ ___
 
 ▸ **encodeAddress**(`key`: string | Uint8Array, `ss58Format?`: Prefix): *string*
 
-*Defined in [Keyring.ts:56](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L56)*
+*Defined in [Keyring.ts:56](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L56)*
 
 **Parameters:**
 
@@ -234,7 +234,7 @@ ___
 
 ▸ **encryptAccount**(`pair`: KeyringPair, `password`: string): *void*
 
-*Defined in [Keyring.ts:148](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L148)*
+*Defined in [Keyring.ts:148](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L148)*
 
 **Parameters:**
 
@@ -251,7 +251,7 @@ ___
 
 ▸ **forgetAccount**(`address`: string): *void*
 
-*Defined in [Keyring.ts:157](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L157)*
+*Defined in [Keyring.ts:157](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L157)*
 
 **Parameters:**
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **forgetAddress**(`address`: string): *void*
 
-*Defined in [Keyring.ts:162](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L162)*
+*Defined in [Keyring.ts:162](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L162)*
 
 **Parameters:**
 
@@ -283,7 +283,7 @@ ___
 
 ▸ **forgetContract**(`address`: string): *void*
 
-*Defined in [Keyring.ts:166](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L166)*
+*Defined in [Keyring.ts:166](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L166)*
 
 **Parameters:**
 
@@ -299,7 +299,7 @@ ___
 
 ▸ **getAccount**(`address`: string | Uint8Array): *[KeyringAddress](../interfaces/_types_.keyringaddress.md) | undefined*
 
-*Defined in [Keyring.ts:170](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L170)*
+*Defined in [Keyring.ts:170](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L170)*
 
 **Parameters:**
 
@@ -315,7 +315,7 @@ ___
 
 ▸ **getAccounts**(): *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
-*Defined in [Keyring.ts:178](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L178)*
+*Defined in [Keyring.ts:178](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L178)*
 
 **Returns:** *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
@@ -325,7 +325,7 @@ ___
 
 ▸ **getAddress**(`_address`: string | Uint8Array, `type`: [KeyringItemType](../modules/_types_.md#keyringitemtype) | null): *[KeyringAddress](../interfaces/_types_.keyringaddress.md) | undefined*
 
-*Defined in [Keyring.ts:322](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L322)*
+*Defined in [Keyring.ts:322](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L322)*
 
 **Parameters:**
 
@@ -342,7 +342,7 @@ ___
 
 ▸ **getAddresses**(): *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
-*Defined in [Keyring.ts:341](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L341)*
+*Defined in [Keyring.ts:341](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L341)*
 
 **Returns:** *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
@@ -352,7 +352,7 @@ ___
 
 ▸ **getContract**(`address`: string | Uint8Array): *[KeyringAddress](../interfaces/_types_.keyringaddress.md) | undefined*
 
-*Defined in [Keyring.ts:234](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L234)*
+*Defined in [Keyring.ts:234](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L234)*
 
 **Parameters:**
 
@@ -368,7 +368,7 @@ ___
 
 ▸ **getContracts**(): *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
-*Defined in [Keyring.ts:238](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L238)*
+*Defined in [Keyring.ts:238](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L238)*
 
 **Returns:** *[KeyringAddress](../interfaces/_types_.keyringaddress.md)[]*
 
@@ -378,7 +378,7 @@ ___
 
 ▸ **getPair**(`address`: string | Uint8Array): *KeyringPair*
 
-*Defined in [Keyring.ts:62](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L62)*
+*Defined in [Keyring.ts:62](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L62)*
 
 **Parameters:**
 
@@ -394,7 +394,7 @@ ___
 
 ▸ **getPairs**(): *KeyringPair[]*
 
-*Defined in [Keyring.ts:66](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L66)*
+*Defined in [Keyring.ts:66](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L66)*
 
 **Returns:** *KeyringPair[]*
 
@@ -404,7 +404,7 @@ ___
 
 ▸ **isAvailable**(`_address`: Uint8Array | string): *boolean*
 
-*Defined in [Keyring.ts:72](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L72)*
+*Defined in [Keyring.ts:72](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L72)*
 
 **Parameters:**
 
@@ -420,7 +420,7 @@ ___
 
 ▸ **isPassValid**(`password`: string): *boolean*
 
-*Defined in [Keyring.ts:83](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L83)*
+*Defined in [Keyring.ts:83](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L83)*
 
 **Parameters:**
 
@@ -436,7 +436,7 @@ ___
 
 ▸ **loadAll**(`options`: [KeyringOptions](../interfaces/_types_.keyringoptions.md), `injected`: object[]): *void*
 
-*Defined in [Keyring.ts:207](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L207)*
+*Defined in [Keyring.ts:207](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L207)*
 
 **Parameters:**
 
@@ -453,7 +453,7 @@ ___
 
 ▸ **restoreAccount**(`json`: KeyringPair$Json, `password`: string): *KeyringPair*
 
-*Defined in [Keyring.ts:249](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L249)*
+*Defined in [Keyring.ts:249](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L249)*
 
 **Parameters:**
 
@@ -470,7 +470,7 @@ ___
 
 ▸ **saveAccount**(`pair`: KeyringPair, `password?`: undefined | string): *KeyringPair$Json*
 
-*Defined in [Keyring.ts:195](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L195)*
+*Defined in [Keyring.ts:195](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L195)*
 
 **Parameters:**
 
@@ -487,7 +487,7 @@ ___
 
 ▸ **saveAccountMeta**(`pair`: KeyringPair, `meta`: KeyringPair$Meta): *void*
 
-*Defined in [Keyring.ts:269](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L269)*
+*Defined in [Keyring.ts:269](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L269)*
 
 **Parameters:**
 
@@ -504,7 +504,7 @@ ___
 
 ▸ **saveAddress**(`address`: string, `meta`: KeyringPair$Meta, `type`: [KeyringAddressType](../modules/_types_.md#keyringaddresstype)): *KeyringPair$Json*
 
-*Defined in [Keyring.ts:280](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L280)*
+*Defined in [Keyring.ts:280](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L280)*
 
 **Parameters:**
 
@@ -522,7 +522,7 @@ ___
 
 ▸ **saveContract**(`address`: string, `meta`: KeyringPair$Meta): *KeyringPair$Json*
 
-*Defined in [Keyring.ts:302](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L302)*
+*Defined in [Keyring.ts:302](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L302)*
 
 **Parameters:**
 
@@ -539,7 +539,7 @@ ___
 
 ▸ **saveRecent**(`address`: string): *[SingleAddress](../interfaces/_observable_types_.singleaddress.md)*
 
-*Defined in [Keyring.ts:306](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L306)*
+*Defined in [Keyring.ts:306](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L306)*
 
 **Parameters:**
 
@@ -555,7 +555,7 @@ ___
 
 ▸ **setDevMode**(`isDevelopment`: boolean): *void*
 
-*Defined in [Keyring.ts:191](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L191)*
+*Defined in [Keyring.ts:191](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L191)*
 
 **Parameters:**
 
@@ -571,7 +571,7 @@ ___
 
 ▸ **setSS58Format**(`ss58Format`: number): *void*
 
-*Defined in [Keyring.ts:187](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/Keyring.ts#L187)*
+*Defined in [Keyring.ts:187](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/Keyring.ts#L187)*
 
 **Parameters:**
 

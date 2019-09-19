@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["types"](_types_.md)
 
 # External module: "types"
 

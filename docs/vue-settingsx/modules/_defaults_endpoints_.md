@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["defaults/endpoints"](_defaults_endpoints_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["defaults/endpoints"](_defaults_endpoints_.md)
 
 # External module: "defaults/endpoints"
 
@@ -32,7 +32,7 @@
   }, endpoints);
 }, [])
 
-*Defined in [defaults/endpoints.ts:88](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/endpoints.ts#L88)*
+*Defined in [defaults/endpoints.ts:88](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/endpoints.ts#L88)*
 
 ___
 
@@ -42,4 +42,4 @@ ___
   ? PROVIDERS.parity.nodes.kusama
   : PROVIDERS.parity.nodes.flamingFir
 
-*Defined in [defaults/endpoints.ts:84](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/endpoints.ts#L84)*
+*Defined in [defaults/endpoints.ts:84](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/endpoints.ts#L84)*

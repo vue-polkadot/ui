@@ -1,4 +1,4 @@
-[vue-polkadot UI libraries](../README.md) › [Globals](../globals.md) › ["defaults/type"](_defaults_type_.md)
+[vue-polkadot UI Libraries](../README.md) › [Globals](../globals.md) › ["defaults/type"](_defaults_type_.md)
 
 # External module: "defaults/type"
 
@@ -14,4 +14,4 @@
 
 • **isPolkadot**: *boolean* =  typeof window !== 'undefined' && window.location.host.includes('polkadot')
 
-*Defined in [defaults/type.ts:6](https://github.com/vue-polkadot/vue-ui/blob/52faa75/packages/vue-settings/src/defaults/type.ts#L6)*
+*Defined in [defaults/type.ts:6](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-settings/src/defaults/type.ts#L6)*

@@ -29,7 +29,7 @@
 
 • **contract**? : *[ContractMeta](_types_.contractmeta.md)*
 
-*Defined in [types.ts:35](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L35)*
+*Defined in [types.ts:35](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L35)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **isInjected**? : *undefined | false | true*
 
-*Defined in [types.ts:36](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L36)*
+*Defined in [types.ts:36](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L36)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **isRecent**? : *undefined | false | true*
 
-*Defined in [types.ts:37](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L37)*
+*Defined in [types.ts:37](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L37)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **isTesting**? : *undefined | false | true*
 
-*Defined in [types.ts:38](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L38)*
+*Defined in [types.ts:38](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L38)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **name**? : *undefined | string*
 
-*Defined in [types.ts:39](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L39)*
+*Defined in [types.ts:39](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L39)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **whenCreated**? : *undefined | number*
 
-*Defined in [types.ts:40](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L40)*
+*Defined in [types.ts:40](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L40)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **whenEdited**? : *undefined | number*
 
-*Defined in [types.ts:41](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L41)*
+*Defined in [types.ts:41](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L41)*
 
 ___
 
@@ -85,4 +85,4 @@ ___
 
 • **whenUsed**? : *undefined | number*
 
-*Defined in [types.ts:42](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L42)*
+*Defined in [types.ts:42](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L42)*

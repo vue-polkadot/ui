@@ -25,7 +25,7 @@
 
 • **all**: *function*
 
-*Defined in [types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L19)*
+*Defined in [types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L19)*
 
 #### Type declaration:
 
@@ -50,7 +50,7 @@ ___
 
 • **get**: *function*
 
-*Defined in [types.ts:20](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L20)*
+*Defined in [types.ts:20](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L20)*
 
 #### Type declaration:
 
@@ -76,7 +76,7 @@ ___
 
 • **remove**: *function*
 
-*Defined in [types.ts:21](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L21)*
+*Defined in [types.ts:21](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L21)*
 
 #### Type declaration:
 
@@ -95,7 +95,7 @@ ___
 
 • **set**: *function*
 
-*Defined in [types.ts:22](https://github.com/vue-polkadot/vue-ui/blob/fbc10cf/packages/vue-keyring/src/types.ts#L22)*
+*Defined in [types.ts:22](https://github.com/vue-polkadot/vue-ui/blob/f2fb111/packages/vue-keyring/src/types.ts#L22)*
 
 #### Type declaration:
 
