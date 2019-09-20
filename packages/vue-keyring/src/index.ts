@@ -7,5 +7,5 @@ assertSingletonPackage('@polkadot/ui-keyring');
 export default keyring;
 
 export {
-  Keyring
+  Keyring,
 };

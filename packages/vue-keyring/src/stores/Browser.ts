@@ -19,11 +19,15 @@ export default class BrowserStore implements KeyringStore {
 
   public remove(key: string, cb?: () => void): void {
     store.remove(key);
-    cb && cb();
+    if (cb) {
+      cb();
+    }
   }
 
   public set(key: string, value: KeyringJson, cb?: () => void): void {
     store.set(key, value);
-    cb && cb();
+    if (cb) {
+      cb();
+    }
   }
 }
