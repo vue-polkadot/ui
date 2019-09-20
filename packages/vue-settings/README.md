@@ -22,7 +22,7 @@
 
 | Name        | Description  | Params   | Types                   |
 | ----------- | ------------ | -------- | ----------------------- |
-| setSettings | Set settings | settings | PartialSettingsStruct |
+| setSettings | Set settings | settings | SettingsStruct |
 
 ## Getters
 
