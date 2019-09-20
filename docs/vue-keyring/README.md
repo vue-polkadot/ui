@@ -1,7 +1,12 @@
+[vue-polkadot UI Libraries](README.md) › [Globals](globals.md)
+
+# vue-polkadot UI Libraries
 
 # @vue-polkadot/vue-keyring
 
-A wrapper extending the base @polkadot/keyring interface for usage in the browser: Key management of user accounts including generation and retrieval of keyring pairs from a variety of input combinations.
+A wrapper extending the base `@polkadot/keyring` interface for usage in the browser: Key management of user accounts including generation and retrieval of keyring pairs from a variety of input combinations.
+
+Add it to your project by `yarn add @vue-polkadot/vue-keyring`
 
 ## Usage Examples
 
@@ -9,8 +14,45 @@ All module methods are exposed through a single default export.
 
 ### Regular
 ```js
-import keyring from @vue-polkadot/vue-keyring
+<script lang="ts">
+import keyring from '@vue-polkadot/vue-keyring'
+import FileSaver from 'file-saver';
 
+@Component({})
+export default class Accounts extends Vue {
+  // No accounts (or test accounts) should be loaded until after the chain determination.
+  // Chain determination occurs outside of Keyring.
+  // Loading `keyring.loadAll({ type: 'ed25519' | 'sr25519' })` is triggered
+  // from the API after the chain is received
+  public loadKeyring(): void {
+    keyring.loadAll({
+      ss58Format: 42, type: 'sr25519',
+      isDevelopment: true });
+  }
+
+  public forgetAccount(address: string): void {
+    keyring.forgetAccount(address);
+  }
+
+  // create json backup of your account
+  public makeBackup(address: string, password: string): void {
+    if (!address) {
+      return;
+    }
+
+    try {
+      const addressKeyring = address && keyring.getPair(address);
+      const json = addressKeyring && keyring.backupAccount(addressKeyring, password);
+      const blob = new Blob([JSON.stringify(json)], { type: 'application/json; charset=utf-8' });
+
+      FileSaver.saveAs(blob, `${address}.json`);
+    } catch (error) {
+      console.error(error);
+      return;
+    }
+  }
+}
+</script>
 ```
 
 ## FAQ
@@ -22,4 +64,3 @@ import keyring from @vue-polkadot/vue-keyring
   - An external account is one where the keys are not managed by keyring, e.g. in Parity Signer or Ledger Nano.
 - SS58 Encode / Decode?
   -  SS58 is a simple address format designed for Substrate based chains. You can read about its specification in more detail in the [Parity Wiki](https://wiki.parity.io/External-Address-Format-(SS58)).
-

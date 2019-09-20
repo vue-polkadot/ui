@@ -35,17 +35,17 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 
 export class Keyring implements KeyringStruct {
 
+  protected _genesisHash?: string;
+  protected _store!: KeyringStore;
+  private _keyring?: KeyringInstance;
+  private _prefix?: Prefix;
+  private _ss58Format?: Prefix;
+
   private _accounts: AddressSubject = accounts;
 
   private _addresses: AddressSubject = addresses;
 
   private _contracts: AddressSubject = contracts;
-
-  private _keyring?: KeyringInstance;
-  private _prefix?: Prefix;
-  protected _genesisHash?: string;
-  protected _store!: KeyringStore;
-  private _ss58Format?: Prefix;
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
     // FIXME Tryings are wrong... :()
@@ -65,7 +65,7 @@ export class Keyring implements KeyringStruct {
 
   public getPairs(): KeyringPair[] {
     return this.keyring.getPairs().filter((pair: KeyringPair): boolean =>
-      env.isDevelopment() || pair.meta.isTesting !== true
+      env.isDevelopment() || pair.meta.isTesting !== true,
     );
   }
 
@@ -109,7 +109,7 @@ export class Keyring implements KeyringStruct {
 
     return {
       json: this.saveAccount(pair, password),
-      pair
+      pair,
     };
   }
 
@@ -127,7 +127,7 @@ export class Keyring implements KeyringStruct {
 
     return {
       json: this.saveAccount(pair, password),
-      pair
+      pair,
     };
   }
 

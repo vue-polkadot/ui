@@ -20,6 +20,6 @@ export default function createItem(address: string, _name?: string): KeyringSect
   return {
     key: address,
     name,
-    value: address
+    value: address,
   };
 }
