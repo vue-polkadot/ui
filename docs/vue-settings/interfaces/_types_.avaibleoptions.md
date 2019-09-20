@@ -24,7 +24,7 @@
 
 • **cryptos**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L24)*
+*Defined in [types.ts:24](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L24)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **languages**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:25](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L25)*
+*Defined in [types.ts:25](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L25)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **locking**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:26](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L26)*
+*Defined in [types.ts:26](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L26)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **nodes**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:23](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L23)*
+*Defined in [types.ts:23](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L23)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **prefixes**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:27](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L27)*
+*Defined in [types.ts:27](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L27)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **uiModes**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L28)*
+*Defined in [types.ts:28](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L28)*
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 • **uiThemes**: *[Option](../modules/_types_.md#option)[]*
 
-*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L29)*
+*Defined in [types.ts:29](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L29)*

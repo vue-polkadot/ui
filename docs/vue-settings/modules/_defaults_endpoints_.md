@@ -32,7 +32,7 @@
   }, endpoints);
 }, [])
 
-*Defined in [defaults/endpoints.ts:88](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/defaults/endpoints.ts#L88)*
+*Defined in [defaults/endpoints.ts:88](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/defaults/endpoints.ts#L88)*
 
 ___
 
@@ -42,4 +42,4 @@ ___
   ? PROVIDERS.parity.nodes.kusama
   : PROVIDERS.parity.nodes.flamingFir
 
-*Defined in [defaults/endpoints.ts:84](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/defaults/endpoints.ts#L84)*
+*Defined in [defaults/endpoints.ts:84](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/defaults/endpoints.ts#L84)*

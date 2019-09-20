@@ -25,4 +25,4 @@
   }
 ]
 
-*Defined in [defaults/crypto.ts:7](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/defaults/crypto.ts#L7)*
+*Defined in [defaults/crypto.ts:7](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/defaults/crypto.ts#L7)*

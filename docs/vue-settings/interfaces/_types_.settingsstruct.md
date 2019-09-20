@@ -24,7 +24,7 @@
 
 • **apiUrl**: *string | undefined*
 
-*Defined in [types.ts:13](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L13)*
+*Defined in [types.ts:13](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L13)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **avaibleOptions**: *[AvaibleOptions](_types_.avaibleoptions.md)*
 
-*Defined in [types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L19)*
+*Defined in [types.ts:19](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L19)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **i18nLang**: *string*
 
-*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L14)*
+*Defined in [types.ts:14](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L14)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **locking**: *string*
 
-*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L15)*
+*Defined in [types.ts:15](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L15)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **prefix**: *number*
 
-*Defined in [types.ts:16](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L16)*
+*Defined in [types.ts:16](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L16)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **uiMode**: *string*
 
-*Defined in [types.ts:17](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L17)*
+*Defined in [types.ts:17](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L17)*
 
 ___
 
@@ -72,4 +72,4 @@ ___
 
 • **uiTheme**: *string*
 
-*Defined in [types.ts:18](https://github.com/vue-polkadot/vue-ui/blob/ed1485a/packages/vue-settings/src/types.ts#L18)*
+*Defined in [types.ts:18](https://github.com/vue-polkadot/vue-ui/blob/b6476aa/packages/vue-settings/src/types.ts#L18)*
