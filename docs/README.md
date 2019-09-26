@@ -24,6 +24,13 @@ This is a collection of Vue.js libraries, utlities and classes that allows for e
 In a rush and just want examples? [Jump right in](vue-identicon/README.md) and get a handle the libraries in your projects.
 :::
 
+## Tutorials
+
+We also create step-by-step tutorials for zero hassle:
+
+- [Getting Started](tutorials/getting-started/README.md) Your fist Vue-polkadot typescript app
+
+
 ## Available packages
 
 This repository split up into a number of internal packages, namely -
