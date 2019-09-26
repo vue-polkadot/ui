@@ -1,9 +1,42 @@
-$accentColor = #fd8824
+$accentColor = #4fc08d
 $textColor = #2c3e50
+$codeGrey = #282c34
 
 .home .hero .description,
 .home .feature h2,
 .home .feature p {
-  color: $textColor
+  color: $codeGrey
   opacity: 0.75
+}
+
+.navbar {
+  background-color: $codeGrey
+}
+
+.navbar .links {
+  background-color: $codeGrey
+  color: white
+}
+
+.navbar .site-name,
+.dropdown-item  {
+  color: white
+}
+
+
+.navbar .nav-item:hover,
+.navbar .nav-link:hover,
+.navbar .dropdown-wrapper.open:hover,
+.navbar .dropdown-title:hover {
+  color: $accentColor
+}
+
+li.dropdown-item .nav-link {
+ color: white
+}
+
+
+.dropdown-wrapper.open .nav-dropdown {
+  background-color: $codeGrey
+  border-color: $codeGrey
 }
