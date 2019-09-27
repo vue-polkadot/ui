@@ -1,7 +1,7 @@
 module.exports = {
   base: '/vue-ui/',
   title: 'vue-polkadot/vue-ui',
-  description: 'VueJS utilities, libraries and Vue components in use across @polkadot projects',
+  description: 'Vue components in use across Polkadot projects',
   markdown: {
     lineNumbers: true
   },
@@ -24,7 +24,7 @@ module.exports = {
     search: false,
     sidebar:
      [
-       '/',
+       ['/', 'What is vue-polkadot?'],
        ['/tutorials/getting-started/', 'Tutorials'],
        ['/vue-identicon/', '@vue-polkadot/vue-identicon'],
        ['/vue-keyring/', '@vue-polkadot/vue-keyring'],
