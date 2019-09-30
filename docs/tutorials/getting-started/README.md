@@ -44,7 +44,6 @@ We will create our first Vue Typescript component using `vue-identicon`
 in `src/components/` we will create `IdenticonImage.vue` you can copy the snippet bellow
 
 ```html
-
 <template>
   <div>
     IdenticonImage works!
@@ -61,7 +60,7 @@ export default class IdenticonImage extends Vue {
 ```
 
 In `App.vue` we will now import `IdenticonImage` under `HelloWorld` import.
-```
+```ts
 import IdenticonImage from './components/IdenticonImage.vue';
 ```
 
@@ -178,7 +177,7 @@ What we should see now:
 
 ![Preset](./assets/finall-app.png)
 
-### Generationg vue-identicon with vue-keyring
+### Generation `vue-identicon` with `vue-keyring`
 
 We used static address to try if our identicon works but, it would be more fun to generate identicon based on given address.
 
