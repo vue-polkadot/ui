@@ -39,9 +39,9 @@ open the source code in your favourite text editor (We love [Visual Studio Code]
 
 ### Creating first component
 
-No we will create our firs Vue typescript component using vue-identicon
+We will create our first Vue Typescript component using `vue-identicon`
 
-in `src/components/` we create `IdenticonImage.vue` you can copy the snippet bellow
+in `src/components/` we will create `IdenticonImage.vue` you can copy the snippet bellow
 
 ```html
 
@@ -58,18 +58,16 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class IdenticonImage extends Vue {
 }
 </script>
-
 ```
 
-
-In `App.vue` we now import `IdenticonImage` under `HelloWorld` import.
+In `App.vue` we will now import `IdenticonImage` under `HelloWorld` import.
 ```
 import IdenticonImage from './components/IdenticonImage.vue';
 ```
 
 also we can't forget to register our component, so simply add `IdenticonImage` inside `@Component` annotation like:
 
-```
+```ts
 @Component({
   components: {
     HelloWorld,
@@ -78,7 +76,7 @@ also we can't forget to register our component, so simply add `IdenticonImage` i
 })
 ```
 
-now we can show IdenticonImage inside our template, replace `<img>` tag with:
+now we can show **IdenticonImage** inside our template, replace `<img>` tag with:
 ```
 <IdenticonImage />
 ```
@@ -86,7 +84,6 @@ now we can show IdenticonImage inside our template, replace `<img>` tag with:
 How should `App.vue` look like.
 
 ```html
-
 <template>
   <div id="app">
     <IdenticonImage />
@@ -118,26 +115,25 @@ export default class App extends Vue {}
   margin-top: 60px;
 }
 </style>
-
 ```
 
 ### Adding vue-identicon to project
 
 Now open another terminal and type down
 
-```
+```bash
 yarn add @vue-polkadot/vue-identicon
 ```
 
 this command will install `vue-identicon` package which we can use in our `IdenticonImage.vue`.
 We will import vue-identicon like:
-```
+```ts
 import Identicon from '@vue-polkadot/vue-identicon';
 ```
 
 register the `Identicon` component in `@Component` annotation:
 
-```
+```ts
 @Component({
   components: {
     Identicon
@@ -154,7 +150,6 @@ There are 3 properties for `Identicon`:
  Our final `IdenticonImage.vue` component:
 
 ```html
-
 <template>
   <div>
     <Identicon
@@ -177,7 +172,6 @@ import Identicon from '@vue-polkadot/vue-identicon';
 export default class IdenticonImage extends Vue {
 }
 </script>
-
 ```
 What we should see now:
 
@@ -193,12 +187,11 @@ We will install `vue-keyring` which helps us with account generation.
 yarn add @vue-polkadot/vue-keyring
 ```
 
-We will need two new components in this part. First component `AccountsWrapper` is wrapper for `crypto-wasm library`. Second component `Accounts` creates new account with metadata and shows us `Identicon` based on address.
+We will need two new components in this part. First component `AccountsWrapper` is wrapper for `crypto-wasm` library. Second component `Accounts` creates new account with metadata and shows us `Identicon` based on address.
 
 So let's create new `AccountsWrapper.vue` component in `./src/components`
 
 ```html
-
 <template>
   <div>
     AccountsWrapper works!
@@ -218,25 +211,22 @@ export default class AccountsWrapper extends Vue {
 
 }
 </script>
-
 ```
 
-then we import couple of important libraries.
+then we'll import couple of important libraries.
 
 ```js
 import keyring from '@vue-polkadot/vue-keyring'
 import { keyExtractSuri, mnemonicGenerate, mnemonicValidate, randomAsU8a } from '@polkadot/util-crypto';
 import { waitReady } from '@polkadot/wasm-crypto';
-
 ```
 
-First of all we need to create a function that will be called automatically after component is mounted. Vue has function mounted for that. Inside this function `mountWasmCrypto` is called
+First of all we need to create a function that will be called automatically after component is mounted. Vue has function `mounted` for that. Inside this function `mountWasmCrypto` is called
 
 ```ts
 public mounted(): void {
     this.mountWasmCrypto();
   }
-
 ```
 
 Function `mountWasmCrypto` calls asynchronously `waitReady` which loads Web-assembly into our project.
@@ -246,12 +236,11 @@ Function `mountWasmCrypto` calls asynchronously `waitReady` which loads Web-asse
     await waitReady();
     this.loadKeyring();
   }
-
 ```
-After that we intialze `loadKeyring`.
-`loadAll` function of keyring initialze keyring, creates genesis hash
-and initialize localStorage for saving accounts.
-`getPairs` filters testing accounts which we don't need.
+After that we'll initialize `loadKeyring`.
+`loadAll` function of keyring will initialize keyring. It should be called from api on connect, because it needs also genesis hash and it will initialize localStorage for saving accounts.
+`isDevelopment` will preload our keyring with 10 testing accounts (Alice, Bob, Bob_stash,...).
+`getPairs` will return all accounts which are loaded in keyring.
 
 ```ts
   public loadKeyring(): void {
@@ -259,7 +248,6 @@ and initialize localStorage for saving accounts.
       ss58Format: 42, type: 'sr25519',
       isDevelopment: true });
     this.keyringLoaded = true;
-    this.keys = keyring;
     this.keyringAccounts = keyring.getPairs();
   }
 ```
@@ -267,7 +255,6 @@ and initialize localStorage for saving accounts.
 now we will create template in `Accounts.vue`
 
 ```html
-
 <template>
   <div>
     Accounts works!
@@ -297,15 +284,13 @@ export default class Accounts extends Vue {
     derivationPath: '',
     address: '',
   };
-
 }
 </script>
-
 ```
 
 Inside Accounts we will create 4 new functions.
 Also we need to call mounted as before.
-Function `coldStart` is pretty straightforward. It generates mnemonic seed (those 12 words) then address from these 12 words and after it validates that menmonic
+Function `coldStart` is pretty straightforward. It generates mnemonic seed (those 12 words) then address from these 12 words and after it validates that mnemonic
 
 ```ts
   public mounted(): void {
@@ -330,11 +315,10 @@ Function `coldStart` is pretty straightforward. It generates mnemonic seed (thos
     return this.newAccount.address = keyring.createFromUri(`${this.newAccount.mnemonicSeed.trim()}${this.newAccount.derivationPath}`,
       {}, this.keypairType.selected).address;
   }
-
 ```
 
-now let's connect everyting together
-Inside `IdenticonImage` we add `@Prop value`
+now let's connect everyting together,
+inside `IdenticonImage` we add `@Prop value`
 which value is passed from `Accounts` component
 
 ```html
@@ -361,21 +345,19 @@ export default class IdenticonImage extends Vue {
   @Prop() private value!: string;
 }
 </script>
-
 ```
 
-In `Accounts` component we import `IdenticonImage` and pass prop `:value="address"`
+In `Accounts` component we'll import `IdenticonImage` and pass prop `:value="address"`.
 `:` means value of `value` will be variable not direct value.
-We get `address` from getter which automatically updates value passed to `IdenticonImage`.
+We've got `address` from getter which will automatically updates value passed to `IdenticonImage`.
 
 ```ts
 get address() {
-    return this.newAccount && this.newAccount.address
-  }
+  return this.newAccount && this.newAccount.address
+}
 ```
 
 ```html
-
 <template>
   <div>
     <IdenticonImage :value="address" />
@@ -442,13 +424,11 @@ export default class Accounts extends Vue {
   }
 }
 </script>
-
 ```
 
 Snippet of `AccountsWrapper`
 
 ```html
-
 <template>
   <div>
    <Accounts  v-if="keyringLoaded" />
@@ -485,7 +465,6 @@ export default class AccountsWrapper extends Vue {
       ss58Format: 42, type: 'sr25519',
       isDevelopment: true });
     this.keyringLoaded = true;
-    this.keys = keyring;
     this.mapAccounts();
   }
 
@@ -498,12 +477,11 @@ export default class AccountsWrapper extends Vue {
   public mounted(): void {
     this.mountWasmCrypto();
   }
-
 }
 </script>
 ```
 
-Finally we replace `IdenticonImage` in `App.vue` with `AccountsWrapper`
+Finally we'll replace `IdenticonImage` in `App.vue` with `AccountsWrapper`
 
 ```html
 <template>
@@ -537,9 +515,7 @@ export default class App extends Vue {}
   margin-top: 60px;
 }
 </style>
-
 ```
-
 
 ### Summary
 
