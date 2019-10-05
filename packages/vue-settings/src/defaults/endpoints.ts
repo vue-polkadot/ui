@@ -83,7 +83,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
 
 export const ENDPOINT_DEFAULT = isPolkadot
   ? PROVIDERS.parity.nodes.kusama
-  : PROVIDERS.parity.nodes.flamingFir;
+  : PROVIDERS.parity.nodes.alexander;
 
 export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], chainName): Option[] => {
   const { chainDisplay, logo, type } = CHAIN_INFO[chainName];
