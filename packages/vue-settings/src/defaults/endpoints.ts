@@ -6,7 +6,7 @@ import { Option } from '../types';
 
 import { isPolkadot } from './type';
 
-type ChainName = 'alexander' | 'edgewareTest' | 'flamingFir' | 'kusama';
+type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama';
 
 interface ChainData {
   chainDisplay: string;
@@ -22,7 +22,7 @@ interface PoviderData {
 }
 
 // we use this to give an ordering to the chains available
-const ORDER_CHAINS: ChainName[] = ['kusama', 'alexander', 'edgewareTest', 'flamingFir'];
+const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir'];
 
 // we use this to order the providers inside the chains
 const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth'];
@@ -32,20 +32,25 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
   alexander: {
     chainDisplay: 'Alexander',
     logo: 'alexander',
-    type: 'Polkadot Test'
+    type: 'Polkadot Testnet'
+  },
+  edgeware: {
+    chainDisplay: 'Edgeware',
+    logo: 'edgeware',
+    type: 'Edgeware Mainnet'
   },
   edgewareTest: {
-    chainDisplay: 'Edgeware Test 2',
+    chainDisplay: 'Edgeware Testnet',
     logo: 'edgeware',
-    type: 'Edgeware Test'
+    type: 'Edgeware Testnet'
   },
   flamingFir: {
     chainDisplay: 'Flaming Fir',
     logo: 'substrate',
-    type: 'Substrate Test'
+    type: 'Substrate Testnet'
   },
   kusama: {
-    chainDisplay: 'Kusama CC1',
+    chainDisplay: 'Kusama CC2',
     logo: 'kusama',
     type: 'Polkadot Canary'
   }
@@ -56,6 +61,7 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   commonwealth: {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
+      edgeware: 'wss://mainnet1.edgewa.re',
       edgewareTest: 'wss://testnet2.edgewa.re'
     }
   },
@@ -76,14 +82,14 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   w3f: {
     providerDisplay: 'Web3 Foundation',
     nodes: {
-      kusama: 'wss://canary-5.kusama.network/'
+      kusama: 'wss://serinus-5.kusama.network/'
     }
   }
 };
 
 export const ENDPOINT_DEFAULT = isPolkadot
   ? PROVIDERS.parity.nodes.kusama
-  : PROVIDERS.parity.nodes.alexander;
+  : PROVIDERS.parity.nodes.flamingFir;
 
 export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], chainName): Option[] => {
   const { chainDisplay, logo, type } = CHAIN_INFO[chainName];
@@ -95,7 +101,7 @@ export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], cha
     if (wssUrl) {
       endpoints.push({
         info: logo,
-        text: `${chainDisplay} (${type}, hosted by ${providerDisplay}}`,
+        text: `${chainDisplay} (${type}, hosted by ${providerDisplay})`,
         value: wssUrl
       });
     }
@@ -107,6 +113,6 @@ export const ENDPOINTS: Option[] = ORDER_CHAINS.reduce((endpoints: Option[], cha
 // add a local node right at the end
 ENDPOINTS.push({
   info: 'local',
-  text: 'Local Node (Any, 127.0.0.1:9944)',
+  text: 'Local Node (Own, 127.0.0.1:9944)',
   value: 'ws://127.0.0.1:9944/'
 });

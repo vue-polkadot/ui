@@ -16,6 +16,7 @@ export interface SettingsStruct {
   prefix: number;
   uiMode: string;
   uiTheme: string;
+  icon: string;
   avaibleOptions: AvaibleOptions;
 }
 
@@ -27,4 +28,5 @@ export interface AvaibleOptions {
   prefixes: Option[];
   uiModes: Option[];
   uiThemes: Option[];
+  icons: Option[];
 }

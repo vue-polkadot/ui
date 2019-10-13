@@ -1,5 +1,5 @@
 import { SettingsStruct, Option, AvaibleOptions } from './types'
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './defaults/index'
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, ICONS, ICON_DEFAULT } from './defaults/index'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -8,7 +8,8 @@ const avaibleOptions: AvaibleOptions = {
   locking: LOCKING,
   prefixes: PREFIXES,
   uiModes: UIMODES,
-  uiThemes: UITHEMES
+  uiThemes: UITHEMES,
+  icons: ICONS
 }
 
 const defaultState: SettingsStruct = {
@@ -18,6 +19,7 @@ const defaultState: SettingsStruct = {
     prefix: PREFIX_DEFAULT,
     uiMode: UIMODE_DEFAULT,
     uiTheme: UITHEME_DEFAULT,
+    icon: ICON_DEFAULT,
     avaibleOptions: avaibleOptions,
 }
 
@@ -37,9 +39,12 @@ const SettingModule = {
       // state.uiMode = settings.uiMode || state.uiMode;
       // state.uiTheme = settings.uiTheme || state.uiTheme;
     },
-    addAvaibleOption(state: SettingsStruct, settings: Partial<SettingsStruct>) {
-
+    createNode(state: SettingsStruct, nodeOption: Option) {
+      state.avaibleOptions.nodes = [...state.avaibleOptions.nodes, nodeOption]
     }
+    // addAvaibleOption(state: SettingsStruct, settings: Partial<SettingsStruct>) {
+
+    // }
   },
   actions: {
     setSettings({commit}: any, settings: Partial<SettingsStruct>) {
@@ -63,11 +68,13 @@ const SettingModule = {
     setUiMode({commit}: any, uiMode: string) {
       commit('setSettings', { uiMode });
     },
+    setIcon({commit}: any, icon: string) {
+      commit('setSettings', { icon });
+    },
     addNode({commit}: any, nodeOption: Option) {
       if (nodeOption.value && nodeOption.text) {
-        // ... to be added
+        commit('createNode', nodeOption);
       }
-
     }
   },
  getters: {
