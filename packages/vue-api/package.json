@@ -1,0 +1,30 @@
+{
+  "name": "@vue-polkadot/vue-api",
+  "version": "0.0.1",
+  "description": "Singleton wrapper for polkadot api",
+  "author": "Viki Val <viktorko99@gmail.com>",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --allowSyntheticDefaultImports",
+    "build:watch": "tsc --watch",
+    "lint": "tslint --project \"./tsconfig.json\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.ts"
+  ],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@polkadot/api": "^0.93.1"
+  }
+}
