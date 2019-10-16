@@ -1,4 +1,5 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
+import * as EventEmitter from 'events';
 
 export default class Api {
   get api(): any {
@@ -10,6 +11,7 @@ export default class Api {
     const defaultUrl = 'wss://poc3-rpc.polkadot.io/';
     const provider = new WsProvider(defaultUrl);
     this.instance.setApi(await ApiPromise.create({provider}));
+    Api.eventEmitter.emit('created');
   }
 
   public static getInstance() {
@@ -22,6 +24,7 @@ export default class Api {
   private static instance: Api;
   // private _provider: any;
   private _api: any;
+  public static eventEmitter: EventEmitter = new EventEmitter();
 
   private constructor() {
   }
