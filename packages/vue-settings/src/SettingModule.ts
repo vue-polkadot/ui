@@ -99,6 +99,9 @@ const SettingModule = {
   availableUiThemes(state: SettingsStruct): Option[] {
     return state.avaibleOptions.uiThemes
   },
+  availableIcons(state: SettingsStruct): Option[] {
+    return state.avaibleOptions.icons
+  },
    getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
      return rest
    }
