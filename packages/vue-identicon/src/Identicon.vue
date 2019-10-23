@@ -33,7 +33,7 @@ export default class Identicon extends Vue {
 
   // https://jsfiddle.net/chrisvfritz/o3nycadu/
   get currentComponent(): string {
-    return this.value ? this.theme : 'empty';
+    return this.value && this.value.length === 48 ? this.theme : 'empty';
   }
 }
 </script>

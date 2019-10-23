@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-identicon",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Identicon for Vue.js",
   "author": "Viki Val <viktorko99@gmail.com>",
   "scripts": {
