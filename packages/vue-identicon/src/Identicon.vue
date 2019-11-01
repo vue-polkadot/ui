@@ -15,6 +15,7 @@ const iconComponents: Record<string, Vue.Component> = {
   jdenticon: Jdenticon,
   substrate: Jdenticon,
   polkadot: Polkadot,
+  default: Jdenticon,
 };
 
 @Component({
