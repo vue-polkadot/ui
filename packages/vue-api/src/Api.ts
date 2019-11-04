@@ -30,16 +30,12 @@ export default class Api {
   }
 
   public async changeApiUrl(apiUrl: string): Promise<void> {
-    this._api && this.disconnect();
+    this._api && this._api.then(api => api.disconnect())
     this.setApi(this.createApi(apiUrl));
   }
 
   private setApi(api: any) {
     this._api = api;
-  }
-
-  private disconnect() {
-    this._api.disconnect();
   }
 
   private async createApi(

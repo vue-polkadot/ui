@@ -32,15 +32,12 @@ export default class Api {
     }
     changeApiUrl(apiUrl) {
         return __awaiter(this, void 0, void 0, function* () {
-            this._api && this.disconnect();
+            this._api && this._api.then(api => api.disconnect());
             this.setApi(this.createApi(apiUrl));
         });
     }
     setApi(api) {
         this._api = api;
-    }
-    disconnect() {
-        this._api.disconnect();
     }
     createApi(apiUrl = 'wss://poc3-rpc.polkadot.io/') {
         return __awaiter(this, void 0, void 0, function* () {
