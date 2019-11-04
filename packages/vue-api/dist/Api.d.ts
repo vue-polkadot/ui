@@ -10,6 +10,5 @@ export default class Api {
     private constructor();
     changeApiUrl(apiUrl: string): Promise<void>;
     private setApi;
-    private disconnect;
     private createApi;
 }
