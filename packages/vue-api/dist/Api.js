@@ -31,8 +31,9 @@ export default class Api {
     }
     changeApiUrl(apiUrl) {
         return __awaiter(this, void 0, void 0, function* () {
-            this._api && this._api.then(api => api.disconnect());
-            this.setApi(this.createApi(apiUrl));
+            this._api && this._api.disconnect();
+            // Api.instance.setApi(await this.createApi(apiUrl));
+            this.setApi(yield this.createApi(apiUrl));
         });
     }
     setApi(api) {
