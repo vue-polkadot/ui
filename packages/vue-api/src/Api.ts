@@ -6,9 +6,8 @@ export default class Api {
     return this._api;
   }
 
-  public static async createInstance() {
+  public static async createInstance(defaultUrl = 'wss://poc3-rpc.polkadot.io/') {
     Api.getInstance();
-    const defaultUrl = 'wss://poc3-rpc.polkadot.io/';
     const provider = new WsProvider(defaultUrl);
     this.instance.setApi(await ApiPromise.create({provider}));
     Api.eventEmitter.emit('created');
