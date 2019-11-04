@@ -6,9 +6,8 @@ export default class Api {
     return this._api;
   }
 
-  public static async createInstance() {
+  public static async createInstance(defaultUrl = 'wss://poc3-rpc.polkadot.io/') {
     Api.getInstance();
-    const defaultUrl = 'wss://poc3-rpc.polkadot.io/';
     const provider = new WsProvider(defaultUrl);
     this.instance.setApi(await ApiPromise.create({provider}));
     Api.eventEmitter.emit('created');
@@ -30,16 +29,13 @@ export default class Api {
   }
 
   public async changeApiUrl(apiUrl: string): Promise<void> {
-    this._api && this.disconnect();
-    this.setApi(this.createApi(apiUrl));
+    this._api && this._api.disconnect();
+    // Api.instance.setApi(await this.createApi(apiUrl));
+    this.setApi(await this.createApi(apiUrl));
   }
 
   private setApi(api: any) {
     this._api = api;
-  }
-
-  private disconnect() {
-    this._api.disconnect();
   }
 
   private async createApi(

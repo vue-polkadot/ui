@@ -2,7 +2,7 @@
 import * as EventEmitter from 'events';
 export default class Api {
     readonly api: any;
-    static createInstance(): Promise<void>;
+    static createInstance(defaultUrl?: string): Promise<void>;
     static getInstance(): Api;
     private static instance;
     private _api;
@@ -10,6 +10,5 @@ export default class Api {
     private constructor();
     changeApiUrl(apiUrl: string): Promise<void>;
     private setApi;
-    private disconnect;
     private createApi;
 }
