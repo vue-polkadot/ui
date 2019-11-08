@@ -21,7 +21,6 @@ export default class Api {
             Api.getInstance();
             const provider = new WsProvider(defaultUrl);
             const types = getApiSpecificTypes(defaultUrl);
-            console.log('types', types);
             this.instance.setApi(yield ApiPromise.create({ provider, types }));
             Api.eventEmitter.emit('created');
         });
@@ -46,7 +45,6 @@ export default class Api {
         return __awaiter(this, void 0, void 0, function* () {
             const provider = new WsProvider(apiUrl);
             const types = getApiSpecificTypes(apiUrl);
-            console.log('types', types);
             return yield ApiPromise.create({ provider, types });
         });
     }
