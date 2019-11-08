@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import * as EventEmitter from 'events';
+import { getApiSpecificTypes } from './utils';
 export default class Api {
     constructor() {
     }
@@ -19,7 +20,9 @@ export default class Api {
         return __awaiter(this, void 0, void 0, function* () {
             Api.getInstance();
             const provider = new WsProvider(defaultUrl);
-            this.instance.setApi(yield ApiPromise.create({ provider }));
+            const types = getApiSpecificTypes(defaultUrl);
+            console.log('types', types);
+            this.instance.setApi(yield ApiPromise.create({ provider, types }));
             Api.eventEmitter.emit('created');
         });
     }
@@ -42,7 +45,9 @@ export default class Api {
     createApi(apiUrl = 'wss://poc3-rpc.polkadot.io/') {
         return __awaiter(this, void 0, void 0, function* () {
             const provider = new WsProvider(apiUrl);
-            return yield ApiPromise.create({ provider });
+            const types = getApiSpecificTypes(apiUrl);
+            console.log('types', types);
+            return yield ApiPromise.create({ provider, types });
         });
     }
 }

@@ -1,5 +1,6 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import * as EventEmitter from 'events';
+import { getApiSpecificTypes } from './utils'
 
 export default class Api {
   get api(): any {
@@ -9,7 +10,8 @@ export default class Api {
   public static async createInstance(defaultUrl = 'wss://poc3-rpc.polkadot.io/') {
     Api.getInstance();
     const provider = new WsProvider(defaultUrl);
-    this.instance.setApi(await ApiPromise.create({provider}));
+    const types = getApiSpecificTypes(defaultUrl);
+    this.instance.setApi(await ApiPromise.create({provider, types}));
     Api.eventEmitter.emit('created');
   }
 
@@ -42,6 +44,7 @@ export default class Api {
     apiUrl: string = 'wss://poc3-rpc.polkadot.io/'
   ): Promise<any> {
     const provider = new WsProvider(apiUrl);
-    return await ApiPromise.create({provider});
+    const types = getApiSpecificTypes(apiUrl);
+    return await ApiPromise.create({provider, types});
   }
 }
