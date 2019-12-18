@@ -50,7 +50,7 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Substrate Testnet'
   },
   kusama: {
-    chainDisplay: 'Kusama CC2',
+    chainDisplay: 'Kusama CC3',
     logo: 'kusama',
     type: 'Polkadot Canary'
   }
@@ -61,14 +61,14 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   commonwealth: {
     providerDisplay: 'Commonwealth Labs',
     nodes: {
-      edgeware: 'wss://mainnet1.edgewa.re',
-      edgewareTest: 'wss://testnet2.edgewa.re'
+      // edgeware: 'wss://mainnet1.edgewa.re',
+      edgewareTest: 'wss://testnet4.edgewa.re'
     }
   },
   parity: {
     providerDisplay: 'Parity',
     nodes: {
-      alexander: 'wss://poc3-rpc.polkadot.io/',
+      // alexander: 'wss://poc3-rpc.polkadot.io/',
       flamingFir: 'wss://substrate-rpc.parity.io/',
       kusama: 'wss://kusama-rpc.polkadot.io/'
     }
@@ -76,13 +76,13 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
   unfrastructure: {
     providerDisplay: 'Centrality UNfrastructure',
     nodes: {
-      alexander: 'wss://alex.unfrastructure.io/public/ws'
+      // alexander: 'wss://alex.unfrastructure.io/public/ws'
     }
   },
   w3f: {
     providerDisplay: 'Web3 Foundation',
     nodes: {
-      kusama: 'wss://serinus-5.kusama.network/'
+      kusama: 'wss://cc3-5.kusama.network/'
     }
   }
 };

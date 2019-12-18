@@ -10,15 +10,22 @@ import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 
-const LANGUAGE_DEFAULT = 'default';
+const CAMERA_DEFAULT = 'off';
 
-const LANGUAGES: Option[] = [
+const CAMERA: Option[] = [
   {
-    info: 'detect',
-    text: 'Default browser language (auto-detect)',
-    value: LANGUAGE_DEFAULT
+    info: 'on',
+    text: 'Allow camera access',
+    value: 'on'
+  },
+  {
+    info: 'off',
+    text: 'Do not allow camera access',
+    value: 'off'
   }
 ];
+
+const LANGUAGE_DEFAULT = 'default';
 
 const LOCKING_DEFAULT = 'session';
 
@@ -36,6 +43,8 @@ const LOCKING: Option[] = [
 ];
 
 export {
+  CAMERA_DEFAULT,
+  CAMERA,
   CRYPTOS,
   ENDPOINT_DEFAULT,
   ENDPOINTS,
@@ -43,7 +52,6 @@ export {
   ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
-  LANGUAGES,
   LEDGER_CONN_DEFAULT,
   LEDGER_CONN,
   LOCKING_DEFAULT,
