@@ -1,4 +1,4 @@
-// Copyright 2017-2019 @polkadot/ui-settings authors & contributors
+// Copyright 2017-2020 @polkadot/ui-settings authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
@@ -6,7 +6,7 @@ import { Option } from '../types';
 
 import { isPolkadot } from './type';
 
-type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama';
+type ChainName = 'alexander' | 'edgeware' | 'edgewareTest' | 'flamingFir' | 'kusama' | 'kulupu' | 'westend';
 
 interface ChainData {
   chainDisplay: string;
@@ -14,7 +14,7 @@ interface ChainData {
   type: string;
 }
 
-type ProviderName = 'commonwealth' | 'parity' | 'unfrastructure' | 'w3f';
+type ProviderName = 'commonwealth' | 'parity' | 'unfrastructure' | 'w3f' | 'kulupu';
 
 interface PoviderData {
   providerDisplay: string;
@@ -22,10 +22,10 @@ interface PoviderData {
 }
 
 // we use this to give an ordering to the chains available
-const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'alexander', 'edgewareTest', 'flamingFir'];
+const ORDER_CHAINS: ChainName[] = ['kusama', 'edgeware', 'westend', 'edgewareTest', 'flamingFir', 'kulupu'];
 
 // we use this to order the providers inside the chains
-const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth'];
+const ORDER_PROVIDERS: ProviderName[] = ['parity', 'w3f', 'unfrastructure', 'commonwealth', 'kulupu'];
 
 // some suplementary info on a per-chain basis
 const CHAIN_INFO: Record<ChainName, ChainData> = {
@@ -50,9 +50,19 @@ const CHAIN_INFO: Record<ChainName, ChainData> = {
     type: 'Substrate Testnet'
   },
   kusama: {
-    chainDisplay: 'Kusama CC3',
+    chainDisplay: 'Kusama',
     logo: 'kusama',
     type: 'Polkadot Canary'
+  },
+  kulupu: {
+    chainDisplay: 'Kulupu',
+    logo: 'substrate',
+    type: 'Kulupu Mainnet'
+  },
+  westend: {
+    chainDisplay: 'Westend',
+    logo: 'alexander',
+    type: 'Polkadot Testnet'
   }
 };
 
@@ -70,7 +80,8 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
     nodes: {
       // alexander: 'wss://poc3-rpc.polkadot.io/',
       flamingFir: 'wss://substrate-rpc.parity.io/',
-      kusama: 'wss://kusama-rpc.polkadot.io/'
+      kusama: 'wss://kusama-rpc.polkadot.io/',
+      westend: 'wss://westend-rpc.polkadot.io'
     }
   },
   unfrastructure: {
@@ -83,6 +94,12 @@ const PROVIDERS: Record<ProviderName, PoviderData> = {
     providerDisplay: 'Web3 Foundation',
     nodes: {
       kusama: 'wss://cc3-5.kusama.network/'
+    }
+  },
+  kulupu: {
+    providerDisplay: 'Kulupu',
+    nodes: {
+      kulupu: 'wss://rpc.kulupu.network/ws'
     }
   }
 };
