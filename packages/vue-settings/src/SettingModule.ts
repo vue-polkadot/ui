@@ -1,28 +1,31 @@
 import { SettingsStruct, Option, AvaibleOptions } from './types'
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LANGUAGES, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, ICONS, ICON_DEFAULT } from './defaults/index'
+import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, ICONS, ICON_DEFAULT, CAMERA_DEFAULT, LEDGER_CONN_DEFAULT, CAMERA, LEDGER_CONN } from './defaults/index'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
   cryptos: CRYPTOS,
-  languages: LANGUAGES,
+  languages: [],
   locking: LOCKING,
   prefixes: PREFIXES,
   uiModes: UIMODES,
   uiThemes: UITHEMES,
-  icons: ICONS
+  icons: ICONS,
+  cameras: CAMERA,
+  ledgers: LEDGER_CONN,
 }
 
 const defaultState: SettingsStruct = {
-    apiUrl: ENDPOINT_DEFAULT,
-    i18nLang: LANGUAGE_DEFAULT,
-    locking: LOCKING_DEFAULT,
-    prefix: PREFIX_DEFAULT,
-    uiMode: UIMODE_DEFAULT,
-    uiTheme: UITHEME_DEFAULT,
-    icon: ICON_DEFAULT,
-    avaibleOptions: avaibleOptions,
-}
-
+  apiUrl: ENDPOINT_DEFAULT,
+  camera: CAMERA_DEFAULT,
+  ledgerConn: LEDGER_CONN_DEFAULT,
+  i18nLang: LANGUAGE_DEFAULT,
+  icon: ICON_DEFAULT,
+  locking: LOCKING_DEFAULT,
+  prefix: PREFIX_DEFAULT,
+  uiMode: UIMODE_DEFAULT,
+  uiTheme: UITHEME_DEFAULT,
+  avaibleOptions: avaibleOptions
+};
 
 
 const SettingModule = {
@@ -32,12 +35,6 @@ const SettingModule = {
       Object.keys(settings).map((key: string) => {
         (state as any)[key] = (settings as any)[key]
       })
-      // state.apiUrl = settings.apiUrl || state.apiUrl;
-      // state.i18nLang = settings.i18nLang || state.i18nLang;
-      // state.locking = settings.locking || state.locking;
-      // state.prefix =  settings.prefix || state.prefix;
-      // state.uiMode = settings.uiMode || state.uiMode;
-      // state.uiTheme = settings.uiTheme || state.uiTheme;
     },
     createNode(state: SettingsStruct, nodeOption: Option) {
       state.avaibleOptions.nodes = [...state.avaibleOptions.nodes, nodeOption]

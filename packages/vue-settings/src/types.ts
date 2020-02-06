@@ -11,12 +11,14 @@ export type Option = {
 
 export interface SettingsStruct {
   apiUrl: string | undefined;
+  camera: string;
   i18nLang: string;
+  icon: string;
+  ledgerConn: string;
   locking: string;
   prefix: number;
   uiMode: string;
   uiTheme: string;
-  icon: string;
   avaibleOptions: AvaibleOptions;
 }
 
@@ -29,4 +31,6 @@ export interface AvaibleOptions {
   uiModes: Option[];
   uiThemes: Option[];
   icons: Option[];
+  ledgers: Option[];
+  cameras: Option[];
 }
