@@ -16,7 +16,7 @@ export default class Api {
     get api() {
         return this._api;
     }
-    static createInstance(defaultUrl = 'wss://poc3-rpc.polkadot.io/') {
+    static createInstance(defaultUrl = 'wss://substrate-rpc.parity.io/') {
         return __awaiter(this, void 0, void 0, function* () {
             Api.getInstance();
             const provider = new WsProvider(defaultUrl);

@@ -7,7 +7,7 @@ export default class Api {
     return this._api;
   }
 
-  public static async createInstance(defaultUrl = 'wss://poc3-rpc.polkadot.io/') {
+  public static async createInstance(defaultUrl = 'wss://substrate-rpc.parity.io/') {
     Api.getInstance();
     const provider = new WsProvider(defaultUrl);
     const types = getApiSpecificTypes(defaultUrl);
