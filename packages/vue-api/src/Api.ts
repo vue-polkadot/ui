@@ -1,5 +1,5 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import * as EventEmitter from 'events';
+import {EventEmitter} from 'events';
 import { getApiSpecificTypes } from './utils'
 
 export default class Api {

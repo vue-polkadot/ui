@@ -5,6 +5,7 @@
       "declaration": true,
       "outDir": "./dist",
       "strict": false,
-      "moduleResolution": "node"
+      "moduleResolution": "node",
+      "skipLibCheck": true
     }
 }

@@ -1,7 +1,7 @@
 /// <reference types="node" />
-import * as EventEmitter from 'events';
+import { EventEmitter } from 'events';
 export default class Api {
-    readonly api: any;
+    get api(): any;
     static createInstance(defaultUrl?: string): Promise<void>;
     static getInstance(): Api;
     private static instance;
