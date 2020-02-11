@@ -1,11 +1,11 @@
 {
   "name": "@vue-polkadot/vue-api",
-  "version": "0.0.12-beta.6",
+  "version": "0.0.12-beta.7",
   "description": "Singleton wrapper for polkadot api",
   "author": "Viki Val <viktorko99@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc --allowSyntheticDefaultImports",
+    "build": "tsc",
     "build:watch": "tsc --watch",
     "lint": "tslint --project \"./tsconfig.json\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     "dist/*",
     "src/*",
     "public/*",
-    "*.json",
+    "package.json",
     "*.js",
     "*.ts"
   ],
@@ -25,7 +25,7 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "@polkadot/api": "^1.2.0-beta.4",
+    "@polkadot/api": "^1.1.1",
     "edgeware-node-types": "^1.1.0"
   }
 }
