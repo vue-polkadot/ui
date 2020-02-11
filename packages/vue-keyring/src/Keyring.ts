@@ -1,4 +1,4 @@
-// Copyright 2017-2019 @polkadot/ui-keyring authors & contributors
+// Copyright 2017-2020 @polkadot/ui-keyring authors & contributors
 // This software may be modified and distributed under the terms
 // of the Apache-2.0 license. See the LICENSE file for details.
 
@@ -21,7 +21,7 @@ import { CreateResult, KeyringAddress, KeyringAddressType,
   KeyringOptions, KeyringStruct, KeyringStore } from './types';
 
 import createPair from '@polkadot/keyring/pair';
-import chains from '@vue-polkadot/vue-settings/defaults/chains';
+import { chains } from '@vue-polkadot/vue-settings';
 import { isBoolean, hexToU8a, isHex, isString } from '@polkadot/util';
 
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
