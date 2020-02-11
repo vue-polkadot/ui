@@ -1,5 +1,5 @@
 # vue-ui-polkadot
-UI utilities, libraries and Vue.js components in use across @polkadot projects. 
+UI utilities, libraries and Vue.js components in use across @polkadot projects.
 
 ## [📄 Documentation - vue-polkadot.js.org/vue-ui](https://vue-polkadot.js.org/vue-ui/)
 

@@ -64,3 +64,10 @@ export default class Accounts extends Vue {
   - An external account is one where the keys are not managed by keyring, e.g. in Parity Signer or Ledger Nano.
 - SS58 Encode / Decode?
   -  SS58 is a simple address format designed for Substrate based chains. You can read about its specification in more detail in the [Parity Wiki](https://wiki.parity.io/External-Address-Format-(SS58)).
+
+
+## Build package
+
+`bump version in package.json`
+`yarn build-bundle`
+`npm publish --access public`
