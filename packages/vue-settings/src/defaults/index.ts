@@ -9,6 +9,7 @@ import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
 import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
 import { PREFIXES, PREFIX_DEFAULT } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
+import chains from './chains'
 
 const CAMERA_DEFAULT = 'off';
 
@@ -61,5 +62,6 @@ export {
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,
-  UITHEMES
+  UITHEMES,
+  chains
 };
