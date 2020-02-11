@@ -21,6 +21,7 @@ import { CreateResult, KeyringAddress, KeyringAddressType,
   KeyringOptions, KeyringStruct, KeyringStore } from './types';
 
 import createPair from '@polkadot/keyring/pair';
+import chains from '@vue-polkadot/vue-settings/defaults/chains';
 import { isBoolean, hexToU8a, isHex, isString } from '@polkadot/util';
 
 import { accountKey, addressKey, accountRegex, addressRegex, contractKey, contractRegex } from './defaults';
@@ -48,15 +49,11 @@ export class Keyring implements KeyringStruct {
   private _contracts: AddressSubject = contracts;
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
-    // FIXME Tryings are wrong... :()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (this.keyring.decodeAddress as any)(key, ignoreChecksum, ss58Format);
+    return this.keyring.decodeAddress(key, ignoreChecksum, ss58Format);
   }
 
   public encodeAddress = (key: string | Uint8Array, ss58Format?: Prefix): string => {
-    // FIXME Tryings are wrong... :()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (this.keyring.encodeAddress as any)(key, ss58Format);
+    return this.keyring.encodeAddress(key, ss58Format);
   }
 
   public getPair(address: string | Uint8Array): KeyringPair {
@@ -184,9 +181,10 @@ export class Keyring implements KeyringStruct {
       .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
-  public setSS58Format(ss58Format: number): void {
-    this._ss58Format = ss58Format as Prefix;
+  public setSS58Format(ss58Format: Prefix): void {
+    this._ss58Format = ss58Format;
   }
+
 
   public setDevMode(isDevelopment: boolean): void {
     env.set(isDevelopment);
@@ -310,6 +308,7 @@ export class Keyring implements KeyringStruct {
       this.addresses.add(this._store, address, {
         address,
         meta: {
+          genesisHash: this.genesisHash,
           isRecent: true,
           whenCreated: Date.now()
         }
@@ -354,10 +353,14 @@ export class Keyring implements KeyringStruct {
 
   private allowGenesis(json?: KeyringJson | { meta: KeyringJson$Meta } | null): boolean {
     if (json && json.meta && this.genesisHash) {
+      const hashes: (string | null | undefined)[] = Object.values(chains).find((hashes): boolean =>
+        hashes.includes(this.genesisHash || '')
+      ) || [this.genesisHash];
+
       if (json.meta.genesisHash) {
-        return this.genesisHash === json.meta.genesisHash;
+        return hashes.includes(json.meta.genesisHash);
       } else if (json.meta.contract) {
-        return this.genesisHash === json.meta.contract.genesisHash;
+        return hashes.includes(json.meta.contract.genesisHash);
       }
     }
 

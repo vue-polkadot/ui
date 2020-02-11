@@ -12,7 +12,7 @@ import { AddressSubject, SingleAddress } from './observable/types';
 
 export interface ContractMeta {
   abi: string;
-  genesisHash?: string;
+  genesisHash?: string | null;
 }
 
 export interface KeyringStore {
@@ -33,6 +33,7 @@ export interface KeyringOptions extends KeyringOptionsBase {
 // eslint-disable-next-line @typescript-eslint/class-name-casing
 export interface KeyringJson$Meta {
   contract?: ContractMeta;
+  genesisHash?: string | null;
   isInjected?: boolean;
   isRecent?: boolean;
   isTesting?: boolean;
