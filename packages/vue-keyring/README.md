@@ -64,6 +64,8 @@ export default class Accounts extends Vue {
 
 ## Build instruction
 
-`bump package.name version`
+`bump package.version`
+
 `yarn build:rollup`
+
 `npm publish --access public`
