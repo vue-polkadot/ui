@@ -6,11 +6,6 @@
   <div id="keypair">
     <wrapper>
       <div className="icon">
-        <Identicon
-          :value="address"
-          theme="polkadot"
-          size="32"
-        />
       </div>
       <!-- <div :className="`name ${isUppercase ? 'uppercase' : 'normalcase'}`"> -->
       <div className="name">
@@ -27,7 +22,6 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 // @ts-ignore
 import styled from 'vue-styled-components';
-import Identicon from '@vue-polkadot/vue-identicon';
 
 const wrapper = styled.div`
     display: flex;
@@ -68,7 +62,6 @@ const wrapper = styled.div`
 
 @Component({
   components: {
-    Identicon,
     wrapper,
   }
 })
