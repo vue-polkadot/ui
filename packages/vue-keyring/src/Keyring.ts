@@ -182,7 +182,9 @@ export class Keyring implements KeyringStruct {
   }
 
   public setSS58Format(ss58Format: Prefix): void {
-    this._ss58Format = ss58Format;
+    if (this._keyring && ss58Format) {
+      this._keyring.setSS58Format(ss58Format);
+    }
   }
 
 
@@ -247,7 +249,7 @@ export class Keyring implements KeyringStruct {
   public restoreAccount(json: KeyringPair$Json, password: string): KeyringPair {
     const type = Array.isArray(json.encoding.content) ? json.encoding.content[1] : 'ed25519';
     const pair = createPair(
-      type,
+      { toSS58: this.encodeAddress, type },
       {
         // FIXME Just for the transition period (ignoreChecksum)
         publicKey: this.decodeAddress(json.address, true)
@@ -436,7 +438,7 @@ export class Keyring implements KeyringStruct {
   }
 
   protected initKeyring(options: KeyringOptions): void {
-    const keyring = testKeyring({ ss58Format: this._ss58Format, ...options }, true);
+    const keyring = testKeyring(options, true);
 
     if (isBoolean(options.isDevelopment)) {
       this.setDevMode(options.isDevelopment);
