@@ -39,6 +39,7 @@
     "rxjs": "^6.5.2",
     "store": "^2.0.12",
     "tslib": "1.11.1",
+    "tslint": "^6.1.0",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
@@ -48,8 +49,8 @@
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-typescript": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
-    "rollup": "^1.21.4",
-    "rollup-plugin-typescript2": "^0.24.2",
+    "rollup": "^2.1.0",
+    "rollup-plugin-typescript2": "^0.26.0",
     "typescript": "^3.8.3",
     "vue-template-compiler": "^2.6.10"
   }
