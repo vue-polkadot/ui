@@ -1,7 +1,6 @@
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json'
-let defaults = { compilerOptions: { declaration: true } };
-let override = { compilerOptions: { declaration: false } };
+
 export default {
   input: 'src/index.ts',
   output: [
@@ -19,11 +18,6 @@ export default {
     ...Object.keys(pkg.peerDependencies || {}),
   ],
   plugins: [
-    typescript({
-      tsconfigDefaults: defaults,
-      tsconfig: "tsconfig.json",
-      tsconfigOverride: override,
-      // verbosity: 3,
-    })
+    typescript({ lib: ["es5", "es6", "dom"], target: "es6" })
   ],
 }
