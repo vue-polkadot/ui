@@ -31,7 +31,6 @@
     "@polkadot/types": "^1.7.1",
     "@polkadot/util": "^2.6.2",
     "@polkadot/util-crypto": "^2.2.2",
-    "@rollup/plugin-typescript": "^4.0.0",
     "@types/store": "^2.0.2",
     "@types/webpack-env": "^1.14.0",
     "@vue-polkadot/vue-settings": "0.0.11",
@@ -47,10 +46,11 @@
     "vue-styled-components": "^1.4.9"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^4.0.0",
     "@vue/cli-plugin-babel": "^3.0.5",
-    "@vue/cli-plugin-typescript": "^3.0.5",
+    "@vue/cli-plugin-typescript": "4.2.3",
     "@vue/cli-service": "^3.0.5",
-    "rollup": "^2.1.0",
+    "rollup": "1.32.1",
     "rollup-plugin-typescript2": "^0.26.0",
     "typescript": "^3.8.3",
     "vue-template-compiler": "^2.6.10"
