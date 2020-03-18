@@ -36,17 +36,18 @@ const RECENT_EXPIRY = 24 * 60 * 60;
 
 export class Keyring implements KeyringStruct {
 
+  #keyring?: KeyringInstance;
+  #accounts: AddressSubject = accounts;
+
+  #addresses: AddressSubject = addresses;
+
+  #contracts: AddressSubject = contracts;
+
   protected _genesisHash?: string;
   protected _store!: KeyringStore;
-  private _keyring?: KeyringInstance;
   private _prefix?: Prefix;
   private _ss58Format?: Prefix;
 
-  private _accounts: AddressSubject = accounts;
-
-  private _addresses: AddressSubject = addresses;
-
-  private _contracts: AddressSubject = contracts;
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum, ss58Format);
@@ -82,20 +83,20 @@ export class Keyring implements KeyringStruct {
   }
 
   public get accounts(): AddressSubject {
-    return this._accounts;
+    return this.#accounts;
   }
 
   public get addresses(): AddressSubject {
-    return this._addresses;
+    return this.#addresses;
   }
 
   public get contracts(): AddressSubject {
-    return this._contracts;
+    return this.#contracts;
   }
 
   public get keyring(): KeyringInstance {
-    if (this._keyring) {
-      return this._keyring;
+    if (this.#keyring) {
+      return this.#keyring;
     }
 
     throw new Error('Keyring should be initialised via \'loadAll\' before use');
@@ -181,12 +182,11 @@ export class Keyring implements KeyringStruct {
       .filter((account): boolean => env.isDevelopment() || account.meta.isTesting !== true);
   }
 
-  public setSS58Format(ss58Format: Prefix): void {
-    if (this._keyring && ss58Format) {
-      this._keyring.setSS58Format(ss58Format);
+  public setSS58Format(ss58Format?: Prefix): void {
+    if (this.#keyring && ss58Format) {
+      this.#keyring.setSS58Format(ss58Format);
     }
   }
-
 
   public setDevMode(isDevelopment: boolean): void {
     env.set(isDevelopment);
@@ -294,7 +294,7 @@ export class Keyring implements KeyringStruct {
 
     delete json.meta.isRecent;
 
-    this.stores[type]().add(this._store, address, json);
+    this.#stores[type]().add(this._store, address, json);
 
     return json as KeyringPair$Json;
   }
@@ -326,8 +326,8 @@ export class Keyring implements KeyringStruct {
       : this.encodeAddress(_address);
     const publicKey = this.decodeAddress(address);
     const stores = type
-      ? [this.stores[type]]
-      : Object.values(this.stores);
+      ? [this.#stores[type]]
+      : Object.values(this.#stores);
 
     const info = stores.reduce<SingleAddress | undefined>((lastInfo, store): SingleAddress | undefined =>
       (store().subject.getValue()[address] || lastInfo), undefined);
@@ -347,7 +347,7 @@ export class Keyring implements KeyringStruct {
       .map((address): KeyringAddress => this.getAddress(address) as KeyringAddress);
   }
 
-  private stores = {
+  #stores = {
     address: (): AddressSubject => this.addresses,
     contract: (): AddressSubject => this.contracts,
     account: (): AddressSubject => this.accounts
@@ -444,9 +444,9 @@ export class Keyring implements KeyringStruct {
       this.setDevMode(options.isDevelopment);
     }
 
-    this._keyring = keyring;
+    this.#keyring = keyring;
     this._genesisHash = options.genesisHash && options.genesisHash.toHex();
-    this._store = options.store || new BrowserStore();
+    this._store = options.store || this._store;
 
     this.addAccountPairs();
   }

@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-keyring",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "author": "Matej Nemcek <ybdaba@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -38,6 +38,7 @@
     "mkdirp": "^1.0.3",
     "rxjs": "^6.5.2",
     "store": "^2.0.12",
+    "tslib": "1.11.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
