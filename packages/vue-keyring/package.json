@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-keyring",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "author": "Matej Nemcek <ybdaba@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -35,7 +35,6 @@
     "@types/store": "^2.0.2",
     "@types/webpack-env": "^1.14.0",
     "@vue-polkadot/vue-settings": "0.0.11",
-    "acorn-private-class-elements": "^0.2.0",
     "core-js": "^2.6.5",
     "mkdirp": "^1.0.3",
     "rxjs": "^6.5.2",
