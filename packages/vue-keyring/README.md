@@ -62,10 +62,10 @@ export default class Accounts extends Vue {
 - SS58 Encode / Decode?
   -  SS58 is a simple address format designed for Substrate based chains. You can read about its specification in more detail in the [Parity Wiki](https://wiki.parity.io/External-Address-Format-(SS58)).
 
-## Build instruction
+## Build instruction & Publish instructions
 
 `bump package.version`
 
-`yarn build:rollup`
+`yarn build:basic`
 
 `npm publish --access public`

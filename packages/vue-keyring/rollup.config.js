@@ -1,3 +1,4 @@
+import acornPrivateFields from 'acorn-private-class-elements'
 import typescript from '@rollup/plugin-typescript';
 import pkg from './package.json'
 
@@ -17,6 +18,9 @@ export default {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
   ],
+  // acornInjectPlugins: [
+  //   acornPrivateFields()
+  // ],
   plugins: [
     typescript({ lib: ["es5", "es6", "dom"], target: "es5" })
   ],
