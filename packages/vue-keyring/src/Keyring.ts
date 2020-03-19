@@ -48,6 +48,12 @@ export class Keyring implements KeyringStruct {
   private _prefix?: Prefix;
   private _ss58Format?: Prefix;
 
+  constructor () {
+    this.#accounts = accounts;
+    this.#addresses = addresses;
+    this.#contracts = contracts;
+    this._store = new BrowserStore();
+  }
 
   public decodeAddress = (key: string | Uint8Array, ignoreChecksum?: boolean, ss58Format?: Prefix): Uint8Array => {
     return this.keyring.decodeAddress(key, ignoreChecksum, ss58Format);
