@@ -1,8 +1,9 @@
 /// <reference types="node" />
+import { ApiPromise } from '@polkadot/api';
 import { EventEmitter } from 'events';
 export default class Api {
     get api(): any;
-    static createInstance(defaultUrl?: string): Promise<void>;
+    static createInstance(defaultUrl?: string): Promise<ApiPromise | Error>;
     static getInstance(): Api;
     private static instance;
     private _api;

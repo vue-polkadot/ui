@@ -19,10 +19,16 @@ export default class Api {
     static createInstance(defaultUrl = 'wss://substrate-rpc.parity.io/') {
         return __awaiter(this, void 0, void 0, function* () {
             Api.getInstance();
-            const provider = new WsProvider(defaultUrl);
-            const options = getApiOptions(defaultUrl);
-            this.instance.setApi(yield ApiPromise.create(Object.assign({ provider }, options)));
-            Api.eventEmitter.emit('created');
+            try {
+                const provider = new WsProvider(defaultUrl);
+                const options = getApiOptions(defaultUrl);
+                const apiPromise = yield ApiPromise.create(Object.assign({ provider }, options));
+                this.instance.setApi(apiPromise);
+                return apiPromise;
+            }
+            catch (err) {
+                throw err;
+            }
         });
     }
     static getInstance() {
