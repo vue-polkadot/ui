@@ -1,6 +1,6 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import {EventEmitter} from 'events';
-import { getApiSpecificTypes } from './utils'
+import { getApiOptions } from './utils'
 
 export default class Api {
   get api(): any {
@@ -10,8 +10,8 @@ export default class Api {
   public static async createInstance(defaultUrl = 'wss://substrate-rpc.parity.io/') {
     Api.getInstance();
     const provider = new WsProvider(defaultUrl);
-    const types = getApiSpecificTypes(defaultUrl);
-    this.instance.setApi(await ApiPromise.create({provider, types}));
+    const options = getApiOptions(defaultUrl);
+    this.instance.setApi(await ApiPromise.create({provider, ...options}));
     Api.eventEmitter.emit('created');
   }
 
@@ -44,7 +44,7 @@ export default class Api {
     apiUrl: string = 'wss://poc3-rpc.polkadot.io/'
   ): Promise<any> {
     const provider = new WsProvider(apiUrl);
-    const types = getApiSpecificTypes(apiUrl);
-    return await ApiPromise.create({provider, types});
+    const options = getApiOptions(apiUrl);
+    return await ApiPromise.create({provider, ...options});
   }
 }

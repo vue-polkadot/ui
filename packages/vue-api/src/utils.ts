@@ -1,27 +1,28 @@
-import { IdentityTypes } from 'edgeware-node-types/dist/identity';
-import { VotingTypes } from 'edgeware-node-types/dist/voting';
-import { TreasuryRewardTypes } from 'edgeware-node-types/dist/treasuryReward';
-import { SignalingTypes } from 'edgeware-node-types/dist/signaling';
+import * as edgewareDefinitions from "edgeware-node-types/dist/definitions";
 
+const edgewareTypes = Object.values(edgewareDefinitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
 
-const types = {
+const options = {
   edgeware: {
-    ...IdentityTypes,
-    ...VotingTypes,
-    ...TreasuryRewardTypes,
-    ...SignalingTypes,
+    types: {
+      ...edgewareTypes,
+      "voting::VoteType": "VoteType",
+      "voting::TallyType": "TallyType"
+    },
+    typesAlias: {
+      voting: { Tally: "VotingTally" }
+    }
   }
-}
+};
 
 const regexes = {
-  edgeware: /edgewa/,
+  edgeware: /edgewa/
+};
 
-}
-
-export const getApiSpecificTypes = (apiUrl: string): any => {
+export const getApiOptions = (apiUrl: string): any => {
   if (apiUrl.match(regexes.edgeware)) {
-    return { ...types.edgeware }
+    return { ...options.edgeware };
   }
 
-  return {}
-}
+  return {};
+};
