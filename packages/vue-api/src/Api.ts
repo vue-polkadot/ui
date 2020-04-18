@@ -1,5 +1,4 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import {EventEmitter} from 'events';
 import { getApiOptions } from './utils'
 
 export default class Api {
@@ -28,12 +27,10 @@ export default class Api {
   }
 
   private static instance: Api;
-  // private _provider: any;
   private _api: any;
-  public static eventEmitter: EventEmitter = new EventEmitter();
+  // private _apiUrl: string = 'wss://kusama-rpc.polkadot.io/';
 
-  private constructor() {
-  }
+  private constructor() {}
 
   public async changeApiUrl(apiUrl: string): Promise<void> {
     this._api && this._api.disconnect();
@@ -47,7 +44,7 @@ export default class Api {
 
   private async createApi(
     apiUrl: string = 'wss://poc3-rpc.polkadot.io/'
-  ): Promise<any> {
+  ): Promise<ApiPromise> {
     const provider = new WsProvider(apiUrl);
     const options = getApiOptions(apiUrl);
     return await ApiPromise.create({provider, ...options});

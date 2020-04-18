@@ -8,11 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { ApiPromise, WsProvider } from '@polkadot/api';
-import { EventEmitter } from 'events';
 import { getApiOptions } from './utils';
 export default class Api {
-    constructor() {
-    }
+    // private _apiUrl: string = 'wss://kusama-rpc.polkadot.io/';
+    constructor() { }
     get api() {
         return this._api;
     }
@@ -55,4 +54,3 @@ export default class Api {
         });
     }
 }
-Api.eventEmitter = new EventEmitter();
