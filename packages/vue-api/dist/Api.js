@@ -8,49 +8,72 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { ApiPromise, WsProvider } from '@polkadot/api';
+import { EventEmitter } from 'events';
 import { getApiOptions } from './utils';
-export default class Api {
-    // private _apiUrl: string = 'wss://kusama-rpc.polkadot.io/';
-    constructor() { }
-    get api() {
-        return this._api;
+/**
+ * Singleton instance for @polkadot/api.
+ */
+export default class Api extends EventEmitter {
+    constructor() {
+        super();
     }
-    static createInstance(defaultUrl = 'wss://substrate-rpc.parity.io/') {
+    /**
+     * getInstance
+     * @returns Api Instance
+     */
+    static getInstance() {
+        return Api._instance;
+    }
+    /**
+     * connect
+     * @requires apiUrl: string
+     * @returns instance of polkadot-js/api instance
+     */
+    connect(apiUrl) {
         return __awaiter(this, void 0, void 0, function* () {
-            Api.getInstance();
+            if (!apiUrl || typeof apiUrl != 'string') {
+                throw new TypeError(`[VUE API] ERR: Unable to init api with apiUrl ${apiUrl}`);
+            }
             try {
-                const provider = new WsProvider(defaultUrl);
-                const options = getApiOptions(defaultUrl);
+                const provider = new WsProvider(apiUrl);
+                const options = getApiOptions(apiUrl);
                 const apiPromise = yield ApiPromise.create(Object.assign({ provider }, options));
-                this.instance.setApi(apiPromise);
-                return apiPromise;
+                this.setApi(apiPromise);
+                this._emit('connect', apiPromise);
             }
             catch (err) {
+                this._emit('error', err);
                 throw err;
             }
+            this.setUrl(apiUrl);
+            return this._api;
         });
     }
-    static getInstance() {
-        if (!Api.instance) {
-            Api.instance = new Api();
+    /**
+     * disconnect
+     */
+    disconnect() {
+        if (this._api) {
+            // this._api.once('disconnected', () => this._emit('disconnect', this._apiUrl));
+            this._api.disconnect();
+            this.setUrl(null);
         }
-        return Api.instance;
-    }
-    changeApiUrl(apiUrl) {
-        return __awaiter(this, void 0, void 0, function* () {
-            this._api && this._api.disconnect();
-            // Api.instance.setApi(await this.createApi(apiUrl));
-            this.setApi(yield this.createApi(apiUrl));
-        });
     }
     setApi(api) {
         this._api = api;
     }
-    createApi(apiUrl = 'wss://poc3-rpc.polkadot.io/') {
-        return __awaiter(this, void 0, void 0, function* () {
-            const provider = new WsProvider(apiUrl);
-            const options = getApiOptions(apiUrl);
-            return yield ApiPromise.create(Object.assign({ provider }, options));
-        });
+    setUrl(apiUrl) {
+        this._apiUrl = apiUrl;
+    }
+    get api() {
+        return this._api;
+    }
+    /**
+     * tryEmit
+     *
+     */
+    _emit(message = 'event', payload) {
+        this.emit(message, payload);
     }
 }
+Api._instance = new Api();

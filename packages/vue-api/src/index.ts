@@ -1,3 +1,3 @@
-import Api from './NewApi';
+import Api from './Api';
 
 export default Api;
