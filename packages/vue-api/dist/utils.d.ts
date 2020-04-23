@@ -1,1 +1,1 @@
-export declare const getApiSpecificTypes: (apiUrl: string) => any;
+export declare const getApiOptions: (apiUrl: string) => any;

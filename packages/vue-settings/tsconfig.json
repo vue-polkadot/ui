@@ -4,6 +4,8 @@
       "module": "es2015",
       "declaration": true,
       "outDir": "./dist",
-      "strict": true
+      "strict": true,
+      "moduleResolution": "node",
+      "skipLibCheck": true
     }
 }
