@@ -28,8 +28,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@polkadot/keyring": "^2.6.2",
-    "@polkadot/types": "^1.7.1",
+    "@polkadot/keyring": "2.8.1",
+    "@polkadot/types": "1.11.2",
     "@polkadot/util": "^2.6.2",
     "@polkadot/util-crypto": "^2.2.2",
     "@types/store": "^2.0.2",
