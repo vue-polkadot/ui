@@ -7,6 +7,10 @@
 `npm install --save @vue-polkadot/vue-api`
 
 
+## Docs
+
+`connect` method returns `Promise<ApiPromise | Error>` 
+
 ## Usage Examples
 
 Import vue-api object like
@@ -14,19 +18,17 @@ Import vue-api object like
 ```js
 import Connector from '@vue-polkadot/vue-api';
 ```
-Create singleton instance:
+Connect to selected node
 ```js
-Connector.createInstance(store.state.setting.apiUrl);
-```
-Connect this instance to `$http` property
-```js
-Vue.prototype.$http = Connector.getInstance();
+Connector.connect(store.state.setting.apiUrl);
 ```
 
 Then in component
 ```js
-async function getToBalance() {
-  const toBalance = await (this as any).$http.api.query.balances.freeBalance(this.transfer.to);
-  this.transfer.toBalance = await toBalance.toString();
+async function getChainProperties() {
+  const { api } = Connector.getInstance();
+  const { chainSS58, chainDecimals, chainToken } = api.registry;
+  console.log('[API] Connect <3', { chainSS58, chainDecimals, chainToken});
 }
 ```
+
