@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-api",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Singleton wrapper for polkadot api",
   "author": "Viki Val <viktorko99@gmail.com>",
   "main": "dist/index.js",
@@ -20,12 +20,12 @@
   ],
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/node": "^14.0.13",
+    "@types/node": "^14.0.14",
     "tslint": "^6.1.2",
     "typescript": "^3.9.5"
   },
   "dependencies": {
-    "@polkadot/api": "^1.19.1",
+    "@polkadot/api": "^1.21.1",
     "edgeware-node-types": "^2.3.0"
   }
 }
