@@ -1,7 +1,5 @@
-import * as edgewareDefinitions from "edgeware-node-types/dist/definitions";
-const edgewareTypes = Object
-    .values(edgewareDefinitions)
-    .reduce((res, { default: { types } }) => (Object.assign(Object.assign({}, res), types)), {});
+import * as edgewareDefinitions from 'edgeware-node-types/interfaces/definitions';
+const edgewareTypes = Object.values(edgewareDefinitions).reduce((res, { types }) => (Object.assign(Object.assign({}, res), types)), {});
 const options = {
     edgeware: {
         types: Object.assign(Object.assign({}, edgewareTypes), { 'voting::VoteType': 'VoteType', 'voting::TallyType': 'TallyType', 'voting::Tally': 'VotingTally', 

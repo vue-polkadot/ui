@@ -1,8 +1,6 @@
-import * as edgewareDefinitions from "edgeware-node-types/dist/definitions";
+import * as edgewareDefinitions from 'edgeware-node-types/interfaces/definitions';
 
-const edgewareTypes = Object
-.values(edgewareDefinitions)
-.reduce((res, { default: { types } }): object => ({ ...res, ...types }), {});
+const edgewareTypes = Object.values(edgewareDefinitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
 
 const options = {
   edgeware: {
