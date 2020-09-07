@@ -1,0 +1,18 @@
+#!/usr/bin/env just --justfile
+
+update-deps:
+  npm install -D @types/node@latest tslint@latest typescript@latest --save
+
+update: update-deps
+
+build:
+  npm run build
+
+link:
+  yarn link
+
+publish:
+  npm publish --access public
+
+c VERSION:
+  git commit -am "Updated vue-settings@{{VERSION}}"

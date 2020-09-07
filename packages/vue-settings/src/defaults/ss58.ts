@@ -12,10 +12,17 @@ export const PREFIXES: Option[] = [
     text: 'Default for the connected node',
     value: -1
   },
+  // keep as first (well, after default)
   {
     info: 'substrate',
-    text: 'Substrate (development)',
+    text: 'Substrate (generic)',
     value: 42
+  },
+  // all in ascending order based on value
+  {
+    info: 'polkadot',
+    text: 'Polkadot (live)',
+    value: 0
   },
   {
     info: 'kusama',
@@ -23,8 +30,18 @@ export const PREFIXES: Option[] = [
     value: 2
   },
   {
-    info: 'polkadot',
-    text: 'Polkadot (live)',
-    value: 0
+    info: 'edgeware',
+    text: 'Edgeware (live)',
+    value: 7
+  },
+  {
+    info: 'kulupu',
+    text: 'Kulupu (live)',
+    value: 16
+  },
+  {
+    info: 'subsocial',
+    text: 'Subsocial (live)',
+    value: 28
   }
 ];

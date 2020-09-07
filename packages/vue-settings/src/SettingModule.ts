@@ -15,7 +15,7 @@ const avaibleOptions: AvaibleOptions = {
 }
 
 const defaultState: SettingsStruct = {
-  apiUrl: ENDPOINT_DEFAULT,
+  apiUrl: ENDPOINT_DEFAULT as string,
   camera: CAMERA_DEFAULT,
   ledgerConn: LEDGER_CONN_DEFAULT,
   i18nLang: LANGUAGE_DEFAULT,
