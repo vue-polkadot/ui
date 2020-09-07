@@ -178,10 +178,10 @@ function createTestNetworks(): Option[] {
   ]
 }
 
-export const ENDPOINTS: Option[] = {
+export const ENDPOINTS: Option[] = [
   ...createLiveNetworks(),
   ...createTestNetworks(),
   ...createDev(),
-}
+]
 
 export const ENDPOINT_DEFAULT = createLiveNetworks()[0].value || 'wss://rpc.polkadot.io';
