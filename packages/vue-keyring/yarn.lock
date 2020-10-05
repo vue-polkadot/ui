@@ -652,6 +652,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.10.4":
+  version "7.11.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.11.2.tgz#f549c13c754cc40b87644b9fa9f09a6a95fe0736"
+  integrity sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.8.3", "@babel/template@^7.8.6":
   version "7.8.6"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.6.tgz#86b22af15f828dfb086474f964dcc3e39c43ce2b"
@@ -803,36 +810,23 @@
     tweetnacl "^1.0.3"
     xxhashjs "^0.2.2"
 
-"@polkadot/util-crypto@^2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-2.13.1.tgz#02ae12f02d5a636bb8ff5c8804d4696a1308624b"
-  integrity sha512-AZZCwzW6EOql/KTKfDNgUUKpaGkKEk04cxMWdUzU52gmCLcGS8NXdl/YEs+R8JmQsF41q11gcSD/WzTFuv4ehQ==
+"@polkadot/util-crypto@^2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@polkadot/util-crypto/-/util-crypto-2.18.1.tgz#c4c36cd49c303f551f878a573f516479c94aeafe"
+  integrity sha512-RqCIv+WKLStJXhZcE+pT3V/xQvt7V74laqhLyLKIsVXPpeuKDiTxt0E5EB+gkuW1eTC4A03kitULcNA5w4JtFw==
   dependencies:
-    "@babel/runtime" "^7.10.2"
-    "@polkadot/util" "2.13.1"
+    "@babel/runtime" "^7.10.4"
+    "@polkadot/util" "2.18.1"
     "@polkadot/wasm-crypto" "^1.2.1"
     base-x "^3.0.8"
     bip39 "^3.0.2"
     blakejs "^1.1.0"
     bn.js "^5.1.2"
-    bs58 "^4.0.1"
-    elliptic "^6.5.2"
+    elliptic "^6.5.3"
     js-sha3 "^0.8.0"
     pbkdf2 "^3.1.1"
     tweetnacl "^1.0.3"
     xxhashjs "^0.2.2"
-
-"@polkadot/util@2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-2.13.1.tgz#59cbe50822026a9849589a10c5ee15a5754dce62"
-  integrity sha512-k1GrS3W5c57sLJJyKYF2bq7H5d8vn6jzTaK8rDM7hRp9Ai2Crl4SjyY+5Tdr0LWG+UTybfc8rIieJklB3amA3w==
-  dependencies:
-    "@babel/runtime" "^7.10.2"
-    "@types/bn.js" "^4.11.6"
-    bn.js "^5.1.2"
-    camelcase "^5.3.1"
-    chalk "^4.0.0"
-    ip-regex "^4.1.0"
 
 "@polkadot/util@2.14.1", "@polkadot/util@^2.14.1":
   version "2.14.1"
@@ -840,6 +834,18 @@
   integrity sha512-Rp/74CsAedjzd/ERLcOw9WUEsMDOnvI+Bp3k9UpT3vZKRa/foxK4N+H5TmItZRwP4FETMqizU0mKF3rGg17btg==
   dependencies:
     "@babel/runtime" "^7.10.2"
+    "@types/bn.js" "^4.11.6"
+    bn.js "^5.1.2"
+    camelcase "^5.3.1"
+    chalk "^4.1.0"
+    ip-regex "^4.1.0"
+
+"@polkadot/util@2.18.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-2.18.1.tgz#81380f21e47f3c5657ef09be7c477a72838d35eb"
+  integrity sha512-0KAojJMR5KDaaobIyvHVuW9vBP5LG3S0vpRSovB4UPlGDok3ETJSm5lMhA0t2KM8C4gXGBakCotFVGSOvWGgjA==
+  dependencies:
+    "@babel/runtime" "^7.10.4"
     "@types/bn.js" "^4.11.6"
     bn.js "^5.1.2"
     camelcase "^5.3.1"
@@ -2112,14 +2118,6 @@ chalk@^3.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-chalk@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.0.0.tgz#6e98081ed2d17faab615eb52ac66ec1fe6209e72"
-  integrity sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
-
 chalk@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
@@ -3076,6 +3074,19 @@ elliptic@^6.0.0, elliptic@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.2.tgz#05c5678d7173c049d8ca433552224a495d0e3762"
   integrity sha512-f4x70okzZbIQl/NSRLkI/+tteV/9WqL98zx+SQ69KbXxmVrmjwsNUPn/gYJJ0sHvEak24cZgHIPegRePAtA/xw==
+  dependencies:
+    bn.js "^4.4.0"
+    brorand "^1.0.1"
+    hash.js "^1.0.0"
+    hmac-drbg "^1.0.0"
+    inherits "^2.0.1"
+    minimalistic-assert "^1.0.0"
+    minimalistic-crypto-utils "^1.0.0"
+
+elliptic@^6.5.3:
+  version "6.5.3"
+  resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.3.tgz#cb59eb2efdaf73a0bd78ccd7015a62ad6e0f93d6"
+  integrity sha512-IMqzv5wNQf+E6aHeIqATs0tOLeOTwj1QKbRcS3jBbYkl5oLAserA8yJTT7/VyHUYG91PRmPyeQDObKLPpeS4dw==
   dependencies:
     bn.js "^4.4.0"
     brorand "^1.0.1"
