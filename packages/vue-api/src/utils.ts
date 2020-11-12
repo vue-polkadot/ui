@@ -1,4 +1,5 @@
 import * as edgewareDefinitions from 'edgeware-node-types/interfaces/definitions';
+import usetechTypes from './types/usetech'
 
 const edgewareTypes = Object.values(edgewareDefinitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
 
@@ -20,16 +21,26 @@ const options = {
     typesAlias: {
       voting: { Tally: "VotingTally" }
     }
+  },
+  usetech: {
+    types: {
+      ...usetechTypes
+    }
   }
 };
 
 const regexes = {
-  edgeware: /edgewa/
+  edgeware: /edgewa/,
+  usetech: /usetech/
 };
 
 export const getApiOptions = (apiUrl: string): any => {
-  if (apiUrl.match(regexes.edgeware)) {
+  if (regexes.edgeware.test(apiUrl)) {
     return { ...options.edgeware };
+  }
+
+  if (regexes.usetech.test(apiUrl)) {
+    return { ...options.usetech }
   }
 
   return {};
