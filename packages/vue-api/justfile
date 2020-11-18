@@ -1,0 +1,23 @@
+#!/usr/bin/env just --justfile
+
+update-config:
+  svn checkout https://github.com/polkadot-js/apps/trunk/packages/apps-config/src/api
+  mv api src/config
+
+update-deps:
+  npm install -D @types/node@latest tslint@latest typescript@latest --save
+  npm install @polkadot/api@latest edgeware-node-types@latest --save
+
+update: update-deps update-config
+
+build:
+  npm run build
+
+link:
+  yarn link
+
+publish:
+  npm publish --access public
+
+c VERSION:
+  git commit -am "Updated vue-api@{{VERSION}}"
