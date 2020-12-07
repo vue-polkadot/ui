@@ -22,7 +22,7 @@
   "dependencies": {
     "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
     "@vue/babel-preset-jsx": "^1.1.0",
-    "typedoc": "^0.15.0",
+    "typedoc": "^0.17.5",
     "typedoc-plugin-markdown": "^2.2.5",
     "typedoc-plugin-no-inherit": "^1.1.10"
   }
