@@ -1,9 +1,12 @@
 #!/usr/bin/env just --justfile
 
+update-config:
+  svn checkout https://github.com/polkadot-js/apps/trunk/packages/apps-config/src/api
+
 update-deps:
   npm install -D @types/node@latest tslint@latest typescript@latest --save
 
-update: update-deps
+update: update-deps update-config
 
 build:
   npm run build

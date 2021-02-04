@@ -1,13 +1,12 @@
-// Copyright 2017-2020 @polkadot/ui-settings authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// Copyright 2017-2021 @polkadot/ui-settings authors & contributors
+// SPDX-License-Identifier: Apache-2.0
 
-import { Option } from '../types';
+import type { Option } from '../types';
 
-import { CRYPTOS } from './crypto';
-import { ENDPOINTS, ENDPOINT_DEFAULT } from './endpoints';
+import { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto';
+import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints';
 import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger';
-import { PREFIXES, PREFIX_DEFAULT } from './ss58';
+import { PREFIX_DEFAULT, PREFIXES } from './ss58';
 import { ICON_DEFAULT, ICON_DEFAULT_HOST, ICONS, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES } from './ui';
 import chains from './chains'
 
@@ -47,6 +46,8 @@ export {
   CAMERA_DEFAULT,
   CAMERA,
   CRYPTOS,
+  CRYPTOS_ETH,
+  CRYPTOS_LEDGER,
   ENDPOINT_DEFAULT,
   ENDPOINTS,
   ICON_DEFAULT,
