@@ -6,13 +6,13 @@ import { Option } from '../types';
 export const ENDPOINTS: Option[] = [
   {
     info: 'kusama',
-    text: 'Kusama (Parity)',
-    value: 'wss://kusama-rpc.polkadot.io'
+    text: 'Kusama (OnFinality)',
+    value: 'wss://kusama.api.onfinality.io/public-ws'
   },
   {
     info: 'kusama',
-    text: 'Kusama (OnFinality)',
-    value: 'wss://kusama.api.onfinality.io/public-ws'
+    text: 'Kusama (Parity)',
+    value: 'wss://kusama-rpc.polkadot.io'
   },
   {
     info: 'kusama',
