@@ -1,7 +1,7 @@
-import { spec as edgewareTypes } from '@edgeware/node-types';
+// import { spec as edgewareTypes } from '@edgeware/node-types';
 import usetechTypes from './types/usetech';
 const options = {
-    edgeware: edgewareTypes,
+    edgeware: {},
     usetech: {
         types: Object.assign({}, usetechTypes)
     }
