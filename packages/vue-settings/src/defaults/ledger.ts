@@ -1,8 +1,7 @@
-// Copyright 2017-2020 @polkadot/ui-settings authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// Copyright 2017-2021 @polkadot/ui-settings authors & contributors
+// SPDX-License-Identifier: Apache-2.0
 
-import { Option } from '../types';
+import type { Option } from '../types';
 
 export const LEDGER_CONN_DEFAULT = 'none';
 
@@ -12,14 +11,20 @@ export const LEDGER_CONN: Option[] = [
     text: 'Do not attach Ledger devices',
     value: 'none'
   },
-  {
-    info: 'u2f',
-    text: 'Attach Ledger via U2F',
-    value: 'u2f'
-  },
+  // Deprecated
+  // {
+  //   info: 'u2f',
+  //   text: 'Attach Ledger via U2F',
+  //   value: 'u2f'
+  // },
   {
     info: 'webusb',
-    text: 'Attach Ledger via WebUSB',
+    text: 'Attach Ledger via WebUSB (Chrome, recommended)',
     value: 'webusb'
+  },
+  {
+    info: 'hid',
+    text: 'Attach Ledger via WebHID (Chrome, experimental)',
+    value: 'hid'
   }
 ];

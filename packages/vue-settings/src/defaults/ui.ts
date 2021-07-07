@@ -1,8 +1,7 @@
-// Copyright 2017-2020 @polkadot/ui-settings authors & contributors
-// This software may be modified and distributed under the terms
-// of the Apache-2.0 license. See the LICENSE file for details.
+// Copyright 2017-2021 @polkadot/ui-settings authors & contributors
+// SPDX-License-Identifier: Apache-2.0
 
-import { Option } from '../types';
+import type { Option } from '../types';
 
 import { isPolkadot } from './type';
 
@@ -71,11 +70,14 @@ const ICONS: Option[] = [
   }
 ];
 
+const NOTIFICATION_DEFAULT = 'popup';
+
 export {
   ICON_DEFAULT,
   ICON_DEFAULT_HOST,
   ICONS,
   LANGUAGE_DEFAULT,
+  NOTIFICATION_DEFAULT,
   UIMODE_DEFAULT,
   UIMODES,
   UITHEME_DEFAULT,
