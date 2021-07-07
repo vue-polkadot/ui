@@ -1,27 +1,26 @@
-import * as edgewareDefinitions from "edgeware-node-types/dist/definitions";
-
-const edgewareTypes = Object.values(edgewareDefinitions).reduce((res, { types }): object => ({ ...res, ...types }), {});
-
+// import { spec as edgewareTypes } from '@edgeware/node-types';
+import usetechTypes from './types/usetech'
 const options = {
-  edgeware: {
+  edgeware: {},
+  usetech: {
     types: {
-      ...edgewareTypes,
-      "voting::VoteType": "VoteType",
-      "voting::TallyType": "TallyType"
-    },
-    typesAlias: {
-      voting: { Tally: "VotingTally" }
+      ...usetechTypes
     }
   }
 };
 
 const regexes = {
-  edgeware: /edgewa/
+  edgeware: /edgewa/,
+  usetech: /usetech/
 };
 
 export const getApiOptions = (apiUrl: string): any => {
-  if (apiUrl.match(regexes.edgeware)) {
+  if (regexes.edgeware.test(apiUrl)) {
     return { ...options.edgeware };
+  }
+
+  if (regexes.usetech.test(apiUrl)) {
+    return { ...options.usetech }
   }
 
   return {};
