@@ -72,4 +72,5 @@ export default {
     per_period: "Compact<Balance>",
   },
   VestingScheduleOf: "VestingSchedule",
+  PoolId: "AccountId"
 };

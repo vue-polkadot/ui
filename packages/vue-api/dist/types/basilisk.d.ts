@@ -72,5 +72,6 @@ declare const _default: {
         per_period: string;
     };
     VestingScheduleOf: string;
+    PoolId: string;
 };
 export default _default;
