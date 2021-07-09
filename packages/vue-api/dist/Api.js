@@ -29,14 +29,14 @@ export default class Api extends EventEmitter {
      * @requires apiUrl: string
      * @returns instance of polkadot-js/api instance
      */
-    connect(apiUrl) {
+    connect(apiUrl, overrideOptions) {
         return __awaiter(this, void 0, void 0, function* () {
             if (!apiUrl || typeof apiUrl != 'string') {
                 throw new TypeError(`[VUE API] ERR: Unable to init api with apiUrl ${apiUrl}`);
             }
             try {
                 const provider = new WsProvider(apiUrl);
-                const options = getApiOptions(apiUrl);
+                const options = overrideOptions !== null && overrideOptions !== void 0 ? overrideOptions : getApiOptions(apiUrl);
                 const apiPromise = yield ApiPromise.create(Object.assign({ provider }, options));
                 this.setApi(apiPromise);
                 this._emit('connect', apiPromise);

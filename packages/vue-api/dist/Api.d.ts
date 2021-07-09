@@ -1,8 +1,9 @@
 /// <reference types="node" />
 import { ApiPromise } from '@polkadot/api';
 import { EventEmitter } from 'events';
+import { ApiExtension } from './utils';
 export interface ApiService {
-    connect(apiUrl: string): Promise<ApiPromise | Error>;
+    connect(apiUrl: string, overrideOptions?: ApiExtension): Promise<ApiPromise | Error>;
     disconnect(): void;
 }
 /**
@@ -23,7 +24,7 @@ export default class Api extends EventEmitter implements ApiService {
      * @requires apiUrl: string
      * @returns instance of polkadot-js/api instance
      */
-    connect(apiUrl: string): Promise<ApiPromise | Error>;
+    connect(apiUrl: string, overrideOptions?: ApiExtension): Promise<ApiPromise | Error>;
     /**
      * disconnect
      */
