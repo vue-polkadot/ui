@@ -1,9 +1,9 @@
 import { ApiPromise, WsProvider } from '@polkadot/api';
 import { EventEmitter } from 'events';
-import { getApiOptions } from './utils'
+import { ApiExtension, getApiOptions } from './utils'
 
 export interface ApiService {
-  connect(apiUrl: string): Promise<ApiPromise | Error>;
+  connect(apiUrl: string, overrideOptions?: ApiExtension): Promise<ApiPromise | Error>;
   disconnect(): void;
   // registerCustomTypes(userTypes: string, apiUrl?: string): Promise<ApiPromise | Error>;
 }
@@ -33,14 +33,14 @@ export default class Api extends EventEmitter implements ApiService {
    * @requires apiUrl: string
    * @returns instance of polkadot-js/api instance
    */
-  public async connect(apiUrl: string): Promise<ApiPromise | Error> {
+  public async connect(apiUrl: string, overrideOptions?: ApiExtension): Promise<ApiPromise | Error> {
     if (!apiUrl || typeof apiUrl != 'string') {
       throw new TypeError(`[VUE API] ERR: Unable to init api with apiUrl ${apiUrl}`);
     }
 
     try {
       const provider = new WsProvider(apiUrl);
-      const options = getApiOptions(apiUrl);
+      const options = overrideOptions ?? getApiOptions(apiUrl);
       const apiPromise = await ApiPromise.create({provider, ...options});
       this.setApi(apiPromise);
       this._emit('connect', apiPromise);
