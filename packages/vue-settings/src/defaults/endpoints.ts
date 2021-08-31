@@ -20,6 +20,16 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://kusama.elara.patract.io'
   },
   {
+    info: 'statemine',
+    text: 'Statemine (Parity)',
+    value: 'wss://kusama-statemine-rpc.paritytech.net'
+  },
+  {
+    info: 'westend',
+    text: 'Westend (Parity)',
+    value: 'wss://westend-rpc.polkadot.io'
+  },
+  {
     info: 'basilisk',
     text: 'Basilisk (HydraDX)',
     value: 'wss://rpc-01.basilisk.hydradx.io'
