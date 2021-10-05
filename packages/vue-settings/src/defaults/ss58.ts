@@ -3,7 +3,7 @@
 
 import type { Option } from '../types';
 
-import { available } from '@polkadot/networks';
+import { availableNetworks as available } from '@polkadot/networks';
 
 export const PREFIX_DEFAULT = -1;
 
