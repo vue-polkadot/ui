@@ -1,7 +1,7 @@
 // Copyright 2017-2021 @polkadot/ui-settings authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import known from '@polkadot/networks';
+import { selectableNetworks as known } from '@polkadot/networks';
 
 type ChainDef = string[];
 

@@ -105,4 +105,14 @@ const SettingModule = {
  }
 }
 
+export function Module(overrideDefault: Partial<SettingsStruct>) {
+  return {
+    ...SettingModule,
+    state: {
+      ...SettingModule.state,
+      ...overrideDefault
+    }
+  }
+}
+
 export default SettingModule

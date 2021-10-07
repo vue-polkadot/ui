@@ -1,4 +1,4 @@
-import SettingModule from './SettingModule'
+import SettingModule, { Module as OverrideSettingModule } from './SettingModule'
 import {
   CAMERA_DEFAULT,
   CAMERA,
@@ -42,7 +42,8 @@ export {
   UIMODES,
   UITHEME_DEFAULT,
   UITHEMES,
-  chains
+  chains,
+  OverrideSettingModule,
 }
 
 export default SettingModule

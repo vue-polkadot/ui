@@ -30,6 +30,11 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://westend-rpc.polkadot.io'
   },
   {
+    info: 'westmint',
+    text: 'Westmint (Parity)',
+    value: 'wss://westmint-rpc.polkadot.io'
+  },
+  {
     info: 'basilisk',
     text: 'Basilisk (HydraDX)',
     value: 'wss://rpc-01.basilisk.hydradx.io'
@@ -48,6 +53,11 @@ export const ENDPOINTS: Option[] = [
     info: 'local',
     text: 'Local Node (Own, 127.0.0.1:9944)',
     value: 'ws://127.0.0.1:9944/'
+  },
+  {
+    info: 'parachain',
+    text: 'Local Parachain Node (Own, 127.0.0.1:9988)',
+    value: 'ws://127.0.0.1:9988/'
   }
 ];
 
