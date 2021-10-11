@@ -50,6 +50,11 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://rpc.dusty.plasmnet.io'
   },
   {
+    info: 'snek',
+    text: 'Snek Sandbox (HydraDX)',
+    value: 'wss://basilisk-kodadot.hydration.cloud'
+  },
+  {
     info: 'local',
     text: 'Local Node (Own, 127.0.0.1:9944)',
     value: 'ws://127.0.0.1:9944/'
