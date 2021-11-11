@@ -35,6 +35,11 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://westmint-rpc.polkadot.io'
   },
   {
+    info: 'westmint',
+    text: 'Westmint (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/westmint'
+  },
+  {
     info: 'basilisk',
     text: 'Basilisk (HydraDX)',
     value: 'wss://rpc-01.basilisk.hydradx.io'
