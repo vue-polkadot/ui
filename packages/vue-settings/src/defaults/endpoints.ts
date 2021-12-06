@@ -25,6 +25,16 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://kusama-statemine-rpc.paritytech.net'
   },
   {
+    info: 'statemine',
+    text: 'Statemine (OnFinality)',
+    value: 'wss://statemine.api.onfinality.io/public-ws'
+  },
+  {
+    info: 'statemine',
+    text: 'Statemine (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/statemine'
+  },
+  {
     info: 'westend',
     text: 'Westend (Parity)',
     value: 'wss://westend-rpc.polkadot.io'
