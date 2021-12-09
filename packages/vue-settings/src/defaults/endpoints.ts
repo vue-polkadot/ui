@@ -25,9 +25,24 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://kusama-statemine-rpc.paritytech.net'
   },
   {
+    info: 'statemine',
+    text: 'Statemine (OnFinality)',
+    value: 'wss://statemine.api.onfinality.io/public-ws'
+  },
+  {
+    info: 'statemine',
+    text: 'Statemine (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/statemine'
+  },
+  {
     info: 'westend',
     text: 'Westend (Parity)',
     value: 'wss://westend-rpc.polkadot.io'
+  },
+  {
+    info: 'westmint',
+    text: 'Westmint (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/westmint'
   },
   {
     info: 'westmint',
@@ -48,6 +63,11 @@ export const ENDPOINTS: Option[] = [
     info: 'dusty',
     text: 'Dusty (Stake Technologies)',
     value: 'wss://rpc.dusty.plasmnet.io'
+  },
+  {
+    info: 'snek',
+    text: 'Snek Sandbox (HydraDX)',
+    value: 'wss://basilisk-kodadot.hydration.cloud'
   },
   {
     info: 'local',
