@@ -7,20 +7,39 @@ import { isPolkadot } from './type';
 
 const LANGUAGE_DEFAULT = 'default';
 
-const UIMODE_DEFAULT = !isPolkadot && typeof window !== 'undefined' && window.location.host.includes('ui-light')
-  ? 'light'
-  : 'full';
 
-const UIMODES: Option[] = [
+const PAGINATION_DEFAULT = '12';
+
+const PAGINATIONS: Option[] = [12, 24, 48].map((value): Option => ({ value, text: value.toString(), info: value.toString() }));
+
+const DISPLAY_DEFAULT = 'large';
+
+
+const DISPLAYS: Option[] = [
   {
-    info: 'full',
-    text: 'Fully featured',
-    value: 'full'
+    info: 'large',
+    text: 'Large display',
+    value: 'large'
   },
   {
-    info: 'light',
-    text: 'Basic features only',
-    value: 'light'
+    info: 'small',
+    text: 'Small display',
+    value: 'small'
+  }
+];
+
+const SHOW_DEFAULT = 'all';
+
+const SHOW_OPTIONS: Option[] = [
+  {
+    info: 'all',
+    text: 'Show all',
+    value: 'large'
+  },
+  {
+    info: 'some',
+    text: 'Small display',
+    value: 'small'
   }
 ];
 
@@ -78,8 +97,12 @@ export {
   ICONS,
   LANGUAGE_DEFAULT,
   NOTIFICATION_DEFAULT,
-  UIMODE_DEFAULT,
-  UIMODES,
+  PAGINATION_DEFAULT,
+  PAGINATIONS,
+  SHOW_DEFAULT,
+  SHOW_OPTIONS,
+  DISPLAY_DEFAULT,
+  DISPLAYS,
   UITHEME_DEFAULT,
   UITHEMES
 };

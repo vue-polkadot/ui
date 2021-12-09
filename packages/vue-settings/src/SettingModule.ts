@@ -1,5 +1,28 @@
-import { SettingsStruct, Option, AvaibleOptions } from './types'
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, ICONS, ICON_DEFAULT, CAMERA_DEFAULT, LEDGER_CONN_DEFAULT, CAMERA, LEDGER_CONN } from './defaults/index'
+import { SettingsStruct, Option, AvaibleOptions, StoreInstance } from './types'
+import {
+  CRYPTOS,
+  ENDPOINT_DEFAULT,
+  ENDPOINTS,
+  LANGUAGE_DEFAULT,
+  LOCKING_DEFAULT,
+  LOCKING,
+  PREFIX_DEFAULT,
+  PREFIXES,
+  PAGINATION_DEFAULT,
+  PAGINATIONS,
+  SHOW_DEFAULT,
+  SHOW_OPTIONS,
+  DISPLAY_DEFAULT,
+  DISPLAYS,
+  UITHEME_DEFAULT,
+  UITHEMES,
+  ICONS,
+  ICON_DEFAULT,
+  CAMERA_DEFAULT,
+  LEDGER_CONN_DEFAULT,
+  CAMERA,
+  LEDGER_CONN,
+} from './defaults/index'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -7,7 +30,9 @@ const avaibleOptions: AvaibleOptions = {
   languages: [],
   locking: LOCKING,
   prefixes: PREFIXES,
-  uiModes: UIMODES,
+  paginations: PAGINATIONS,
+  displays: DISPLAYS,
+  showOptions: SHOW_OPTIONS,
   uiThemes: UITHEMES,
   icons: ICONS,
   cameras: CAMERA,
@@ -22,87 +47,100 @@ const defaultState: SettingsStruct = {
   icon: ICON_DEFAULT,
   locking: LOCKING_DEFAULT,
   prefix: PREFIX_DEFAULT,
-  uiMode: UIMODE_DEFAULT,
+  pagination: PAGINATION_DEFAULT,
+  display: DISPLAY_DEFAULT,
+  show: SHOW_DEFAULT,
   uiTheme: UITHEME_DEFAULT,
-  avaibleOptions: avaibleOptions
-};
-
+  avaibleOptions: avaibleOptions,
+}
 
 const SettingModule = {
   state: { ...defaultState },
   mutations: {
     setSettings(state: SettingsStruct, settings: Partial<SettingsStruct>) {
       Object.keys(settings).map((key: string) => {
-        (state as any)[key] = (settings as any)[key]
+        ;(state as any)[key] = (settings as any)[key]
       })
     },
     createNode(state: SettingsStruct, nodeOption: Option) {
       state.avaibleOptions.nodes = [...state.avaibleOptions.nodes, nodeOption]
-    }
+    },
     // addAvaibleOption(state: SettingsStruct, settings: Partial<SettingsStruct>) {
 
     // }
   },
   actions: {
-    setSettings({commit}: any, settings: Partial<SettingsStruct>) {
-      commit('setSettings', settings);
+    setSettings({ commit }: StoreInstance, settings: Partial<SettingsStruct>) {
+      commit('setSettings', settings)
     },
-    setApiUrl({commit}: any, apiUrl: string) {
-      commit('setSettings', { apiUrl });
+    setApiUrl({ commit }: StoreInstance, apiUrl: string) {
+      commit('setSettings', { apiUrl })
     },
-    setLanguage({commit}: any, i18nLang: string) {
-      commit('setSettings', { i18nLang });
+    setLanguage({ commit }: StoreInstance, i18nLang: string) {
+      commit('setSettings', { i18nLang })
     },
-    setLocking({commit}: any, locking: string) {
-      commit('setSettings', { locking });
+    setLocking({ commit }: StoreInstance, locking: string) {
+      commit('setSettings', { locking })
     },
-    setPrefix({commit}: any, prefix: string) {
-      commit('setSettings', { prefix });
+    setPrefix({ commit }: StoreInstance, prefix: string) {
+      commit('setSettings', { prefix })
     },
-    setUiTheme({commit}: any, uiTheme: string) {
-      commit('setSettings', { uiTheme });
+    setUiTheme({ commit }: StoreInstance, uiTheme: string) {
+      commit('setSettings', { uiTheme })
     },
-    setUiMode({commit}: any, uiMode: string) {
-      commit('setSettings', { uiMode });
+    setPagination({ commit }: StoreInstance, pagination: string) {
+      commit('setSettings', { pagination })
     },
-    setIcon({commit}: any, icon: string) {
-      commit('setSettings', { icon });
+    setDisplay({ commit }: StoreInstance, display: string) {
+      commit('setSettings', { display })
     },
-    addNode({commit}: any, nodeOption: Option) {
+    setShowOption({ commit }: StoreInstance, show: string) {
+      commit('setSettings', { show })
+    },
+    setIcon({ commit }: StoreInstance, icon: string) {
+      commit('setSettings', { icon })
+    },
+    addNode({ commit }: StoreInstance, nodeOption: Option) {
       if (nodeOption.value && nodeOption.text) {
-        commit('createNode', nodeOption);
+        commit('createNode', nodeOption)
       }
-    }
+    },
   },
- getters: {
-  availableNodes(state: SettingsStruct): Option[] {
-     return state.avaibleOptions.nodes
-   },
-   availableLanguages(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.languages
+  getters: {
+    availableNodes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.nodes
+    },
+    availableLanguages(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.languages
+    },
+    availableCryptos(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.cryptos
+    },
+    availableLocking(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.locking
+    },
+    availablePrefixes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.prefixes
+    },
+    availablePaginations(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.paginations
+    },
+    availableDisplays(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.displays
+    },
+    availableShowOptions(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.showOptions
+    },
+    availableUiThemes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.uiThemes
+    },
+    availableIcons(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.icons
+    },
+    getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
+      return rest
+    },
   },
-  availableCryptos(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.cryptos
-  },
-  availableLocking(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.locking
-  },
-  availablePrefixes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.prefixes
-  },
-  availableUiModes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.uiModes
-  },
-  availableUiThemes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.uiThemes
-  },
-  availableIcons(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.icons
-  },
-   getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
-     return rest
-   }
- }
 }
 
 export function Module(overrideDefault: Partial<SettingsStruct>) {
@@ -110,8 +148,8 @@ export function Module(overrideDefault: Partial<SettingsStruct>) {
     ...SettingModule,
     state: {
       ...SettingModule.state,
-      ...overrideDefault
-    }
+      ...overrideDefault,
+    },
   }
 }
 
