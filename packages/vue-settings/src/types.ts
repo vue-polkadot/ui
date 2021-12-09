@@ -22,6 +22,8 @@ export interface SettingsStruct {
   pagination: string,
   display: string,
   show: string,
+  urlPrefix: string,
+  indexer: string,
   avaibleOptions: AvaibleOptions;
 }
 
@@ -38,6 +40,8 @@ export interface AvaibleOptions {
   icons: Options;
   ledgers: Options;
   cameras: Options;
+  urlPrefixes: Options;
+  indexers: Options;
 }
 
 export interface NetworkSpecsStruct {

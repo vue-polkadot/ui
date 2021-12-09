@@ -22,6 +22,10 @@ import {
   LEDGER_CONN_DEFAULT,
   CAMERA,
   LEDGER_CONN,
+  INDEXERS,
+  INDEXER_DEFAULT,
+  URL_PREFIXES,
+  URL_PREFIX_DEFAULT
 } from './defaults/index'
 
 const avaibleOptions: AvaibleOptions = {
@@ -37,6 +41,8 @@ const avaibleOptions: AvaibleOptions = {
   icons: ICONS,
   cameras: CAMERA,
   ledgers: LEDGER_CONN,
+  urlPrefixes: URL_PREFIXES,
+  indexers: INDEXERS,
 }
 
 const defaultState: SettingsStruct = {
@@ -52,6 +58,8 @@ const defaultState: SettingsStruct = {
   show: SHOW_DEFAULT,
   uiTheme: UITHEME_DEFAULT,
   avaibleOptions: avaibleOptions,
+  urlPrefix: URL_PREFIX_DEFAULT,
+  indexer: INDEXER_DEFAULT,
 }
 
 const SettingModule = {
@@ -65,9 +73,6 @@ const SettingModule = {
     createNode(state: SettingsStruct, nodeOption: Option) {
       state.avaibleOptions.nodes = [...state.avaibleOptions.nodes, nodeOption]
     },
-    // addAvaibleOption(state: SettingsStruct, settings: Partial<SettingsStruct>) {
-
-    // }
   },
   actions: {
     setSettings({ commit }: StoreInstance, settings: Partial<SettingsStruct>) {
@@ -96,6 +101,12 @@ const SettingModule = {
     },
     setShowOption({ commit }: StoreInstance, show: string) {
       commit('setSettings', { show })
+    },
+    setUrlPrefix({ commit }: StoreInstance, urlPrefix: string) {
+      commit('setSettings', { urlPrefix })
+    },
+    setIndexer({ commit }: StoreInstance, indexer: string) {
+      commit('setSettings', { indexer })
     },
     setIcon({ commit }: StoreInstance, icon: string) {
       commit('setSettings', { icon })

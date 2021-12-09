@@ -7,6 +7,8 @@ import { CRYPTOS, CRYPTOS_ETH, CRYPTOS_LEDGER } from './crypto'
 import { ENDPOINT_DEFAULT, ENDPOINTS } from './endpoints'
 import { LEDGER_CONN, LEDGER_CONN_DEFAULT } from './ledger'
 import { PREFIX_DEFAULT, PREFIXES } from './ss58'
+import { INDEXER_DEFAULT, INDEXERS } from './indexers'
+import { PREFIXES as URL_PREFIXES, PREFIX_DEFAULT as URL_PREFIX_DEFAULT } from './prefixes'
 import {
   ICON_DEFAULT,
   ICON_DEFAULT_HOST,
@@ -80,5 +82,9 @@ export {
   DISPLAYS,
   UITHEME_DEFAULT,
   UITHEMES,
+  INDEXER_DEFAULT,
+  INDEXERS,
+  URL_PREFIX_DEFAULT,
+  URL_PREFIXES,
   chains,
 }
