@@ -148,6 +148,12 @@ const SettingModule = {
     availableIcons(state: SettingsStruct): Option[] {
       return state.avaibleOptions.icons
     },
+    availableUrlPrefixes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.urlPrefixes
+    },
+    availableIndexers(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.indexers
+    },
     getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
       return rest
     },
