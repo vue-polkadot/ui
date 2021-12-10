@@ -29,7 +29,7 @@ import {
   CHANGE_DEFAULT,
   CHANGE_OPTIONS,
 } from './defaults/index'
-import { equalsOrLocal, isManual } from './utils'
+import { equalsOrLocal, isAuto } from './utils'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -107,16 +107,17 @@ const SettingModule = {
     setShowOption({ commit }: StoreContext, show: string) {
       commit('setSettings', { show })
     },
-    setUrlPrefix({ commit, state }: StoreContext, urlPrefix: string) {
-      if (isManual(state.change)) {
-        commit('setSettings', { urlPrefix })
-        return
-      }
+    setUrlPrefix({ commit, state, dispatch }: StoreContext, urlPrefix: string) {
 
-      const eq = equalsOrLocal(urlPrefix)
-      const apiUrl = state.avaibleOptions.nodes.find(eq)?.value
-      const indexer = state.avaibleOptions.indexers.find(eq)?.value
-      commit('setSettings', { urlPrefix, apiUrl, indexer })
+      commit('setSettings', { urlPrefix })
+
+      if (isAuto(state.change)) {
+        const eq = equalsOrLocal(urlPrefix)
+        const apiUrl = state.avaibleOptions.nodes.find(eq)?.value
+        dispatch('setApiUrl', apiUrl)
+        const indexer = state.avaibleOptions.indexers.find(eq)?.value
+        dispatch('setIndexer', indexer)
+      }
     },
     setIndexer({ commit }: StoreContext, indexer: string) {
       commit('setSettings', { indexer })

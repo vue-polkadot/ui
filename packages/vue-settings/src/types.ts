@@ -58,4 +58,5 @@ export interface NetworkSpecsStruct {
 export type StoreContext = {
   commit: (type: string, payload?: any, options?: Object) => void;
   state: SettingsStruct;
+  dispatch: (type: string, payload?: any, options?: Object) => Promise<any>;
 }
