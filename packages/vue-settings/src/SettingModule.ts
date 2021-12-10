@@ -114,8 +114,8 @@ const SettingModule = {
       }
 
       const eq = equalsOrLocal(urlPrefix)
-      const apiUrl = state.avaibleOptions.nodes.find(eq)
-      const indexer = state.avaibleOptions.indexers.find(eq)
+      const apiUrl = state.avaibleOptions.nodes.find(eq)?.value
+      const indexer = state.avaibleOptions.indexers.find(eq)?.value
       commit('setSettings', { urlPrefix, apiUrl, indexer })
     },
     setIndexer({ commit }: StoreContext, indexer: string) {
