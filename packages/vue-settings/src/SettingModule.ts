@@ -1,4 +1,4 @@
-import { SettingsStruct, Option, AvaibleOptions, StoreInstance } from './types'
+import { SettingsStruct, Option, AvaibleOptions, StoreContext } from './types'
 import {
   CRYPTOS,
   ENDPOINT_DEFAULT,
@@ -76,43 +76,43 @@ const SettingModule = {
     },
   },
   actions: {
-    setSettings({ commit }: StoreInstance, settings: Partial<SettingsStruct>) {
+    setSettings({ commit }: StoreContext, settings: Partial<SettingsStruct>) {
       commit('setSettings', settings)
     },
-    setApiUrl({ commit }: StoreInstance, apiUrl: string) {
+    setApiUrl({ commit }: StoreContext, apiUrl: string) {
       commit('setSettings', { apiUrl })
     },
-    setLanguage({ commit }: StoreInstance, i18nLang: string) {
+    setLanguage({ commit }: StoreContext, i18nLang: string) {
       commit('setSettings', { i18nLang })
     },
-    setLocking({ commit }: StoreInstance, locking: string) {
+    setLocking({ commit }: StoreContext, locking: string) {
       commit('setSettings', { locking })
     },
-    setPrefix({ commit }: StoreInstance, prefix: string) {
+    setPrefix({ commit }: StoreContext, prefix: string) {
       commit('setSettings', { prefix })
     },
-    setUiTheme({ commit }: StoreInstance, uiTheme: string) {
+    setUiTheme({ commit }: StoreContext, uiTheme: string) {
       commit('setSettings', { uiTheme })
     },
-    setPagination({ commit }: StoreInstance, pagination: string) {
+    setPagination({ commit }: StoreContext, pagination: string) {
       commit('setSettings', { pagination })
     },
-    setDisplay({ commit }: StoreInstance, display: string) {
+    setDisplay({ commit }: StoreContext, display: string) {
       commit('setSettings', { display })
     },
-    setShowOption({ commit }: StoreInstance, show: string) {
+    setShowOption({ commit }: StoreContext, show: string) {
       commit('setSettings', { show })
     },
-    setUrlPrefix({ commit }: StoreInstance, urlPrefix: string) {
+    setUrlPrefix({ commit }: StoreContext, urlPrefix: string) {
       commit('setSettings', { urlPrefix })
     },
-    setIndexer({ commit }: StoreInstance, indexer: string) {
+    setIndexer({ commit }: StoreContext, indexer: string) {
       commit('setSettings', { indexer })
     },
-    setIcon({ commit }: StoreInstance, icon: string) {
+    setIcon({ commit }: StoreContext, icon: string) {
       commit('setSettings', { icon })
     },
-    addNode({ commit }: StoreInstance, nodeOption: Option) {
+    addNode({ commit }: StoreContext, nodeOption: Option) {
       if (nodeOption.value && nodeOption.text) {
         commit('createNode', nodeOption)
       }

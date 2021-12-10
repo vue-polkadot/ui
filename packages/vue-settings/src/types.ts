@@ -53,6 +53,7 @@ export interface NetworkSpecsStruct {
   unit: string;
 }
 
-export type StoreInstance = {
+export type StoreContext = {
   commit: (type: string, payload?: any, options?: Object) => void;
+  state: SettingsStruct;
 }
