@@ -21,6 +21,7 @@ import {
   SHOW_OPTIONS,
   DISPLAY_DEFAULT,
   DISPLAYS,
+  INDEXERS,
   chains
 } from './defaults/index'
 
@@ -45,6 +46,7 @@ export {
   SHOW_DEFAULT,
   SHOW_OPTIONS,
   DISPLAY_DEFAULT,
+  INDEXERS,
   DISPLAYS,
   chains,
   OverrideSettingModule,

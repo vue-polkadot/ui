@@ -1,6 +1,6 @@
 {
   "name": "@vue-polkadot/vue-settings",
-  "version": "0.0.38-rc.1",
+  "version": "0.0.38-rc.2",
   "description": "Polkadot Settings for KodaDot",
   "author": "Viki Val <viktorko99@gmail.com>",
   "main": "dist/index.js",
