@@ -6,6 +6,11 @@ import { Option } from '../types';
 export const ENDPOINTS: Option[] = [
   {
     info: 'kusama',
+    text: 'Kusama (Patract Elara)',
+    value: 'wss://kusama.elara.patract.io'
+  },
+  {
+    info: 'kusama',
     text: 'Kusama (Parity)',
     value: 'wss://kusama-rpc.polkadot.io'
   },
@@ -15,9 +20,9 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://kusama.api.onfinality.io/public-ws'
   },
   {
-    info: 'kusama',
-    text: 'Kusama (Patract Elara)',
-    value: 'wss://kusama.elara.patract.io'
+    info: 'statemine',
+    text: 'Statemine (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/statemine'
   },
   {
     info: 'statemine',
@@ -30,19 +35,14 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://statemine.api.onfinality.io/public-ws'
   },
   {
-    info: 'statemine',
-    text: 'Statemine (Patract Elara)',
-    value: 'wss://pub.elara.patract.io/statemine'
+    info: 'westmint',
+    text: 'Westmint (Patract Elara)',
+    value: 'wss://pub.elara.patract.io/westmint'
   },
   {
     info: 'westend',
     text: 'Westend (Parity)',
     value: 'wss://westend-rpc.polkadot.io'
-  },
-  {
-    info: 'westmint',
-    text: 'Westmint (Patract Elara)',
-    value: 'wss://pub.elara.patract.io/westmint'
   },
   {
     info: 'westmint',
