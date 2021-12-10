@@ -25,9 +25,11 @@ import {
   INDEXERS,
   INDEXER_DEFAULT,
   URL_PREFIXES,
-  URL_PREFIX_DEFAULT
+  URL_PREFIX_DEFAULT,
+  CHANGE_DEFAULT,
+  CHANGE_OPTIONS,
 } from './defaults/index'
-import { equalsOrLocal } from './utils'
+import { equalsOrLocal, isManual } from './utils'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -44,6 +46,7 @@ const avaibleOptions: AvaibleOptions = {
   ledgers: LEDGER_CONN,
   urlPrefixes: URL_PREFIXES,
   indexers: INDEXERS,
+  changes: CHANGE_OPTIONS,
 }
 
 const defaultState: SettingsStruct = {
@@ -61,6 +64,7 @@ const defaultState: SettingsStruct = {
   avaibleOptions: avaibleOptions,
   urlPrefix: URL_PREFIX_DEFAULT,
   indexer: INDEXER_DEFAULT,
+  change: CHANGE_DEFAULT,
 }
 
 const SettingModule = {
@@ -103,14 +107,25 @@ const SettingModule = {
     setShowOption({ commit }: StoreContext, show: string) {
       commit('setSettings', { show })
     },
-    setUrlPrefix({ commit }: StoreContext, urlPrefix: string) {
-      commit('setSettings', { urlPrefix })
+    setUrlPrefix({ commit, state }: StoreContext, urlPrefix: string) {
+      if (isManual(state.change)) {
+        commit('setSettings', { urlPrefix })
+        return
+      }
+
+      const eq = equalsOrLocal(urlPrefix)
+      const apiUrl = state.avaibleOptions.nodes.find(eq)
+      const indexer = state.avaibleOptions.indexers.find(eq)
+      commit('setSettings', { urlPrefix, apiUrl, indexer })
     },
     setIndexer({ commit }: StoreContext, indexer: string) {
       commit('setSettings', { indexer })
     },
     setIcon({ commit }: StoreContext, icon: string) {
       commit('setSettings', { icon })
+    },
+    setChange({ commit }: StoreContext, change: string) {
+      commit('setSettings', { change })
     },
     addNode({ commit }: StoreContext, nodeOption: Option) {
       if (nodeOption.value && nodeOption.text) {
@@ -155,6 +170,9 @@ const SettingModule = {
     availableIcons(state: SettingsStruct): Option[] {
       return state.avaibleOptions.icons
     },
+    availableChanges(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.changes
+    },
     currentChainByPrefix(state: SettingsStruct): string | undefined {
       return state.avaibleOptions.urlPrefixes.find(
         (prefix: Option) => prefix.value === state.urlPrefix
@@ -162,11 +180,11 @@ const SettingModule = {
     },
     availableNodesByPrefix(state: SettingsStruct, getters: any): Option[] {
       const eq = equalsOrLocal(getters.currentChainByPrefix)
-      return state.avaibleOptions.nodes.filter(eq)
+      return getters.availableNodes.filter(eq)
     },
     availableIndexerByPrefix(state: SettingsStruct, getters: any): Option[] {
       const eq = equalsOrLocal(getters.currentChainByPrefix)
-      return state.avaibleOptions.indexers.filter(eq)
+      return getters.availableIndexers.filter(eq)
     },
     getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
       return rest
