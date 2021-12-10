@@ -21,6 +21,8 @@ import {
   DISPLAYS,
   UITHEME_DEFAULT,
   UITHEMES,
+  CHANGE_DEFAULT,
+  CHANGE_OPTIONS,
 } from './ui'
 import chains from './chains'
 
@@ -86,5 +88,7 @@ export {
   INDEXERS,
   URL_PREFIX_DEFAULT,
   URL_PREFIXES,
+  CHANGE_DEFAULT,
+  CHANGE_OPTIONS,
   chains,
 }

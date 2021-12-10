@@ -60,6 +60,21 @@ const UITHEMES: Option[] = [
   }
 ];
 
+const CHANGE_DEFAULT = 'auto';
+
+const CHANGE_OPTIONS: Option[] = [
+  {
+    info: 'auto',
+    text: 'Automatic',
+    value: 'auto'
+  },
+  {
+    info: 'manual',
+    text: 'Manual (change node && indexer)',
+    value: 'manual'
+  },
+]
+
 const ICON_DEFAULT = 'default';
 
 const ICON_DEFAULT_HOST = isPolkadot
@@ -104,5 +119,7 @@ export {
   DISPLAY_DEFAULT,
   DISPLAYS,
   UITHEME_DEFAULT,
-  UITHEMES
+  UITHEMES,
+  CHANGE_DEFAULT,
+  CHANGE_OPTIONS,
 };

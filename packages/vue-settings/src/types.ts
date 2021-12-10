@@ -25,6 +25,7 @@ export interface SettingsStruct {
   urlPrefix: string,
   indexer: string,
   avaibleOptions: AvaibleOptions;
+  change: string;
 }
 
 export interface AvaibleOptions {
@@ -42,6 +43,7 @@ export interface AvaibleOptions {
   cameras: Options;
   urlPrefixes: Options;
   indexers: Options;
+  changes: Options;
 }
 
 export interface NetworkSpecsStruct {
