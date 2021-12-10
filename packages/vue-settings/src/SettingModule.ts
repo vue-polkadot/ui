@@ -27,6 +27,7 @@ import {
   URL_PREFIXES,
   URL_PREFIX_DEFAULT
 } from './defaults/index'
+import { equalsOrLocal } from './utils'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -153,6 +154,19 @@ const SettingModule = {
     },
     availableIcons(state: SettingsStruct): Option[] {
       return state.avaibleOptions.icons
+    },
+    currentChainByPrefix(state: SettingsStruct): string | undefined {
+      return state.avaibleOptions.urlPrefixes.find(
+        (prefix: Option) => prefix.value === state.urlPrefix
+      )?.info
+    },
+    availableNodesByPrefix(state: SettingsStruct, getters: any): Option[] {
+      const eq = equalsOrLocal(getters.currentChainByPrefix)
+      return state.avaibleOptions.nodes.filter(eq)
+    },
+    availableIndexerByPrefix(state: SettingsStruct, getters: any): Option[] {
+      const eq = equalsOrLocal(getters.currentChainByPrefix)
+      return state.avaibleOptions.indexers.filter(eq)
     },
     getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
       return rest
