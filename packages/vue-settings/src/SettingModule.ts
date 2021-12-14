@@ -29,7 +29,7 @@ import {
   CHANGE_DEFAULT,
   CHANGE_OPTIONS,
 } from './defaults/index'
-import { equalsOrLocal, isAuto } from './utils'
+import { equalsOrLocal, isAuto, valueEquals } from './utils'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -112,7 +112,8 @@ const SettingModule = {
       commit('setSettings', { urlPrefix })
 
       if (isAuto(state.change)) {
-        const eq = equalsOrLocal(urlPrefix)
+        const valueOfPrefix = state.avaibleOptions.urlPrefixes.find(valueEquals(urlPrefix))?.info
+        const eq = equalsOrLocal(valueOfPrefix || urlPrefix)
         const apiUrl = state.avaibleOptions.nodes.find(eq)?.value
         dispatch('setApiUrl', apiUrl)
         const indexer = state.avaibleOptions.indexers.find(eq)?.value
