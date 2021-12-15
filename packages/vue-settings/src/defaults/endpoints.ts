@@ -6,8 +6,8 @@ import { Option } from '../types';
 export const ENDPOINTS: Option[] = [
   {
     info: 'kusama',
-    text: 'Kusama (Patract Elara)',
-    value: 'wss://kusama.elara.patract.io'
+    text: 'Kusama (OnFinality)',
+    value: 'wss://kusama.api.onfinality.io/public-ws'
   },
   {
     info: 'kusama',
@@ -16,8 +16,8 @@ export const ENDPOINTS: Option[] = [
   },
   {
     info: 'kusama',
-    text: 'Kusama (OnFinality)',
-    value: 'wss://kusama.api.onfinality.io/public-ws'
+    text: 'Kusama (Patract Elara)',
+    value: 'wss://kusama.elara.patract.io'
   },
   {
     info: 'statemine',
