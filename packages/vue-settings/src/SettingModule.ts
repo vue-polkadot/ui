@@ -180,6 +180,9 @@ const SettingModule = {
         (prefix: Option) => prefix.value === state.urlPrefix
       )?.info
     },
+    currentUrlPrefix(state: SettingsStruct): string {
+      return state.urlPrefix
+    },
     availableNodesByPrefix(state: SettingsStruct, getters: any): Option[] {
       const eq = equalsOrLocal(getters.currentChainByPrefix)
       return getters.availableNodes.filter(eq)
