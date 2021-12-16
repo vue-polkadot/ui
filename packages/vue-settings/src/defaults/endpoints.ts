@@ -40,14 +40,14 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://pub.elara.patract.io/westmint'
   },
   {
-    info: 'westend',
-    text: 'Westend (Parity)',
-    value: 'wss://westend-rpc.polkadot.io'
-  },
-  {
     info: 'westmint',
     text: 'Westmint (Parity)',
     value: 'wss://westmint-rpc.polkadot.io'
+  },
+  {
+    info: 'westend',
+    text: 'Westend (Parity)',
+    value: 'wss://westend-rpc.polkadot.io'
   },
   {
     info: 'basilisk',

@@ -17,6 +17,11 @@ export const PREFIXES: Option[] = [
     value: 'statemine'
   },
   {
+    info: 'westmint',
+    text: 'Westmint',
+    value: 'westmint'
+  },
+  {
     info: 'basilisk',
     text: 'Basilisk',
     value: 'bsx'
