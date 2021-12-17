@@ -7,6 +7,11 @@ import type { Option } from '../types';
 export const INDEXERS: Option[] = [
   {
     info: 'kusama',
+    text: 'Kusama (magick EU)',
+    value: 'https://sz.api.subquery.network/sq/vikiival/magick'
+  },
+  {
+    info: 'kusama',
     text: 'Kusama (magick)',
     value: 'https://api.subquery.network/sq/vikiival/magick'
   },
