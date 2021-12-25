@@ -3,8 +3,12 @@
 
 import type { Option } from '../types';
 
-
 export const INDEXERS: Option[] = [
+  {
+    info: 'kusama',
+    text: 'Kusama (magick auto-balanced)',
+    value: 'https://kodadot.api.subquery.network'
+  },
   {
     info: 'kusama',
     text: 'Kusama (magick EU)',
