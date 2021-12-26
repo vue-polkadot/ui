@@ -8,6 +8,8 @@ export type Option = {
   value: string | number;
 }
 
+export type Options = Option[];
+
 export interface SettingsStruct {
   apiUrl: string;
   camera: string;
@@ -16,22 +18,32 @@ export interface SettingsStruct {
   ledgerConn: string;
   locking: string;
   prefix: number;
-  uiMode: string;
   uiTheme: string;
+  pagination: string,
+  display: string,
+  show: string,
+  urlPrefix: string,
+  indexer: string,
   avaibleOptions: AvaibleOptions;
+  change: string;
 }
 
 export interface AvaibleOptions {
-  nodes: Option[];
-  cryptos: Option[];
-  languages: Option[];
-  locking: Option[];
-  prefixes: Option[];
-  uiModes: Option[];
-  uiThemes: Option[];
-  icons: Option[];
-  ledgers: Option[];
-  cameras: Option[];
+  nodes: Options;
+  cryptos: Options;
+  languages: Options;
+  locking: Options;
+  prefixes: Options;
+  paginations: Options,
+  displays: Options,
+  showOptions: Options,
+  uiThemes: Options;
+  icons: Options;
+  ledgers: Options;
+  cameras: Options;
+  urlPrefixes: Options;
+  indexers: Options;
+  changes: Options;
 }
 
 export interface NetworkSpecsStruct {
@@ -41,4 +53,10 @@ export interface NetworkSpecsStruct {
   prefix: number;
   title: string;
   unit: string;
+}
+
+export type StoreContext = {
+  commit: (type: string, payload?: any, options?: Object) => void;
+  state: SettingsStruct;
+  dispatch: (type: string, payload?: any, options?: Object) => Promise<any>;
 }

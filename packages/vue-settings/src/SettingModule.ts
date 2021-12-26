@@ -1,5 +1,35 @@
-import { SettingsStruct, Option, AvaibleOptions } from './types'
-import { CRYPTOS, ENDPOINT_DEFAULT, ENDPOINTS, LANGUAGE_DEFAULT, LOCKING_DEFAULT, LOCKING, PREFIX_DEFAULT, PREFIXES, UIMODE_DEFAULT, UIMODES, UITHEME_DEFAULT, UITHEMES, ICONS, ICON_DEFAULT, CAMERA_DEFAULT, LEDGER_CONN_DEFAULT, CAMERA, LEDGER_CONN } from './defaults/index'
+import { SettingsStruct, Option, AvaibleOptions, StoreContext } from './types'
+import {
+  CRYPTOS,
+  ENDPOINT_DEFAULT,
+  ENDPOINTS,
+  LANGUAGE_DEFAULT,
+  LOCKING_DEFAULT,
+  LOCKING,
+  PREFIX_DEFAULT,
+  PREFIXES,
+  PAGINATION_DEFAULT,
+  PAGINATIONS,
+  SHOW_DEFAULT,
+  SHOW_OPTIONS,
+  DISPLAY_DEFAULT,
+  DISPLAYS,
+  UITHEME_DEFAULT,
+  UITHEMES,
+  ICONS,
+  ICON_DEFAULT,
+  CAMERA_DEFAULT,
+  LEDGER_CONN_DEFAULT,
+  CAMERA,
+  LEDGER_CONN,
+  INDEXERS,
+  INDEXER_DEFAULT,
+  URL_PREFIXES,
+  URL_PREFIX_DEFAULT,
+  CHANGE_DEFAULT,
+  CHANGE_OPTIONS,
+} from './defaults/index'
+import { equalsOrLocal, isAuto, valueEquals } from './utils'
 
 const avaibleOptions: AvaibleOptions = {
   nodes: ENDPOINTS,
@@ -7,11 +37,16 @@ const avaibleOptions: AvaibleOptions = {
   languages: [],
   locking: LOCKING,
   prefixes: PREFIXES,
-  uiModes: UIMODES,
+  paginations: PAGINATIONS,
+  displays: DISPLAYS,
+  showOptions: SHOW_OPTIONS,
   uiThemes: UITHEMES,
   icons: ICONS,
   cameras: CAMERA,
   ledgers: LEDGER_CONN,
+  urlPrefixes: URL_PREFIXES,
+  indexers: INDEXERS,
+  changes: CHANGE_OPTIONS,
 }
 
 const defaultState: SettingsStruct = {
@@ -22,87 +57,144 @@ const defaultState: SettingsStruct = {
   icon: ICON_DEFAULT,
   locking: LOCKING_DEFAULT,
   prefix: PREFIX_DEFAULT,
-  uiMode: UIMODE_DEFAULT,
+  pagination: PAGINATION_DEFAULT,
+  display: DISPLAY_DEFAULT,
+  show: SHOW_DEFAULT,
   uiTheme: UITHEME_DEFAULT,
-  avaibleOptions: avaibleOptions
-};
-
+  avaibleOptions: avaibleOptions,
+  urlPrefix: URL_PREFIX_DEFAULT,
+  indexer: INDEXER_DEFAULT,
+  change: CHANGE_DEFAULT,
+}
 
 const SettingModule = {
   state: { ...defaultState },
   mutations: {
     setSettings(state: SettingsStruct, settings: Partial<SettingsStruct>) {
       Object.keys(settings).map((key: string) => {
-        (state as any)[key] = (settings as any)[key]
+        ;(state as any)[key] = (settings as any)[key]
       })
     },
     createNode(state: SettingsStruct, nodeOption: Option) {
       state.avaibleOptions.nodes = [...state.avaibleOptions.nodes, nodeOption]
-    }
-    // addAvaibleOption(state: SettingsStruct, settings: Partial<SettingsStruct>) {
-
-    // }
+    },
   },
   actions: {
-    setSettings({commit}: any, settings: Partial<SettingsStruct>) {
-      commit('setSettings', settings);
+    setSettings({ commit }: StoreContext, settings: Partial<SettingsStruct>) {
+      commit('setSettings', settings)
     },
-    setApiUrl({commit}: any, apiUrl: string) {
-      commit('setSettings', { apiUrl });
+    setApiUrl({ commit }: StoreContext, apiUrl: string) {
+      commit('setSettings', { apiUrl })
     },
-    setLanguage({commit}: any, i18nLang: string) {
-      commit('setSettings', { i18nLang });
+    setLanguage({ commit }: StoreContext, i18nLang: string) {
+      commit('setSettings', { i18nLang })
     },
-    setLocking({commit}: any, locking: string) {
-      commit('setSettings', { locking });
+    setLocking({ commit }: StoreContext, locking: string) {
+      commit('setSettings', { locking })
     },
-    setPrefix({commit}: any, prefix: string) {
-      commit('setSettings', { prefix });
+    setPrefix({ commit }: StoreContext, prefix: string) {
+      commit('setSettings', { prefix })
     },
-    setUiTheme({commit}: any, uiTheme: string) {
-      commit('setSettings', { uiTheme });
+    setUiTheme({ commit }: StoreContext, uiTheme: string) {
+      commit('setSettings', { uiTheme })
     },
-    setUiMode({commit}: any, uiMode: string) {
-      commit('setSettings', { uiMode });
+    setPagination({ commit }: StoreContext, pagination: string) {
+      commit('setSettings', { pagination })
     },
-    setIcon({commit}: any, icon: string) {
-      commit('setSettings', { icon });
+    setDisplay({ commit }: StoreContext, display: string) {
+      commit('setSettings', { display })
     },
-    addNode({commit}: any, nodeOption: Option) {
-      if (nodeOption.value && nodeOption.text) {
-        commit('createNode', nodeOption);
+    setShowOption({ commit }: StoreContext, show: string) {
+      commit('setSettings', { show })
+    },
+    setUrlPrefix({ commit, state, dispatch }: StoreContext, urlPrefix: string) {
+
+      commit('setSettings', { urlPrefix })
+
+      if (isAuto(state.change)) {
+        const valueOfPrefix = state.avaibleOptions.urlPrefixes.find(valueEquals(urlPrefix))?.info
+        const eq = equalsOrLocal(valueOfPrefix || urlPrefix)
+        const apiUrl = state.avaibleOptions.nodes.find(eq)?.value
+        dispatch('setApiUrl', apiUrl)
+        const indexer = state.avaibleOptions.indexers.find(eq)?.value
+        dispatch('setIndexer', indexer)
       }
-    }
+    },
+    setIndexer({ commit }: StoreContext, indexer: string) {
+      commit('setSettings', { indexer })
+    },
+    setIcon({ commit }: StoreContext, icon: string) {
+      commit('setSettings', { icon })
+    },
+    setChange({ commit }: StoreContext, change: string) {
+      commit('setSettings', { change })
+    },
+    addNode({ commit }: StoreContext, nodeOption: Option) {
+      if (nodeOption.value && nodeOption.text) {
+        commit('createNode', nodeOption)
+      }
+    },
   },
- getters: {
-  availableNodes(state: SettingsStruct): Option[] {
-     return state.avaibleOptions.nodes
-   },
-   availableLanguages(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.languages
+  getters: {
+    availableUrlPrefixes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.urlPrefixes
+    },
+    availableIndexers(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.indexers
+    },
+    availableNodes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.nodes
+    },
+    availableLanguages(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.languages
+    },
+    availableCryptos(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.cryptos
+    },
+    availableLocking(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.locking
+    },
+    availablePrefixes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.prefixes
+    },
+    availablePaginations(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.paginations
+    },
+    availableDisplays(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.displays
+    },
+    availableShowOptions(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.showOptions
+    },
+    availableUiThemes(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.uiThemes
+    },
+    availableIcons(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.icons
+    },
+    availableChanges(state: SettingsStruct): Option[] {
+      return state.avaibleOptions.changes
+    },
+    currentChainByPrefix(state: SettingsStruct): string | undefined {
+      return state.avaibleOptions.urlPrefixes.find(
+        (prefix: Option) => prefix.value === state.urlPrefix
+      )?.info
+    },
+    currentUrlPrefix(state: SettingsStruct): string {
+      return state.urlPrefix
+    },
+    availableNodesByPrefix(state: SettingsStruct, getters: any): Option[] {
+      const eq = equalsOrLocal(getters.currentChainByPrefix)
+      return getters.availableNodes.filter(eq)
+    },
+    availableIndexerByPrefix(state: SettingsStruct, getters: any): Option[] {
+      const eq = equalsOrLocal(getters.currentChainByPrefix)
+      return getters.availableIndexers.filter(eq)
+    },
+    getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
+      return rest
+    },
   },
-  availableCryptos(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.cryptos
-  },
-  availableLocking(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.locking
-  },
-  availablePrefixes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.prefixes
-  },
-  availableUiModes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.uiModes
-  },
-  availableUiThemes(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.uiThemes
-  },
-  availableIcons(state: SettingsStruct): Option[] {
-    return state.avaibleOptions.icons
-  },
-   getSettings({ avaibleOptions, ...rest }: SettingsStruct) {
-     return rest
-   }
- }
 }
 
 export function Module(overrideDefault: Partial<SettingsStruct>) {
@@ -110,8 +202,8 @@ export function Module(overrideDefault: Partial<SettingsStruct>) {
     ...SettingModule,
     state: {
       ...SettingModule.state,
-      ...overrideDefault
-    }
+      ...overrideDefault,
+    },
   }
 }
 
