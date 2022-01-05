@@ -7,7 +7,7 @@ export const INDEXERS: Option[] = [
   {
     info: 'kusama',
     text: 'Kusama (magick auto-balanced)',
-    value: 'https://kodadot.api.subquery.network'
+    value: 'https://kodadot.gapi.subquery.network'
   },
   {
     info: 'kusama',
