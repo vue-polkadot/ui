@@ -50,6 +50,11 @@ export const ENDPOINTS: Option[] = [
     value: 'wss://westend-rpc.polkadot.io'
   },
   {
+    info: 'westend',
+    text: 'Westend (OnFinality)',
+    value: 'wss://westend.api.onfinality.io/public-ws'
+  },
+  {
     info: 'basilisk',
     text: 'Basilisk (HydraDX)',
     value: 'wss://rpc-01.basilisk.hydradx.io'
