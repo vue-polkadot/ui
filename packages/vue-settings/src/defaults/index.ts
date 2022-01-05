@@ -24,7 +24,6 @@ import {
   CHANGE_DEFAULT,
   CHANGE_OPTIONS,
 } from './ui'
-import chains from './chains'
 
 const CAMERA_DEFAULT = 'off'
 
@@ -90,5 +89,4 @@ export {
   URL_PREFIXES,
   CHANGE_DEFAULT,
   CHANGE_OPTIONS,
-  chains,
 }
