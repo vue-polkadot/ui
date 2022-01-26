@@ -1,4 +1,12 @@
+# DEPRECATED: vue-ui-polkadot
+
+Original vue-polkadot project is deprecated.
+Some packages are now available in [@kodadot1](https://www.npmjs.com/org/kodadot1) on [npmjs](https://www.npmjs.com).
+
+Code has been moved under [kodadot/packages](https://github.com/kodadot/packages).
+
 # vue-ui-polkadot
+
 UI utilities, libraries and Vue.js components in use across @polkadot projects.
 
 ## [📄 Documentation - vue-polkadot.js.org/vue-ui](https://vue-polkadot.js.org/vue-ui/)
