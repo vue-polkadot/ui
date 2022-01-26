@@ -1,16 +1,13 @@
 {
     "compilerOptions": {
       "target": "es6",
-      "module": "es2015",
+      "module": "es6",
+      "importHelpers": true,
       "declaration": true,
       "outDir": "./dist",
       "strict": false,
       "moduleResolution": "node",
       "skipLibCheck": true,
       "baseUrl": ".",
-      "paths": {
-        "@polkadot/api/augment": ["./node_modules/@edgeware/node-types/interfaces/augment-api.d.ts"],
-        "@polkadot/types/augment": ["./node_modules/@edgeware/node-types/interfaces/augment-types.d.ts"],
-      }
     }
 }

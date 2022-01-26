@@ -4,7 +4,6 @@ import { ApiExtension, getApiOptions } from './utils'
 
 export interface ApiService {
   connect(apiUrl: string, overrideOptions?: ApiExtension): Promise<ApiPromise | Error>;
-  disconnect(): void;
   // registerCustomTypes(userTypes: string, apiUrl?: string): Promise<ApiPromise | Error>;
 }
 
@@ -39,9 +38,14 @@ export default class Api extends EventEmitter implements ApiService {
     }
 
     try {
+      await this.disconnect(); // disconnect if already connected
       const provider = new WsProvider(apiUrl);
       const options = overrideOptions ?? getApiOptions(apiUrl);
       const apiPromise = await ApiPromise.create({provider, ...options});
+      apiPromise
+      .once('connected', () => this._emit('connected', apiUrl))
+      .once('ready', () => this._emit('ready', apiUrl))
+      .on('disconnected', () => this._emit('disconnected', apiUrl));
       this.setApi(apiPromise);
       this._emit('connect', apiPromise);
     } catch (err) {
@@ -56,10 +60,11 @@ export default class Api extends EventEmitter implements ApiService {
   /**
    * disconnect
    */
-  public disconnect(): void {
+  public async disconnect(): Promise<void> {
     if (this._api) {
-      // this._api.once('disconnected', () => this._emit('disconnect', this._apiUrl));
-      this._api.disconnect();
+      // const url = this._apiUrl;
+      // this._api.once('disconnected', () => console.log('[DOT-API] Disconnected from the endpoint', url));
+      await this._api.disconnect();
       this.setUrl(null);
     }
   }
